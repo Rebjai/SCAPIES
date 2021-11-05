@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Questionaire\QuestionaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::post('/questionaire/general_info',[QuestionaireController::class, 'generalInfo'])->name('questionaire.general_info');
 Route::post('/questionaire/address_info',[QuestionaireController::class, 'addressInfo'])->name('questionaire.address_info');

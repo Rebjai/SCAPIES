@@ -4,7 +4,7 @@
     <div>
         <x-label for="name" :value="__('Nombre')" />
 
-        <x-input id="name" class="block mt-1 w-full" type="name" name="name" :value="old('name')" required autocomplete="name" />
+        <x-input id="name" class="block mt-1 w-full" type="name" name="name" :value="$alumno?old('name'):$user->name" required autocomplete="name" />
     </div>
 
     <div>
@@ -43,7 +43,7 @@
     <div>
         <x-label for="email" :value="__('Correo electrónico')" />
 
-        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required disabled="true" />
+        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$alumno?old('email'):$user->email" required disabled="true" />
     </div>
     <div>
         <x-label for="telefono" :value="__('Teléfono')" />
