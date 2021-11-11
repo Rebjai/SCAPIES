@@ -17,7 +17,7 @@ class CreateCatalogTable extends Migration
             $table->id();
             $table->string('nombre');
         });
-        Schema::create('areas_bachillerato', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('area_bachillerato');
         });
@@ -29,13 +29,13 @@ class CreateCatalogTable extends Migration
             $table->foreignId('subsistema_id')->references('id')->on('subsistemas')->onDelete('restrict');
             
         });
-        Schema::create('planteles_areas', function (Blueprint $table) {
+        Schema::create('area_plantel', function (Blueprint $table) {
             $table->id();
             $table->string('plantel_id');
             $table->string('area_id');
             // $table->unsignedBigInteger('subsistema_id');
             $table->foreignId('plantel_id')->references('id')->on('planteles')->onDelete('restrict');
-            $table->foreignId('area_id')->references('id')->on('areas_bachillerato')->onDelete('restrict');
+            $table->foreignId('area_id')->references('id')->on('areas')->onDelete('restrict');
         });
         
         Schema::create('causas_baja', function (Blueprint $table) {
@@ -60,9 +60,9 @@ class CreateCatalogTable extends Migration
     public function down()
     {
         Schema::dropIfExists('subsistemas');
-        Schema::dropIfExists('areas_bachillerato');
+        Schema::dropIfExists('areas');
         Schema::dropIfExists('planteles');
-        Schema::dropIfExists('planteles_areas');
+        Schema::dropIfExists('area_plantel');
         Schema::dropIfExists('causas_baja');
         Schema::dropIfExists('modalidad_estudios');
         Schema::dropIfExists('modelos_educativos');
