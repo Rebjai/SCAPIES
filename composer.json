@@ -1,5 +1,5 @@
 {
-    "name": "Questionaire",
+    "name": "questionaire/survey",
     "type": "project",
     "description": "Questionaire / survey app.",
     "keywords": ["framework", "laravel"],

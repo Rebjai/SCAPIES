@@ -81,7 +81,7 @@
                     
                        
                         <p><label><strong>Selecciona tu campo de formación que estás cursando</strong></label>
-                        <select name="areas_bachilleratos" id="areas_bachillerato">
+                        <select name="areass" id="areas">
                         <option value="0">Selecciona</option>
                            <?php
                               try {
@@ -92,7 +92,7 @@
                                 $cnn = new PDO("mysql:host=$host;dbname=$dbname",$username,$password);
 
                                 //Preparamos la consulta sql
-                                $respuesta = $cnn->prepare("select * from areas_bachillerato ORDER BY area_bachillerato ASC");
+                                $respuesta = $cnn->prepare("select * from areas ORDER BY area ASC");
 
                                 //Ejecutamos la consulta
                                 $respuesta->setFetchMode(PDO::FETCH_ASSOC);
@@ -104,7 +104,7 @@
                                 while($row = $respuesta->fetch())
                                 {        
                                                                         
-                                echo "<option codigo='".$row["id"]."' value='".$row["id"]."'>".$row["area_bachillerato"]."</option>";                                                
+                                echo "<option codigo='".$row["id"]."' value='".$row["id"]."'>".$row["area"]."</option>";                                                
                                 } 
                               }
                                 catch(Exception $e)

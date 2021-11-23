@@ -11,6 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                 @include('questionaire.general_info')
                 @include('questionaire.address_info')
+                @include('questionaire.academic_info')
                 @include('questionaire.index')
                 </div>
             </div>
