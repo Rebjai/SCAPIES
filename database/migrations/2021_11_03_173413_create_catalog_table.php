@@ -31,11 +31,11 @@ class CreateCatalogTable extends Migration
         });
         Schema::create('area_plantel', function (Blueprint $table) {
             $table->id();
-            $table->string('plantel_id');
-            $table->string('area_id');
+            $table->unsignedBigInteger('plantel_id');
+            $table->unsignedBigInteger('area_id');
             // $table->unsignedBigInteger('subsistema_id');
-            $table->foreignId('plantel_id')->references('id')->on('planteles')->onDelete('restrict');
-            $table->foreignId('area_id')->references('id')->on('areas')->onDelete('restrict');
+            $table->foreign('plantel_id')->references('id')->on('planteles')->onDelete('restrict');
+            $table->foreign('area_id')->references('id')->on('areas')->onDelete('restrict');
         });
         
         Schema::create('causas_baja', function (Blueprint $table) {
