@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Bachilleratos;
+namespace App\Http\Controllers\Universidad;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plantel\Subsistema;
 use Illuminate\Http\Request;
 
-class subsistemaController extends Controller
+class universidadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class subsistemaController extends Controller
      */
     public function index()
     {
-        return view('bachillerato.subsistema.index');
+        //
     }
 
     /**
@@ -25,8 +24,7 @@ class subsistemaController extends Controller
      */
     public function create()
     {
-        $subsistema = new Subsistema();
-        return view('bachillerato.subsistema.create', compact('subsistema'));
+        //
     }
 
     /**
@@ -37,8 +35,7 @@ class subsistemaController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route('subsistema.index')
-        ->with('success', 'PlanEstudio created successfully.');
+        //
     }
 
     /**
@@ -49,8 +46,7 @@ class subsistemaController extends Controller
      */
     public function show($id)
     {
-        $subsistema = Subsistema::find($id);
-        return view('bachillerato.plantel.show', compact('subsistema'));
+        //
     }
 
     /**
@@ -61,8 +57,7 @@ class subsistemaController extends Controller
      */
     public function edit($id)
     {
-        $subsistema = Subsistema::find($id);
-        return view('bachillerato.subsistema.edit', compact('planEstudio'));
+        //
     }
 
     /**
@@ -74,7 +69,7 @@ class subsistemaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(Subsistema::$rules);
+        //
     }
 
     /**
