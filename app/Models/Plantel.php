@@ -12,6 +12,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Plantel extends Model
 {
     use HasFactory;
+    static $rules = [
+        "subsistema_id" => "required",
+        "clave" => "required",
+        "nombre"=> "required"
+    ];
+
+    protected $fillable = ['clave', 'nombre', 'subsistema_id'];
+
     /**
      * The areas that belong to the Plantel
      *
