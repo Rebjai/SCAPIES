@@ -4,6 +4,11 @@
             {{ __('Subsistemas Escolares') }}
         </h2>
     </x-slot>
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -16,12 +21,12 @@
                             {{$subsitema->nombre}}
                         </div>
                         <div>
-                            <a href="{{route('subsistema.edit', ['subsistema' => $subsitema->id])">
+                            <a href="{{route('subsistema.edit', ['subsistema' => $subsitema->id])}}">
                                 Editar
                             </a>
                         </div>
                         <div>
-                            <form action="{{route('subsistema.destroy',  ['subsistema' => $subsitema->id])" method="POST">
+                            <form action="{{route('subsistema.destroy',  ['subsistema' => $subsitema->id])}}" method="POST">
                                 @method('DELETE') 
                                 @csrf
                                 <button>Eliminar</button>

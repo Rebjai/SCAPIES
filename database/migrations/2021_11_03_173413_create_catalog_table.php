@@ -16,10 +16,12 @@ class CreateCatalogTable extends Migration
         Schema::create('subsistemas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->timestamps();
         });
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('area_bachillerato');
+            $table->timestamps();
         });
         Schema::create('planteles', function (Blueprint $table) {
             $table->id();
@@ -27,6 +29,7 @@ class CreateCatalogTable extends Migration
             $table->string('clave');
             // $table->unsignedBigInteger('subsistema_id');
             $table->foreignId('subsistema_id')->references('id')->on('subsistemas')->onDelete('restrict');
+            $table->timestamps();
             
         });
         Schema::create('area_plantel', function (Blueprint $table) {
@@ -36,19 +39,23 @@ class CreateCatalogTable extends Migration
             // $table->unsignedBigInteger('subsistema_id');
             $table->foreign('plantel_id')->references('id')->on('planteles')->onDelete('restrict');
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('restrict');
+            $table->timestamps();
         });
         
         Schema::create('causas_baja', function (Blueprint $table) {
             $table->id();
             $table->string('causa');
+            $table->timestamps();
         });
         Schema::create('modalidad_estudios', function (Blueprint $table) {
             $table->id();
             $table->string('modalidad');
+            $table->timestamps();
         });
         Schema::create('modelos_educativos', function (Blueprint $table) {
             $table->id();
             $table->string('modelo');
+            $table->timestamps();
         });
     }
 

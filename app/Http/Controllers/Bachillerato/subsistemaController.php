@@ -66,7 +66,7 @@ class subsistemaController extends Controller
     public function edit($id)
     {
         $subsistema = Subsistema::find($id);
-        return view('bachillerato.subsistema.edit', compact('planEstudio'));
+        return view('bachillerato.subsistema.edit', compact('subsistema'));
     }
 
     /**
@@ -82,7 +82,7 @@ class subsistemaController extends Controller
         $subsistema = Subsistema::find($id);
         return redirect(route('subsistema.index'))->with('success', 'Subsistema actualizado correctamente');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -91,6 +91,8 @@ class subsistemaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Subsistema::find($id)->delete();
+        return redirect(route('subsistema.index'))->with('success', 'Subsistema eliminado correctamente');
+
     }
 }
