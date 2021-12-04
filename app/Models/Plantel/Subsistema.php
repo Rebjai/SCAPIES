@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Subsistema extends Model
 {
     use HasFactory;
+
+    static $rules = [
+		'nombre' => 'required',
+    ];
+
+    protected $fillable = ['nombre'];
+
+    
+    
 }

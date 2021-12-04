@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Bachilleratos\subsistemaController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Questionaire\QuestionaireController;
+use App\Models\Plantel\Subsistema;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +25,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 Route::post('/questionaire/general_info',[QuestionaireController::class, 'generalInfo'])->name('questionaire.general_info');
 Route::post('/questionaire/address_info',[QuestionaireController::class, 'addressInfo'])->name('questionaire.address_info');
+// Route::get('/bachilleratos/plantel',[subsistemaController::class, 'index'])->name('bachilleratos.subsistema.index');
+// Route::post('/bachilleratos/planter',[subsistemaController::class, 'store'])->name('bachilleratos.subsistema.store');
+// Route::patch('/bachilleratos/plantel/{plantel}',[subsistemaController::class, 'destroy'])->name('bachilleratos.subsistema.destroy');
+Route::resource('subsistema', subsistemaController::class);
 
 require __DIR__.'/auth.php';
