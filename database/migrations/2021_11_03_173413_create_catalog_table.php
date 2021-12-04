@@ -59,10 +59,10 @@ class CreateCatalogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subsistemas');
+        Schema::dropIfExists('area_plantel');
         Schema::dropIfExists('areas');
         Schema::dropIfExists('planteles');
-        Schema::dropIfExists('area_plantel');
+        Schema::dropIfExists('subsistemas');
         Schema::dropIfExists('causas_baja');
         Schema::dropIfExists('modalidad_estudios');
         Schema::dropIfExists('modelos_educativos');

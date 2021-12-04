@@ -35,5 +35,7 @@ class CreateCuestionariosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('cuestionarios');
+        Schema::dropIfExists('cuestionario_opciones_carreras');
+        Schema::dropIfExists('baja_alumnos');
     }
 }

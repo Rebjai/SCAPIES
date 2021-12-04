@@ -44,7 +44,7 @@ class CreateUniversidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('universidades');
         Schema::dropIfExists('carreras');
+        Schema::dropIfExists('universidades');
     }
 }
