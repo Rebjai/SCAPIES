@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Area extends Model
 {
     use HasFactory;
+    static $rules = ["area_bachillerato"=>"required"];
     /**
      * The planteles that belong to the Area
      *

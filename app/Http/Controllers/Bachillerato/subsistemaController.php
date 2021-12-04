@@ -93,6 +93,5 @@ class subsistemaController extends Controller
     {
         Subsistema::find($id)->delete();
         return redirect(route('subsistema.index'))->with('success', 'Subsistema eliminado correctamente');
-
     }
 }

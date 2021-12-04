@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Bachilleratos\subsistemaController;
+use App\Http\Controllers\Bachillerato\areaController;
+use App\Http\Controllers\Bachillerato\subsistemaController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Questionaire\QuestionaireController;
-use App\Models\Plantel\Subsistema;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +29,7 @@ Route::post('/questionaire/address_info',[QuestionaireController::class, 'addres
 // Route::post('/bachilleratos/planter',[subsistemaController::class, 'store'])->name('bachilleratos.subsistema.store');
 // Route::patch('/bachilleratos/plantel/{plantel}',[subsistemaController::class, 'destroy'])->name('bachilleratos.subsistema.destroy');
 Route::resource('subsistema', subsistemaController::class);
+Route::resource('plantel', areaController::class);
+Route::resource('area', areaController::class);
 
 require __DIR__.'/auth.php';

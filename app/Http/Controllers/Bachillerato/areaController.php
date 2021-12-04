@@ -3,18 +3,19 @@
 namespace App\Http\Controllers\Bachillerato;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plantel\Area;
 use Illuminate\Http\Request;
 
-class areaController extends Controller
-{
-    /**
+class areaController extends Controller{
+/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $planteles = Area::all();
+        return view('bachillerato.area.index', compact('planteles'));
     }
 
     /**
@@ -24,7 +25,8 @@ class areaController extends Controller
      */
     public function create()
     {
-        //
+        $area = new Area();
+        return view('bachillerato.area.create', 'planteles');
     }
 
     /**
@@ -35,7 +37,9 @@ class areaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(Area::$rules);
+        Area::create($request->all());
+        return redirect(route('area.index'))->with('succes','Se ha agregado el area correctamente');
     }
 
     /**
@@ -46,7 +50,7 @@ class areaController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -57,7 +61,8 @@ class areaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = Area::find($id);
+        return view('bachillerato.area.edit', compact('area'));
     }
 
     /**
@@ -69,9 +74,11 @@ class areaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(Area::$rules);
+        $subsistema = Area::find($id);
+        return redirect(route('area.index'))->with('success', 'Area actualizado correctamente');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -80,6 +87,8 @@ class areaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Area::find($id)->delete();
+        return redirect(route('area.index'))->with('success', 'Area eliminado correctamente');
+
     }
 }
