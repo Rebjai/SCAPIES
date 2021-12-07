@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Plantel;
+namespace App\Models\Bachillerato;
 
 use App\Models\Plantel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Bachillerato;
 
 use App\Models\Plantel\Area;
 use App\Models\Plantel\Subsistema;
@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Plantel extends Model
 {
     use HasFactory;
+    protected $table = 'planteles';
     static $rules = [
         "subsistema_id" => "required",
         "clave" => "required",
