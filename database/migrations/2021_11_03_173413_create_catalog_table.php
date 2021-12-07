@@ -20,7 +20,7 @@ class CreateCatalogTable extends Migration
         });
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->string('area_bachillerato');
+            $table->string('nombre');
             $table->timestamps();
         });
         Schema::create('planteles', function (Blueprint $table) {

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Plantel\Subsistema;
+use App\Models\Bachillerato\Subsistema;
 use Illuminate\Database\Seeder;
 
 class SubsistemaSeeder extends Seeder

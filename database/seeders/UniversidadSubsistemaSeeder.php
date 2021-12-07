@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\UniversidadSubsistema;
+use App\Models\Universidad\UniversidadSubsistema;
 use Illuminate\Database\Seeder;
 
 class UniversidadSubsistemaSeeder extends Seeder

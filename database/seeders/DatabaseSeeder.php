@@ -21,5 +21,23 @@ class DatabaseSeeder extends Seeder
         Regimen::create([
             "nombre" =>'Privada'
         ]);
+        // Seed admin and defauld users
+        $this->call([
+            UserSeeder::class,
+        ]);
+        // bachillerato dependencies seeder
+        $this->call([
+            BachilleratoAreasSeeder::class,
+            SubsistemaSeeder::class,
+            PlantelesSeeder::class,
+        ]);
+        // Questionaire dependencies seeder
+        $this->call([
+            CausasBajasSeeder::class,
+        ]);
+        // Universidad dependencies seeder
+        $this->call([
+            UniversidadSubsistemaSeeder::class,
+        ]);
     }
 }
