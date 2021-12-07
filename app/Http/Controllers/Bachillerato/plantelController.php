@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Bachillerato;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plantel;
+use App\Models\Bachillerato\Plantel;
 use Illuminate\Http\Request;
 
 class plantelController extends Controller

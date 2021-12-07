@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Bachillerato;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plantel\Area;
+use App\Models\Bachillerato\Area;
 use Illuminate\Http\Request;
 
 class areaController extends Controller{
