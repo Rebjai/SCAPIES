@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Regimen;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Regimen seeder
+        Regimen::create([
+            "nombre" =>'Pública'
+        ]);
+        Regimen::create([
+            "nombre" =>'Privada'
+        ]);
     }
 }
