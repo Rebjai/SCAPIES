@@ -19,7 +19,7 @@ class CreateUniversidadesTable extends Migration
             $table->string('nombre');
 
         });
-        Schema::create('universidad_susistemas', function (Blueprint $table) {
+        Schema::create('universidad_subsistemas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre');
@@ -30,7 +30,7 @@ class CreateUniversidadesTable extends Migration
             $table->string('siglas')->nullable();
             $table->string('nombre');
             $table->string('lema')->nullable();
-            $table->foreignId('regimen_id')->references('id')->on('regimen')->restrictOnDelete();
+            $table->foreignId('regimen_id')->references('id')->on('regimenes')->restrictOnDelete();
             $table->foreignId('modalidad_id')->references('id')->on('modalidad_estudios')->restrictOnDelete();
             $table->string('telefono')->nullable();
             $table->string('email')->nullable();
