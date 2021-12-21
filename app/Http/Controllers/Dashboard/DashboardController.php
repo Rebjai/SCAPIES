@@ -15,6 +15,9 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $alumno = Alumno::where('user_id', $user->id)->first();
+        if (!$alumno) {
+            $alumno = new Alumno();
+        }
         $areas = Area::all()->sortBy('nombre');
         $subsistemas = Subsistema::all()->sortBy('nombre');
         $plantel = new Plantel();
