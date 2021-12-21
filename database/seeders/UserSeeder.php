@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Coepes',
             'email' => 'admin@coepesoaxaca.com',
             'password' => Hash::make('admin123'),
+            'admin' => true
         ]);
     }
 }
