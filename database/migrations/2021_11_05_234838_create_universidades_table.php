@@ -59,5 +59,7 @@ class CreateUniversidadesTable extends Migration
     {
         Schema::dropIfExists('carreras');
         Schema::dropIfExists('universidades');
+        Schema::dropIfExists('universidad_subsistemas');
+        Schema::dropIfExists('regimenes');
     }
 }
