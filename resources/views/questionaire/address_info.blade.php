@@ -4,7 +4,7 @@
     <div>
         <x-label for="calle" :value="__('Calle')" />
 
-        <x-input id="calle" class="block mt-1 w-full" type="calle" name="calle" :value="old('calle')" required autocomplete="calle" />
+        <x-input id="calle" class="block mt-1 w-full" type="calle" name="calle" :value="old('calle')?old('calle'):$alumno->address" required autocomplete="calle" />
     </div>
 
     <div>
@@ -33,7 +33,8 @@
 
     
 
-    <div class="flex justify-end mt-4">
+    <div class="flex justify-between mt-4">
+        <a href="{{route('dashboard')}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"> {{ __('Atras') }}</a>
         <x-button>
             {{ __('Guardar') }}
         </x-button>

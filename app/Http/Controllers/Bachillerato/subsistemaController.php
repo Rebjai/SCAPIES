@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Bachillerato;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plantel\Subsistema;
+use App\Models\Bachillerato\Subsistema;
 use Illuminate\Http\Request;
 
 class subsistemaController extends Controller

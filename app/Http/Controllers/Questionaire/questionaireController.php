@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Questionaire;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumno\Alumno;
+use App\Models\Bachillerato\Area;
+use App\Models\Bachillerato\Plantel;
+use App\Models\Bachillerato\Subsistema;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
@@ -11,8 +14,22 @@ use Illuminate\Validation\Rules\Password;
 class questionaireController extends Controller
 {
     public function stepTwo(Request $request){
-        $alumno = Alumno::where('user_id' , '=', Auth::user()->id);
+        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
         return view('questionaire.step_two', compact('alumno'));
+    }
+    public function stepThree(Request $request){
+        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
+        $subsistemas = Subsistema::all();
+        $planteles = Plantel::all();
+        $areas = Area::all();
+        return view('questionaire.step_three', compact('alumno', "subsistemas", "planteles", "areas"));
+    }
+    public function stepFour(Request $request){
+        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
+        $subsistemas = Subsistema::all();
+        $planteles = Plantel::all();
+        $areas = Area::all();
+        return view('questionaire.step_four', compact('alumno'));
     }
     public function generalInfo(Request $request)
     {
@@ -46,6 +63,14 @@ class questionaireController extends Controller
             'localidad' => ['required'],
             'codigo_postal' => ['required','string', 'max:6'],
         ]);
+        return redirect(route('questionaire.step_three'));
+    }
+    public function studies(Request $request)
+    {
+        $request->validate([
+            
+        ]);
+        return redirect(route('dashboard'));
     }
     public function academicInfo(Request $request)
     {
@@ -56,5 +81,7 @@ class questionaireController extends Controller
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             // 'password' => ['required', 'confirmed', Password::defaults()],
         ]);
+        return redirect(route('questionaire.step_four'));
+
     }
 }
