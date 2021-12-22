@@ -16,11 +16,12 @@ class CreateAlumnosTable extends Migration
        
         Schema::create('datos_academicos', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('subsistema_id');
+            $table->unsignedBigInteger('subsistema_id');
             $table->unsignedBigInteger('plantel_id');
             $table->unsignedBigInteger('campo_formacion_id');
+            $table->timestamps();
 
-            // $table->foreign('subsistema_id')->references('id')->on('subsistemas')->onDelete('cascade');
+            $table->foreign('subsistema_id')->references('id')->on('subsistemas')->onDelete('cascade');
             $table->foreign('plantel_id')->references('id')->on('planteles')->onDelete('cascade');
             $table->foreign('campo_formacion_id')->references('id')->on('areas')->onDelete('cascade');
         });
