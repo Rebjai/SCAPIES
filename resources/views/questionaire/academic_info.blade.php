@@ -4,10 +4,15 @@
         <x-label for="subsitema" :value="__('Subsistema')" />
 
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
-        <select id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema">
+        <select id="subsitema" class="block mt-1 w-full" type="" name="subsistema_id" :value="old('subsitema_id')" required autocomplete="subsitema">
+            <option value="">Selecciona el subsistema al que pertenece tu escuela</option>
             @foreach ($subsistemas as $subsistema)
 
-            <option value="{{$subsistema->id}}">{{$subsistema->nombre}}</option>
+            <option value="{{$subsistema->id}}" @if ($subsistema->id==old('subsistema_id', $alumno->formacion->subsistema_id??''))
+                selected="selected"
+                @endif
+
+                >{{$subsistema->nombre}}</option>
             @endforeach
         </select>
     </div>
@@ -16,23 +21,28 @@
         <x-label for="planteles" :value="__('Plantel')" />
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
         <select id="planteles" class="block mt-1 w-full" type="" name="plantel_id" :value="old('plantel')" required autocomplete="plantel">
-            <option value="">Selecciona el subsistema al que perteneces</option>
+            <option value="">Selecciona el plantel al que perteneces</option>
             @foreach ($planteles as $plantel)
-            <option value="{{$plantel->id}}">{{$plantel->nombre}}</option>
-            
+            <option value="{{$plantel->id}}" @if ($plantel->id==old('plantel_id', $alumno->formacion->plantel_id??''))
+                selected="selected"
+                @endif
+                >{{$plantel->nombre}}</option>
             @endforeach
         </select>
     </div>
-    
+
     <div>
         <x-label for="area" :value="__('Area')" />
-        
+
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
         <select id="area" class="block mt-1 w-full" type="" name="campo_formacion_id" :value="old('area')" required autocomplete="area">
             <option value="">Selecciona el área de estudios al que pertences</option>
             @foreach ($areas as $area)
 
-            <option value="{{$area->id}}">{{$area->nombre}}</option>
+            <option value="{{$area->id}}" @if ($area->id==old('campo_formacion_id', $alumno->formacion->campo_formacion_id??''))
+                selected="selected"
+                @endif
+                >{{$area->nombre}}</option>
             @endforeach
         </select>
     </div>

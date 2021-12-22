@@ -4,28 +4,33 @@ namespace App\Http\Controllers\Questionaire;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumno\Alumno;
+use App\Models\Alumno\DatoAcademico;
 use App\Models\Bachillerato\Area;
 use App\Models\Bachillerato\Plantel;
 use App\Models\Bachillerato\Subsistema;
+use App\Models\Direccion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 
 class questionaireController extends Controller
 {
-    public function stepTwo(Request $request){
-        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
+    public function stepTwo(Request $request)
+    {
+        $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
         return view('questionaire.step_two', compact('alumno'));
     }
-    public function stepThree(Request $request){
-        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
+    public function stepThree(Request $request)
+    {
+        $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
         $subsistemas = Subsistema::all();
         $planteles = Plantel::all();
         $areas = Area::all();
         return view('questionaire.step_three', compact('alumno', "subsistemas", "planteles", "areas"));
     }
-    public function stepFour(Request $request){
-        $alumno = Alumno::where('user_id' , '=', Auth::user()->id)->first();
+    public function stepFour(Request $request)
+    {
+        $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
         $subsistemas = Subsistema::all();
         $planteles = Plantel::all();
         $areas = Area::all();
@@ -40,10 +45,10 @@ class questionaireController extends Controller
             'genero' => ['required'],
             'curp' => ['required'],
             'correo' => ['required', 'string', 'email', 'max:255'],
-            'telefono' => ['required','string', 'max:255',],
+            'telefono' => ['required', 'string', 'max:255',],
         ]);
         $alumno = Alumno::where('correo', $request->correo)->exists();
-        
+
         if ($alumno) {
             // dd($request->all());
             Alumno::where('correo', $request->correo)->update($request->except('_token'));
@@ -56,20 +61,23 @@ class questionaireController extends Controller
     }
     public function addressInfo(Request $request)
     {
-        $request->validate([
-            'calle' => ['required', 'string', 'max:255'],
-            'numero' => ['required', 'string', 'max:255'],
-            'colonia' => ['required', 'string', 'max:255'],
-            'localidad' => ['required'],
-            'codigo_postal' => ['required','string', 'max:6'],
-        ]);
-        return redirect(route('questionaire.step_three'));
+        $request->validate(Direccion::$rules);
+        $alumno = Alumno::where("user_id", Auth::user()->id)->first();
+        // dd($alumno->direccion());
+        if ($alumno->direccion_id) {
+            // dd($request->except("_token"));
+            // dd($alumno->direccion);
+            Direccion::find($alumno->direccion_id)->update($request->except("_token"));
+            return redirect(route('questionaire.step_three'))->with('success', 'Dirección actualizada');
+        }
+        $direccion = new Direccion($request->except("_token"));
+        $direccion->save();
+        $alumno->direccion()->associate($direccion)->save();
+        return redirect(route('questionaire.step_three'))->with('success', 'Dirección creada');
     }
     public function studies(Request $request)
     {
-        $request->validate([
-            
-        ]);
+        $request->validate([]);
         return redirect(route('dashboard'));
     }
     public function academicInfo(Request $request)
@@ -77,11 +85,23 @@ class questionaireController extends Controller
         $request->validate([
             'plantel_id' => ['required', 'string', 'max:255'],
             'campo_formacion_id' => ['required', 'string', 'max:255'],
+            'subsistema_id' => ['required', 'string', 'max:255'],
             // 'last_name' => ['required', 'string', 'max:255'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             // 'password' => ['required', 'confirmed', Password::defaults()],
         ]);
-        return redirect(route('questionaire.step_four'));
-
+        $alumno = Alumno::where("user_id", Auth::user()->id)->first();
+        // dd($alumno);
+        if ($alumno->formacion) {
+            // dd($request->except("_token"));
+            // dd($alumno->datos_academicos_id);
+            DatoAcademico::find($alumno->datos_academicos_id)->update($request->except("_token"));
+            return redirect(route('questionaire.step_four'))->with('success', 'Dirección actualizada');
+        }
+        $formacion = new DatoAcademico($request->except("_token"));
+        $formacion->save();
+        $alumno->formacion()->associate($formacion)->save();
+        
+        return redirect(route('questionaire.step_four'))->with('success', 'Dirección creada');
     }
 }
