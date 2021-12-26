@@ -9,8 +9,10 @@ use App\Models\Bachillerato\Area;
 use App\Models\Bachillerato\Plantel;
 use App\Models\Bachillerato\Subsistema;
 use App\Models\Direccion;
+use App\Models\Universidad\Universidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Password;
 
 class questionaireController extends Controller
@@ -31,10 +33,19 @@ class questionaireController extends Controller
     public function stepFour(Request $request)
     {
         $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
-        $subsistemas = Subsistema::all();
-        $planteles = Plantel::all();
-        $areas = Area::all();
-        return view('questionaire.step_four', compact('alumno'));
+        $causas = DB::table('causas_baja')->get();
+        $modelos_educativos = DB::table('modalidad_estudios')->get();
+        $universidades = Universidad::all();
+        $carrera_no_registrada = null;
+        $otra_causa_baja = null;
+        return view('questionaire.step_four', compact(
+            'alumno',
+            'causas',
+            'modelos_educativos',
+            'universidades',
+            'carrera_no_registrada',
+            'otra_causa_baja'
+        ));
     }
     public function generalInfo(Request $request)
     {
@@ -52,7 +63,7 @@ class questionaireController extends Controller
         if ($alumno) {
             // dd($request->all());
             Alumno::where('correo', $request->correo)->update($request->except('_token'));
-            return redirect(route('questionaire.step_two'));
+            return redirect(route('questionaire.step_two'))->with('success', 'Datos generales actualizados');
         }
         // dd(array_merge($request->except('_token'), ["user_id" => Auth::user()->id]));
         $alumno = Alumno::create(array_merge($request->except('_token'), ["user_id" => Auth::user()->id]));
@@ -77,7 +88,26 @@ class questionaireController extends Controller
     }
     public function studies(Request $request)
     {
-        $request->validate([]);
+        dd($request->all());
+        $continuar = $request->get('continuar_estudios');
+        if (!$continuar) {
+            $request->validate();
+        }
+        if($request->has('carrera_no_registrada')){
+            //registrar carrera
+        }
+
+        $request->validate([
+            'apoyo_económico' => 'required',
+            'modelo_educativo_id' => 'required',
+            'universidad_id' => 'required',
+            'carrera_id' => 'required',
+            'universidad_2_id' => 'required',
+            'carrera_2_id' => 'required',
+            'mes' => 'required',
+            'folleto_impreso' => 'required',
+            'aviso_privacidad' => 'required',
+        ]);
         return redirect(route('dashboard'));
     }
     public function academicInfo(Request $request)
@@ -101,7 +131,7 @@ class questionaireController extends Controller
         $formacion = new DatoAcademico($request->except("_token"));
         $formacion->save();
         $alumno->formacion()->associate($formacion)->save();
-        
+
         return redirect(route('questionaire.step_four'))->with('success', 'Dirección creada');
     }
 }
