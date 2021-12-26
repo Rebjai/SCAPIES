@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Regimen;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,11 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Regimen seeder
-        Regimen::create([
-            "nombre" =>'Pública'
-        ]);
-        Regimen::create([
-            "nombre" =>'Privada'
+        $this->call([
+            RegimenesSeeder::class
         ]);
         // Seed admin and defauld users
         $this->call([
@@ -38,6 +34,8 @@ class DatabaseSeeder extends Seeder
         // Universidad dependencies seeder
         $this->call([
             UniversidadSubsistemaSeeder::class,
+            ModalidadEstudiosSeeder::class,
+            UniversitiesSeeder::class
         ]);
     }
 }

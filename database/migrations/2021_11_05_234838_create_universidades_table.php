@@ -31,12 +31,12 @@ class CreateUniversidadesTable extends Migration
             $table->string('nombre');
             $table->string('lema')->nullable();
             $table->foreignId('regimen_id')->references('id')->on('regimenes')->restrictOnDelete();
-            $table->foreignId('modalidad_id')->references('id')->on('modalidad_estudios')->restrictOnDelete();
+            $table->foreignId('modalidad_id')->nullable()->references('id')->on('modalidad_estudios')->restrictOnDelete();
             $table->string('telefono')->nullable();
             $table->string('email')->nullable();
             $table->string('facebook')->nullable();
             $table->string('pagina')->nullable();
-            $table->foreignId('universidad_subsistema_id')->references('id')->on('universidad_subsistemas')->restrictOnDelete();
+            $table->foreignId('universidad_subsistema_id')->nullable()->references('id')->on('universidad_subsistemas')->restrictOnDelete();
             $table->foreignId('direccion_id')->nullable()->references('id')->on('direcciones')->restrictOnDelete();
         });
         Schema::create('carreras', function (Blueprint $table) {
