@@ -43,7 +43,7 @@ class CreateUniversidadesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('universidad_id')->references('id')->on('universidades')->onDelete('restrict');
-            $table->string('carrera')->nullable();
+            $table->string('carrera');
             $table->string('capacidad')->nullable();
             $table->string('duracion')->nullable();
 
