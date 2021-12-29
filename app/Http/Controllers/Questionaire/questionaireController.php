@@ -126,12 +126,12 @@ class questionaireController extends Controller
             // dd($request->except("_token"));
             // dd($alumno->datos_academicos_id);
             DatoAcademico::find($alumno->datos_academicos_id)->update($request->except("_token"));
-            return redirect(route('questionaire.step_four'))->with('success', 'Dirección actualizada');
+            return redirect(route('questionaire.step_four'))->with('success', 'Datos académicos actualizados');
         }
         $formacion = new DatoAcademico($request->except("_token"));
         $formacion->save();
         $alumno->formacion()->associate($formacion)->save();
 
-        return redirect(route('questionaire.step_four'))->with('success', 'Dirección creada');
+        return redirect(route('questionaire.step_four'))->with('success', 'Datos académicos guardados');
     }
 }

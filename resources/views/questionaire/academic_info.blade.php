@@ -66,7 +66,6 @@
         let urlGetPlanteles = '{{route("plantel.show",["plantel" => $alumno->formacion->subsistema_id])}}'
         let parsedURL= urlGetPlanteles.substring(0, urlGetPlanteles.lastIndexOf('/')+1)
 
-        console.log(idSubsistema,parsedURL);
         removeOptions(plantelesSelect)
         fetch(parsedURL+idSubsistema).then(r => r.json()).then(r => {
             addOptions(r,plantelesSelect)

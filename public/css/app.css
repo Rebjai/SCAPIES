@@ -32137,6 +32137,40 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.alert{
+  text-align: center;
+  padding: .25em;
+  max-width: 90%;
+  margin: .5em auto;
+  border-radius: 5px;
+}
+
+.alert-success{
+  background-color: rgba(88, 255, 174, 0.886);
+  -webkit-animation: fadeOff 800ms ease-in-out 2000ms 1 forwards;
+          animation: fadeOff 800ms ease-in-out 2000ms 1 forwards;
+}
+
+@-webkit-keyframes fadeOff{
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOff{
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -188576,4 +188610,3 @@ select {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-

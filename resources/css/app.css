@@ -1,3 +1,24 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.alert{
+    text-align: center;
+    padding: .25em;
+    max-width: 90%;
+    margin: .5em auto;
+    border-radius: 5px;
+}
+.alert-success{
+    background-color: rgba(88, 255, 174, 0.886);
+    animation: fadeOff 800ms ease-in-out 2000ms 1 forwards;
+}
+
+@keyframes fadeOff{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
