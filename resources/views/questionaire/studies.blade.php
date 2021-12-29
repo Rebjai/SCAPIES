@@ -20,8 +20,8 @@
     @error('continuar_estudios')
     <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
     @enderror
-    <div id="baja" class="pt-10">
-        <h2>Baja escolar</h2>
+    <div id="baja" class="pt-10" style="display: none;">
+        <h2>Motivos de la baja escolar</h2>
         <div class="pt-4">
             <x-label for="causas" :value="__('Seleccione la causa')" />
             <select id="causas" class="block mt-1 w-full" type="" name="causa_id" :value="old('causa')" autocomplete="causa">
@@ -49,12 +49,12 @@
             <div class="flex justify-start -mx-2">
                 <div class="mx-2 flex">
 
-                    <input id="si" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" required {{ old('apoyo_economico',$alumno->apoyo_economico)==false ? 'checked' : '' }} />
+                    <input id="si_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" required {{ old('apoyo_economico',$alumno->apoyo_economico)==false ? 'checked' : '' }} />
                     <x-label for="si" :value="__('Si')" />
                 </div>
                 <div class="mx-2 flex">
 
-                    <input id="no" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" required {{ old('apoyo_economico',$alumno->apoyo_economico)!=false ? 'checked' : '' }} />
+                    <input id="no_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" required {{ old('apoyo_economico',$alumno->apoyo_economico)!=false ? 'checked' : '' }} />
                     <x-label for="no" :value="__('No')" />
                 </div>
 
@@ -75,34 +75,34 @@
                     selected="selected"
                     @endif
                     >{{$modelo_educativo->modalidad}}</option>
-                    @endforeach
-                </select>
-            </div>
-            
-            
-            <div class="pt-4">
-                <x-label for="universidades" :value="__('En qué institución de educación superior te quieres inscribir y qué carrera piensas estudiar')" />
-                <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
-                    <option value="">Selecciona una institución educativa</option>
-                    <option value="otra">OTRA</option>
-                    @foreach ($universidades as $universidad)
-                    <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_id', $universidad_seleccionada??''))
+                @endforeach
+            </select>
+        </div>
+
+
+        <div class="pt-4" >
+            <x-label for="universidades" :value="__('¿En qué institución de educación superior te quieres inscribir? (elige \'OTRA\' en caso de que no aparezca en la lista\')')" />
+            <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
+                <option value="">Selecciona una institución educativa</option>
+                <option value="otra">OTRA</option>
+                @foreach ($universidades as $universidad)
+                <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_id', $universidad_seleccionada??''))
                     selected="selected"
                     @endif
                     >{{$universidad->nombre}}</option>
                 @endforeach
             </select>
         </div>
-        <div class="pt-4">
-            <x-label for="carreras" :value="__('Carrera')" />
+        <div class="pt-4" id="opcion_carreras" style="display: none;">
+            <x-label for="carreras" :value="__('Elige la carrera que deseas estudiar')" />
             <select id="carreras" class="block mt-1 w-full" type="" name="carrera_id" :value="old('carrera_id')" autocomplete="carrera_id">
                 <option value="">Selecciona una institución para ver las carreras que ofrece</option>
 
             </select>
         </div>
-        <div class="pt-4">
+        <div class="pt-4" id="otra" style="display: none;">
             <x-label for="carrera_no_registrada" :value="__('En caso de que no aparezca en la lista. Indica el nombre completo de la institución y la carrera que deseas estudiar')" />
-            <x-input id="carrera_no_registrada" class="block mt-1 w-full" type="text" name="carrera_no_registrada" placeholder="Institución - carrera"  :value="old('carrera_no_registrada')?old('carrera_no_registrada'):$carrera_no_registrada" autocomplete="carrera_no_registrada" />
+            <x-input id="carrera_no_registrada" class="block mt-1 w-full" type="text" name="carrera_no_registrada" placeholder="Institución - carrera" :value="old('carrera_no_registrada')?old('carrera_no_registrada'):$carrera_no_registrada" autocomplete="carrera_no_registrada" />
         </div>
         @error('carrera_no_registrada')
         <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
@@ -167,44 +167,42 @@
                 @enderror
             </div>
 
-            <div class="pt-4">
+        </div>
+    </div>
 
-                <x-label for="aviso_privacidad" :value="__('¿Autorizas compartir tus datos personales del cuestionario, para que las instituciones de educación superior que elegiste para continuar tus estudios, te envien información adicional?')" class="my-4 " />
-                <div class="flex justify-start -mx-2">
-                    <div class="mx-2 flex">
+    <div class="pt-10">
+        <h2>Aviso de privacidad</h2>
+        <div class="pt-2">
 
-                        <input id="rechazar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="0" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')==false ? 'checked' : '' }} />
-                        <x-label for="rechazar" :value="__('Si')" />
-                    </div>
-                    <div class="mx-2 flex">
+            <x-label for="aviso_privacidad" :value="__('¿Autorizas compartir tus datos personales del cuestionario, para que las instituciones de educación superior que elegiste para continuar tus estudios, te envien información adicional?')" class="my-4 " />
+            <div class="flex justify-start -mx-2">
+                <div class="mx-2 flex">
 
-                        <input id="aceptar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="1" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')!=false ? 'checked' : '' }} />
-                        <x-label for="aceptar" :value="__('No')" />
-                    </div>
-
+                    <input id="rechazar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="0" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')==false ? 'checked' : '' }} />
+                    <x-label for="rechazar" :value="__('Si')" />
                 </div>
-                @error('aviso_privacidad')
-                <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
-                @enderror
+                <div class="mx-2 flex">
+
+                    <input id="aceptar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="1" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')!=false ? 'checked' : '' }} />
+                    <x-label for="aceptar" :value="__('No')" />
+                </div>
+
             </div>
-
-
-
-
-
-
-
+            @error('aviso_privacidad')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
         </div>
+    </div>
 
 
 
 
-        <div class="flex justify-between mt-4">
-            <a href="{{route('questionaire.step_three')}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"> {{ __('Atras') }}</a>
-            <x-button>
-                {{ __('Terminar encuesta') }}
-            </x-button>
-        </div>
+    <div class="flex justify-between mt-4">
+        <a href="{{route('questionaire.step_three')}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150"> {{ __('Atras') }}</a>
+        <x-button>
+            {{ __('Terminar encuesta') }}
+        </x-button>
+    </div>
 </form>
 
 <script>
@@ -212,29 +210,35 @@
     let universidadesSelect_2 = document.querySelector('#universidades_2')
     let carrerasSelect = document.querySelector('#carreras')
     let carrerasSelect_2 = document.querySelector('#carreras_2')
+
+    let continuar = document.querySelector('#si')
+    let noContinuar = document.querySelector('#no')
+    let continueWithSupport = document.querySelector('#si_apoyo')
+    let noContinueWithSupport = document.querySelector('#no_apoyo')
     
+    let alreadySelected = '{{$universidad_seleccionada}}' > 0
+    let alreadySelected_2 = '{{$universidad_seleccionada_2}}' > 0
+
     function getCarreras(origin, targetSelect) {
-        console.log('getting carreras');
         let select = origin
         let idUniversidad = select.selectedOptions[0]?.value
         let urlGetCarreras = '{{route("carreras.show",["carrera" => $universidad_seleccionada])}}'
-        let parsedURL= urlGetCarreras.substring(0, urlGetCarreras.lastIndexOf('/')+1)
+        let parsedURL = urlGetCarreras.substring(0, urlGetCarreras.lastIndexOf('/') + 1)
         removeOptions(targetSelect)
-        if(idUniversidad != 0)
-        fetch(parsedURL+idUniversidad).then(r => {
-            console.log(r);
-            return r.json()})
+        if (idUniversidad != 0)
+            fetch(parsedURL + idUniversidad).then(r => {
+                return r.json()
+            })
             .then(r => {
-                console.log(r);
-            addOptions(r,targetSelect)
-            let selectedOption = "{{$carrera_seleccionada??''}}"
-            let oldSubsistema = "{{$universidad_seleccionada??''}}"
-            if (oldSubsistema == idUniversidad) {
-                return targetSelect.value = selectedOption
-            }
-            return targetSelect.value = ''
+                addOptions(r, targetSelect)
+                let selectedOption = "{{$carrera_seleccionada??''}}"
+                let oldSubsistema = "{{$universidad_seleccionada??''}}"
+                if (oldSubsistema == idUniversidad) {
+                    return targetSelect.value = selectedOption
+                }
+                return targetSelect.value = ''
 
-        })
+            })
     }
 
     function removeOptions(selectElement) {
@@ -243,20 +247,63 @@
             selectElement.remove(i);
         }
     }
-    function addOptions(elements, selectElement){
-        for (element of elements){
+
+    function addOptions(elements, selectElement) {
+        for (element of elements) {
             let option = document.createElement('option')
             option.value = element.id
             option.text = element.carrera
             selectElement.add(option)
         }
     }
-    universidadesSelect.addEventListener('change', (e)=> getCarreras(e.target, carrerasSelect))
-    universidadesSelect_2.addEventListener('change', (e)=> getCarreras(e.target, carrerasSelect_2))
 
-    let alreadySelected = '{{$universidad_seleccionada}}' >0
-    let alreadySelected_2 = '{{$universidad_seleccionada_2}}'>0
     if (alreadySelected) {
-        getCarreras(universidadesSelect,carrerasSelect)
+        getCarreras(universidadesSelect, carrerasSelect)
     }
+
+    function continueStudies() {
+        showQuestionaire()
+        let drop = document.querySelector('#baja')
+        drop.style.display = 'none'
+    }
+
+    function dropStudies() {
+        // hideQuestionaire()
+        let drop = document.querySelector('#baja')
+        drop.style.display = 'block'
+        console.log('hiding', )
+    }
+
+    function showQuestionaire() {
+        let questionaire = document.querySelector('#estudios_superiores')
+        questionaire.style.display = 'block'
+
+    }
+
+    function hideQuestionaire() {
+        let questionaire = document.querySelector('#estudios_superiores')
+        questionaire.style.display = 'none'
+
+    }
+
+    universidadesSelect.addEventListener('change', (e) => {
+        let otherOption = document.querySelector('#otra')
+        let option = document.querySelector('#opcion_carreras')
+        if(e.target.value == 'otra'){
+            option.style.display='none'
+            return otherOption.style.display = 'block'
+        }
+        
+        option.style.display='block'
+        otherOption.style.display = 'none'
+        getCarreras(e.target, carrerasSelect)
+    }
+        )
+    universidadesSelect_2.addEventListener('change', (e) => getCarreras(e.target, carrerasSelect_2))
+
+    continuar.addEventListener('change', (e) => continueStudies())
+    noContinuar.addEventListener('change', (e) => dropStudies())
+
+    continueWithSupport.addEventListener('change', (e) => showQuestionaire())
+    noContinueWithSupport.addEventListener('change', (e) => hideQuestionaire())
 </script>
