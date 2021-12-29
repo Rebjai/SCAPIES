@@ -50,7 +50,7 @@
     <div>
         <x-label for="curp" :value="__('CURP')" />
 
-        <x-input id="curp" class="block mt-1 w-full" type="text" name="curp" :value="old('curp')? old('curp'):$alumno->curp" required autocomplete="curp" />
+        <x-input id="curp" class="block mt-1 w-full" type="text" maxlength="18" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$" name="curp" :value="old('curp')? old('curp'):$alumno->curp" required autocomplete="curp" />
         @error('curp')
         <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
         @enderror
@@ -66,7 +66,7 @@
     <div>
         <x-label for="telefono" :value="__('Teléfono')" />
 
-        <x-input id="telefono" class="block mt-1 w-full" type="tel" name="telefono" :value="old('telefono')?old('telefono'):$alumno->telefono" required autocomplete="telefono" />
+        <x-input id="telefono" class="block mt-1 w-full" type="tel" maxlength="10" pattern="[0-9]{10}" aria-placeholder="1234567890" placeholder="1234567890" name="telefono" :value="old('telefono')?old('telefono'):$alumno->telefono" required autocomplete="telefono" />
     </div>
     @error('telefono')
     <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
@@ -79,3 +79,34 @@
         </x-button>
     </div>
 </form>
+<script type="text/javascript">
+    function forceKeyPressUppercase(e) {
+        var charInput = e.keyCode;
+        if ((charInput >= 97) && (charInput <= 122)) { // lowercase
+            if (!e.ctrlKey && !e.metaKey && !e.altKey) { // no modifier key
+                var newChar = charInput - 32;
+                var start = e.target.selectionStart;
+                var end = e.target.selectionEnd;
+                e.target.value = e.target.value.substring(0, start) + String.fromCharCode(newChar) + e.target.value.substring(end);
+                e.target.setSelectionRange(start + 1, start + 1);
+                e.preventDefault();
+            }
+        }
+    }
+
+    function onlyNumberKey(evt) {
+
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+            evt.returnValue=false        
+            return false;
+        }
+        console.log('allowed');
+        evt.returnValue=true    
+        return true;
+    }
+
+    document.getElementById("curp").addEventListener("keypress", forceKeyPressUppercase, false);
+    document.getElementById("telefono").addEventListener("keypress", onlyNumberKey, false);
+</script>

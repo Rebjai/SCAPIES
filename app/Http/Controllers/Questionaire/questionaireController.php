@@ -54,9 +54,9 @@ class questionaireController extends Controller
             'apellido_materno' => ['required', 'string', 'max:255'],
             'apellido_paterno' => ['required', 'string', 'max:255'],
             'genero' => ['required'],
-            'curp' => ['required'],
+            'curp' => ['required', 'max:18'],
             'correo' => ['required', 'string', 'email', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255',],
+            'telefono' => ['required', 'string', 'max:10',],
         ]);
         $alumno = Alumno::where('correo', $request->correo)->exists();
 
