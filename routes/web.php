@@ -34,6 +34,7 @@ Route::post('questionaire/academic_info',[questionaireController::class, 'academ
 // Route::patch('/bachilleratos/plantel/{plantel}',[subsistemaController::class, 'destroy'])->name('bachilleratos.subsistema.destroy');
 Route::resource('subsistema', subsistemaController::class);
 Route::resource('plantel', plantelController::class);
+Route::resource('carreras', carrerasController::class);
 Route::resource('area', areaController::class);
 Route::resource('estudio', EstudioController::class);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');

@@ -8,6 +8,7 @@ use App\Models\Alumno\DatoAcademico;
 use App\Models\Bachillerato\Area;
 use App\Models\Bachillerato\Plantel;
 use App\Models\Bachillerato\Subsistema;
+use App\Models\Cuestionario;
 use App\Models\Direccion;
 use App\Models\Universidad\Universidad;
 use Illuminate\Http\Request;
@@ -38,13 +39,25 @@ class questionaireController extends Controller
         $universidades = Universidad::all();
         $carrera_no_registrada = null;
         $otra_causa_baja = null;
+        $universidad_seleccionada = 0;
+        $universidad_seleccionada_2 = 0;
+        
+        if ($alumno->cuestionario) {
+            $opciones_carrera = $alumno->cuestionario->carreras;
+            foreach ($opciones_carrera as $opcion_carrera) {
+                
+            }
+            dd('cuestionario realizado');
+        }
         return view('questionaire.step_four', compact(
             'alumno',
             'causas',
             'modelos_educativos',
             'universidades',
             'carrera_no_registrada',
-            'otra_causa_baja'
+            'otra_causa_baja',
+            'universidad_seleccionada',
+            'universidad_seleccionada_2'
         ));
     }
     public function generalInfo(Request $request)

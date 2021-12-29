@@ -22,13 +22,7 @@
         <x-label for="planteles" :value="__('Plantel')" />
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
         <select id="planteles" class="block mt-1 w-full" type="" name="plantel_id" :value="old('plantel')" required autocomplete="plantel">
-            <option value="">Selecciona el plantel al que perteneces</option>
-            @foreach ($planteles as $plantel)
-            <option value="{{$plantel->id}}" @if ($plantel->id==old('plantel_id', $alumno->formacion->plantel_id??''))
-                selected="selected"
-                @endif
-                >{{$plantel->nombre}}</option>
-            @endforeach
+            <option value="">Primero selecciona el subsistema al que pertenece tu plantel</option>
         </select>
     </div>
 
@@ -67,6 +61,9 @@
         let parsedURL= urlGetPlanteles.substring(0, urlGetPlanteles.lastIndexOf('/')+1)
 
         removeOptions(plantelesSelect)
+        if (idSubsistema == null || idSubsistema =='') {
+            return
+        }
         fetch(parsedURL+idSubsistema).then(r => r.json()).then(r => {
             addOptions(r,plantelesSelect)
             let selectedOption = "{{$alumno->formacion->plantel_id??''}}"
@@ -81,11 +78,15 @@
 
     function removeOptions(selectElement) {
         var i, L = selectElement.options.length - 1;
-        for (i = L; i >= 1; i--) {
+        for (i = L; i >= 0; i--) {
             selectElement.remove(i);
         }
     }
     function addOptions(elements, selectElement){
+        let defaultOption = document.createElement('option')
+            defaultOption.value = ''
+            defaultOption.text = 'Selecciona el plantel al que perteneces'
+            selectElement.add(defaultOption)
         for (element of elements){
             let option = document.createElement('option')
             option.value = element.id

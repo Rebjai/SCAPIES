@@ -22,14 +22,14 @@ class CreateCuestionariosTable extends Migration
         });
         Schema::create('baja_alumnos', function (Blueprint $table) {
             $table->id();
-            
+            $table->foreignId('causa_baja_id')->references('id')->on('causas_baja')->onDelete('restrict');
+            $table->boolean('apoyo_economico');
             $table->timestamps();
         });
         Schema::create('cuestionarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('alumno_id')->references('id')->on('alumnos')->onDelete('restrict');
-            $table->boolean('apoyo_economico');
             $table->foreignId('modalidad_estudios_id')->references('id')->on('modalidad_estudios')->onDelete('restrict');
             $table->integer('mes');
             $table->boolean('folleto_impreso');

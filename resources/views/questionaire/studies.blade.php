@@ -75,17 +75,18 @@
                     selected="selected"
                     @endif
                     >{{$modelo_educativo->modalidad}}</option>
-                @endforeach
-            </select>
-        </div>
-
-
-        <div class="pt-4">
-            <x-label for="universidades" :value="__('En qué institución de educación superior te quieres inscribir y qué carrera piensas estudiar')" />
-            <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
-                <option value="">Selecciona una institución educativa</option>
-                @foreach ($universidades as $universidad)
-                <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_id', $universidad_seleccionada->_id??''))
+                    @endforeach
+                </select>
+            </div>
+            
+            
+            <div class="pt-4">
+                <x-label for="universidades" :value="__('En qué institución de educación superior te quieres inscribir y qué carrera piensas estudiar')" />
+                <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
+                    <option value="">Selecciona una institución educativa</option>
+                    <option value="otra">OTRA</option>
+                    @foreach ($universidades as $universidad)
+                    <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_id', $universidad_seleccionada??''))
                     selected="selected"
                     @endif
                     >{{$universidad->nombre}}</option>
@@ -147,7 +148,7 @@
 
             <div class="pt-4">
 
-                <x-label for="folleto_impreso" :value="__('Si tuvieras apoyo económico, ¿Seguirías estudiando?')" class="my-4 " />
+                <x-label for="folleto_impreso" :value="__('¿De qué manera prefieres recibir el folleto \'¡Ya es hora!\'?')" class="my-4 " />
                 <div class="flex justify-start -mx-2">
                     <div class="mx-2 flex">
 
@@ -205,3 +206,57 @@
             </x-button>
         </div>
 </form>
+
+<script>
+    let universidadesSelect = document.querySelector('#universidades')
+    let universidadesSelect_2 = document.querySelector('#universidades_2')
+    let carrerasSelect = document.querySelector('#carreras')
+    let carrerasSelect_2 = document.querySelector('#carreras_2')
+    
+    function getCarreras(origin, targetSelect) {
+        console.log('getting carreras');
+        let select = origin
+        let idUniversidad = select.selectedOptions[0]?.value
+        let urlGetCarreras = '{{route("carreras.show",["carrera" => $universidad_seleccionada])}}'
+        let parsedURL= urlGetCarreras.substring(0, urlGetCarreras.lastIndexOf('/')+1)
+        removeOptions(targetSelect)
+        if(idUniversidad != 0)
+        fetch(parsedURL+idUniversidad).then(r => {
+            console.log(r);
+            return r.json()})
+            .then(r => {
+                console.log(r);
+            addOptions(r,targetSelect)
+            let selectedOption = "{{$carrera_seleccionada??''}}"
+            let oldSubsistema = "{{$universidad_seleccionada??''}}"
+            if (oldSubsistema == idUniversidad) {
+                return targetSelect.value = selectedOption
+            }
+            return targetSelect.value = ''
+
+        })
+    }
+
+    function removeOptions(selectElement) {
+        var i, L = selectElement.options.length - 1;
+        for (i = L; i >= 1; i--) {
+            selectElement.remove(i);
+        }
+    }
+    function addOptions(elements, selectElement){
+        for (element of elements){
+            let option = document.createElement('option')
+            option.value = element.id
+            option.text = element.carrera
+            selectElement.add(option)
+        }
+    }
+    universidadesSelect.addEventListener('change', (e)=> getCarreras(e.target, carrerasSelect))
+    universidadesSelect_2.addEventListener('change', (e)=> getCarreras(e.target, carrerasSelect_2))
+
+    let alreadySelected = '{{$universidad_seleccionada}}' >0
+    let alreadySelected_2 = '{{$universidad_seleccionada_2}}'>0
+    if (alreadySelected) {
+        getCarreras(universidadesSelect,carrerasSelect)
+    }
+</script>
