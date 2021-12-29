@@ -1,10 +1,11 @@
 <form method="POST" action="{{ route('questionaire.academic_info') }}">
     @csrf
+
     <div>
         <x-label for="subsitema" :value="__('Subsistema')" />
 
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
-        <select id="subsitema" class="block mt-1 w-full" type="" name="subsistema_id" :value="old('subsitema_id')" required autocomplete="subsitema">
+        <select id="subsistema" class="block mt-1 w-full" type="" name="subsistema_id" :value="old('subsitema_id')" required autocomplete="subsitema">
             <option value="">Selecciona el subsistema al que pertenece tu escuela</option>
             @foreach ($subsistemas as $subsistema)
 
@@ -32,7 +33,7 @@
     </div>
 
     <div>
-        <x-label for="area" :value="__('Area')" />
+        <x-label for="area" :value="__('Campo de formación')" />
 
         <!-- <x-input id="subsitema" class="block mt-1 w-full" type="" name="subsitema" :value="old('subsitema')" required autocomplete="subsitema" /> -->
         <select id="area" class="block mt-1 w-full" type="" name="campo_formacion_id" :value="old('area')" required autocomplete="area">
@@ -55,3 +56,46 @@
         </x-button>
     </div>
 </form>
+
+<script>
+    let subsystemInput = document.querySelector('#subsistema')
+    
+    function getPlanteles() {
+        let plantelesSelect = document.querySelector('#planteles')
+        let idSubsistema = subsystemInput.selectedOptions[0]?.value
+        let urlGetPlanteles = '{{route("plantel.show",["plantel" => $alumno->formacion->subsistema_id])}}'
+        let parsedURL= urlGetPlanteles.substring(0, urlGetPlanteles.lastIndexOf('/')+1)
+
+        console.log(idSubsistema,parsedURL);
+        removeOptions(plantelesSelect)
+        fetch(parsedURL+idSubsistema).then(r => r.json()).then(r => {
+            addOptions(r,plantelesSelect)
+            let selectedOption = "{{$alumno->formacion->plantel_id??''}}"
+            let oldSubsistema = "{{$alumno->formacion->subsistema_id??''}}"
+            if (oldSubsistema == idSubsistema) {
+                return plantelesSelect.value = selectedOption
+            }
+            return plantelesSelect.value = ''
+
+        })
+    }
+
+    function removeOptions(selectElement) {
+        var i, L = selectElement.options.length - 1;
+        for (i = L; i >= 1; i--) {
+            selectElement.remove(i);
+        }
+    }
+    function addOptions(elements, selectElement){
+        for (element of elements){
+            let option = document.createElement('option')
+            option.value = element.id
+            option.text = element.nombre
+            selectElement.add(option)
+            // console.log(element);
+        }
+    }
+    subsystemInput.addEventListener('change', getPlanteles)
+
+    getPlanteles()
+</script>
