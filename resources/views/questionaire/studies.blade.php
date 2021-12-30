@@ -22,7 +22,7 @@
     @enderror
     <div id="baja" class="pt-10" style="display: none;">
         <h2>Motivos de la baja escolar</h2>
-        <div class="pt-4">
+        <div class="pt-4" id="causa_baja">
             <x-label for="causas" :value="__('Seleccione la causa')" />
             <select id="causas" class="block mt-1 w-full" type="" name="causa_id" :value="old('causa')" autocomplete="causa">
                 <option value="">Selecciona la causa de la baja escolar</option>
@@ -35,7 +35,7 @@
             </select>
         </div>
 
-        <div class="pt-4">
+        <div class="pt-4" id="indicar_causa_baja" style="display: none;">
             <x-label for="otra_causa_baja" :value="__('Menciona el motivo por el que no continuarás con tus estudios')" />
             <x-input id="otra_causa_baja" class="block mt-1 w-full" type="text" name="otra_causa_baja" :value="old('otra_causa_baja')?old('otra_causa_baja'):$otra_causa_baja" placeholder="Otra causa" autocomplete="otra_causa_baja" />
         </div>
@@ -80,7 +80,7 @@
         </div>
 
 
-        <div class="pt-4" >
+        <div class="pt-4">
             <x-label for="universidades" :value="__('¿En qué institución de educación superior te quieres inscribir? (elige \'OTRA\' en caso de que no aparezca en la lista\')')" />
             <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
                 <option value="">Selecciona una institución educativa</option>
@@ -215,7 +215,7 @@
     let noContinuar = document.querySelector('#no')
     let continueWithSupport = document.querySelector('#si_apoyo')
     let noContinueWithSupport = document.querySelector('#no_apoyo')
-    
+
     let alreadySelected = '{{$universidad_seleccionada}}' > 0
     let alreadySelected_2 = '{{$universidad_seleccionada_2}}' > 0
 
@@ -268,10 +268,9 @@
     }
 
     function dropStudies() {
-        // hideQuestionaire()
+        hideQuestionaire()
         let drop = document.querySelector('#baja')
         drop.style.display = 'block'
-        console.log('hiding', )
     }
 
     function showQuestionaire() {
@@ -289,21 +288,26 @@
     universidadesSelect.addEventListener('change', (e) => {
         let otherOption = document.querySelector('#otra')
         let option = document.querySelector('#opcion_carreras')
-        if(e.target.value == 'otra'){
-            option.style.display='none'
+        if (e.target.value == 'otra') {
+            option.style.display = 'none'
             return otherOption.style.display = 'block'
         }
-        
-        option.style.display='block'
+
+        option.style.display = 'block'
         otherOption.style.display = 'none'
         getCarreras(e.target, carrerasSelect)
-    }
-        )
+    })
     universidadesSelect_2.addEventListener('change', (e) => getCarreras(e.target, carrerasSelect_2))
 
     continuar.addEventListener('change', (e) => continueStudies())
     noContinuar.addEventListener('change', (e) => dropStudies())
 
-    continueWithSupport.addEventListener('change', (e) => showQuestionaire())
-    noContinueWithSupport.addEventListener('change', (e) => hideQuestionaire())
+    document.querySelector('#causas').addEventListener('change', (e) => {
+        let otherOption = document.querySelector('#indicar_causa_baja')
+        if (e.target.value != 6)
+            return otherOption.style.display = 'none'
+        otherOption.style.display = 'block'
+        document.querySelector("#otra_causa_baja").focus()
+
+    })
 </script>
