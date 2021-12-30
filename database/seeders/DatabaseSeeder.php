@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UniversidadSubsistemaSeeder::class,
             ModalidadEstudiosSeeder::class,
-            UniversitiesSeeder::class
+            UniversitiesSeeder::class,
+            CarreraUniversidadSeeder::class
         ]);
     }
 }

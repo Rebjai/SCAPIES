@@ -57,8 +57,14 @@
     function getPlanteles() {
         let plantelesSelect = document.querySelector('#planteles')
         let idSubsistema = subsystemInput.selectedOptions[0]?.value
-        let urlGetPlanteles = '{{route("plantel.show",["plantel" => $alumno->formacion->subsistema_id])}}'
+        let urlGetPlanteles = '{{route("plantel.show",["plantel" => $alumno->formacion->subsistema_id??"0"])}}'
         let parsedURL= urlGetPlanteles.substring(0, urlGetPlanteles.lastIndexOf('/')+1)
+
+        console.log(idSubsistema == '');
+        if (idSubsistema == '') {
+            return 0
+            
+        }
 
         removeOptions(plantelesSelect)
         if (idSubsistema == null || idSubsistema =='') {

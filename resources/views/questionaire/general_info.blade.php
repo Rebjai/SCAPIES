@@ -82,6 +82,8 @@
 <script type="text/javascript">
     function forceKeyPressUppercase(e) {
         var charInput = e.keyCode;
+        if(e.target.value.length >= 18)
+        return false
         if ((charInput >= 97) && (charInput <= 122)) { // lowercase
             if (!e.ctrlKey && !e.metaKey && !e.altKey) { // no modifier key
                 var newChar = charInput - 32;
