@@ -42,5 +42,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/thanks', function () {
+    return view('Thanks');
+})->name('thanks');
 
 require __DIR__.'/auth.php';
