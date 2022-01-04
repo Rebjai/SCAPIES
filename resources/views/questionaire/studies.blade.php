@@ -6,12 +6,12 @@
         <div class="flex justify-start mx-2">
             <div class="mx-2 flex">
 
-                <input id="si" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="1" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios)==true ? 'checked' : '' }} />
+                <input id="si" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="1" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios??"")==true ? 'checked' : '' }} />
                 <x-label for="si" :value="__('Si')" />
             </div>
             <div class="mx-2 flex">
 
-                <input id="no" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="0" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios)==false ? 'checked' : '' }} />
+                <input id="no" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="0" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios??"")==false ? 'checked' : '' }} />
                 <x-label for="no" :value="__('No')" />
             </div>
 
@@ -38,11 +38,11 @@
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
         </div>
-        
+
 
         <div class="pt-4" id="indicar_causa_baja" style="display: none;">
             <x-label for="otra_causa_baja" :value="__('Menciona el motivo por el que no continuarás con tus estudios')" />
-            <x-input id="otra_causa_baja" class="block mt-1 w-full" type="text" name="otra_causa_baja" :value="old('otra_causa_baja', $alumno->cuestionario->baja->otra_causa)" placeholder="Otra causa" autocomplete="otra_causa_baja" />
+            <x-input id="otra_causa_baja" class="block mt-1 w-full" type="text" name="otra_causa_baja" :value="old('otra_causa_baja', $alumno->cuestionario->baja->otra_causa??'')" placeholder="Otra causa" autocomplete="otra_causa_baja" />
         </div>
         @error('otra_causa_baja')
         <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
@@ -51,16 +51,15 @@
         <div class="pt-4">
 
             <x-label for="apoyo_economico" :value="__('Si tuvieras apoyo económico, ¿Seguirías estudiando?')" class="my-4 " />
-            {{$alumno->cuestionario->apoyo_economico}}
             <div class="flex justify-start -mx-2">
                 <div class="mx-2 flex">
 
-                    <input id="si_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico)==true ? 'checked' : '' }} />
+                    <input id="si_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico??'')==true ? 'checked' : '' }} />
                     <x-label for="si" :value="__('Si')" />
                 </div>
                 <div class="mx-2 flex">
 
-                    <input id="no_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico)==false ? 'checked' : '' }} />
+                    <input id="no_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico??'')==false ? 'checked' : '' }} />
                     <x-label for="no" :value="__('No')" />
                 </div>
 
@@ -77,20 +76,22 @@
             <select id="modelos_educativos" class="block mt-1 w-full" type="" name="modelo_educativo_id" :value="old('modelo_educativo')" autocomplete="modelo_educativo">
                 <option value="">Selecciona un modelo educativo</option>
                 @foreach ($modelos_educativos as $modelo_educativo)
-                <option value="{{$modelo_educativo->id}}" @if ($modelo_educativo->id==old('modelo_educativo_id', $alumno->cuestionario->modelo_educativo_id??''))
+                <option value="{{$modelo_educativo->id}}" @if ($modelo_educativo->id==old('modelo_educativo_id', $alumno->cuestionario->modalidad_estudios_id??''))
                     selected="selected"
                     @endif
                     >{{$modelo_educativo->modalidad}}</option>
                 @endforeach
             </select>
         </div>
-
+        @error('modelo_educativo_id')
+        <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+        @enderror
 
         <div class="pt-4">
             <x-label for="universidades" :value="__('¿En qué institución de educación superior te quieres inscribir? (elige \'OTRA\' en caso de que no aparezca en la lista\')')" />
             <select id="universidades" class="block mt-1 w-full" type="" name="universidad_id" :value="old('universidad_id')" autocomplete="universidad_id">
                 <option value="">Selecciona una institución educativa</option>
-                <option value="otra">OTRA</option>
+                <option value="otra" @if (old('universidad_id',$universidad_seleccionada??'')=='otra' ) selected="selected" @endif>OTRA</option>
                 @foreach ($universidades as $universidad)
                 <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_id', $universidad_seleccionada??''))
                     selected="selected"
@@ -99,12 +100,18 @@
                 @endforeach
             </select>
         </div>
+        @error('universidad_id')
+        <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+        @enderror
         <div class="pt-4" id="opcion_carreras" style="display: none;">
             <x-label for="carreras" :value="__('Elige la carrera que deseas estudiar')" />
             <select id="carreras" class="block mt-1 w-full" type="" name="carrera_id" :value="old('carrera_id')" autocomplete="carrera_id">
                 <option value="">Selecciona una institución para ver las carreras que ofrece</option>
 
             </select>
+            @error('carrera_id')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
         </div>
         <div class="pt-4" id="otra" style="display: none;">
             <x-label for="carrera_no_registrada" :value="__('En caso de que no aparezca en la lista. Indica el nombre completo de la institución y la carrera que deseas estudiar')" />
@@ -118,15 +125,19 @@
             <div class="pt-4">
                 <x-label for="universidades_2" :value="__('En caso de no ser admitido en la institución antes señalada, ¿Cuál sería tu segunda opción?')" />
                 <select id="universidades_2" class="block mt-1 w-full" type="" name="universidad_2_id" :value="old('universidad_2_id')" autocomplete="universidad_2_id">
+                    {{$universidad_seleccionada_2}}
                     <option value="">Selecciona una institución educativa</option>
                     @foreach ($universidades as $universidad)
-                    <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_2_id', $universidad_2_seleccionada->id??''))
+                    <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_2_id', $universidad_seleccionada_2??''))
                         selected="selected"
                         @endif
                         >{{$universidad->nombre}}</option>
                     @endforeach
                 </select>
             </div>
+            @error('universidad_2_id')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
             <div class="pt-4">
                 <x-label for="carreras_2" :value="__('Carrera')" />
                 <select id="carreras_2" class="block mt-1 w-full" type="" name="carrera_2_id" :value="old('carrera_2_id')" autocomplete="carrera_2_id">
@@ -134,6 +145,9 @@
 
                 </select>
             </div>
+            @error('carrera_2_id')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
 
 
             <div class="pt-4">
@@ -150,6 +164,9 @@
                     <option value="1">Noviembre</option>
                 </select>
             </div>
+            @error('mes')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
 
 
             <div class="pt-4">
@@ -266,9 +283,7 @@
         }
     }
 
-    if (alreadySelected) {
-        getCarreras(universidadesSelect, carrerasSelect)
-    }
+    
 
     function continueStudies() {
         showQuestionaire()
@@ -322,7 +337,19 @@
     if (noContinuar.checked) {
         dropStudies()
     }
-    if (document.querySelector('#causas').value ==6) {
+    if (document.querySelector('#causas').value == 6) {
         document.querySelector('#indicar_causa_baja').style.display = 'block'
+    }
+    if (document.querySelector('#universidades').value != "") {
+        if (document.querySelector('#universidades').value == 'otra') {
+            document.querySelector('#otra').style.display = 'block'
+        } else {
+            document.querySelector('#opcion_carreras').style.display = 'block'
+            getCarreras(universidadesSelect, carrerasSelect)
+        }
+    }
+    if (document.querySelector('#universidades_2').value != "") {
+
+        getCarreras(universidadesSelect_2, carrerasSelect_2)
     }
 </script>

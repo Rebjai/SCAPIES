@@ -10,6 +10,7 @@ use App\Models\Bachillerato\Area;
 use App\Models\Bachillerato\Plantel;
 use App\Models\Bachillerato\Subsistema;
 use App\Models\Cuestionario;
+use App\Models\Cuestionario\CuestionarioOpcionesCarrera;
 use App\Models\Direccion;
 use App\Models\Universidad\Universidad;
 use Illuminate\Http\Request;
@@ -17,8 +18,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Password;
 
+use function PHPUnit\Framework\isEmpty;
+
 class questionaireController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function stepTwo(Request $request)
     {
         $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
@@ -44,10 +52,24 @@ class questionaireController extends Controller
         $universidad_seleccionada_2 = 0;
 
         if ($alumno->cuestionario) {
-            $opciones_carrera = $alumno->cuestionario->carreras;
-            if ($opciones_carrera) {
-                foreach ($opciones_carrera as $opcion_carrera) {
+            $opciones_carrera = $alumno->cuestionario->opciones_carreras;
+            // dd($opciones_carrera->where('principal',true)->first()->id);
+            if (!$opciones_carrera->isEmpty()) {
+                $opcion_principal = $opciones_carrera
+                ->where('principal',true)
+                ->first();
+                $opcion_secundaria = $opciones_carrera
+                ->where('principal',false)
+                ->first();
+                if (!$opcion_principal->carrera_id) {
+                    $carrera_no_registrada = $opcion_principal->carrera_no_registrada;
+                    $universidad_seleccionada = 'otra';
+                    dd($carrera_no_registrada);
                 }
+                else{
+                    $universidad_seleccionada = $opcion_principal->carrera->universidad->id;
+                }
+                $universidad_seleccionada_2 = $opcion_secundaria->carrera->universidad->id;
             }
 
             // dd('cuestionario realizado');
@@ -102,53 +124,7 @@ class questionaireController extends Controller
         $alumno->direccion()->associate($direccion)->save();
         return redirect(route('questionaire.step_three'))->with('success', 'Dirección creada');
     }
-    public function studies(Request $request)
-    {
-        // i'm not proud of what i've done, sorry
-        $continuar = $request->get('continuar_estudios');
-        $alumno = Alumno::where("user_id", Auth::user()->id)->first();
-        if (!$alumno->cuestionario) {
-            $cuestionario = new Cuestionario([
-                "aviso_privacidad" => $request->get('aviso_privacidad'),
-                "continuar_estudios" => $request->get('continuar_estudios')
-            ]);
-            $alumno->cuestionario()->save($cuestionario);
-        }
-        $alumno->cuestionario->continuar_estudios = $request->get('continuar_estudios');
-        $alumno->cuestionario->aviso_privacidad = $request->get('aviso_privacidad');
-        $alumno->cuestionario->save();
 
-        if (!$continuar) {
-
-            $request->validate([
-                'continuar_estudios' => 'nullable',
-                'apoyo_economico' => 'required',
-                'causa_baja_id' => 'required',
-            ]);
-            $this->bajaAlumno($request, $alumno);
-        }
-
-
-        if ($continuar) {
-
-            dd($request->all());
-            if ($request->has('carrera_no_registrada')) {
-                //registrar carrera
-            }
-
-            $request->validate([
-                'modelo_educativo_id' => 'required',
-                'universidad_id' => 'required',
-                'carrera_id' => 'required',
-                'universidad_2_id' => 'required',
-                'carrera_2_id' => 'required',
-                'mes' => 'required',
-                'folleto_impreso' => 'required',
-                'aviso_privacidad' => 'required',
-            ]);
-        }
-        return redirect(route('thanks'));
-    }
     public function academicInfo(Request $request)
     {
         $request->validate([
@@ -174,6 +150,95 @@ class questionaireController extends Controller
         return redirect(route('questionaire.step_four'))->with('success', 'Datos académicos guardados');
     }
 
+    public function studies(Request $request)
+    {
+        // i'm not proud of what i've done, sorry
+        $continuar = $request->get('continuar_estudios');
+        $alumno = Alumno::where("user_id", Auth::user()->id)->first();
+        if (!$alumno->cuestionario) {
+            $cuestionario = new Cuestionario([
+                "aviso_privacidad" => $request->get('aviso_privacidad'),
+                "continuar_estudios" => $request->get('continuar_estudios')
+            ]);
+            $alumno->cuestionario()->save($cuestionario);
+            $alumno->refresh();
+        }
+        $alumno->cuestionario->continuar_estudios = $request->get('continuar_estudios');
+        $alumno->cuestionario->aviso_privacidad = $request->get('aviso_privacidad');
+        $alumno->cuestionario->save();
+
+        if (!$continuar) {
+
+            $request->validate([
+                'continuar_estudios' => 'nullable',
+                'apoyo_economico' => 'required',
+                'causa_baja_id' => 'required',
+            ]);
+            $this->bajaAlumno($request, $alumno);
+        }
+
+
+        if ($continuar) {
+
+
+
+            $request->validate([
+                'modelo_educativo_id' => 'required',
+                'universidad_id' => 'required',
+                'carrera_id' => 'required_unless:universidad_id,otra',
+                'carrera_no_registrada' => 'required_if:universidad_id,otra',
+                'universidad_2_id' => 'required',
+                'carrera_2_id' => 'required',
+                'mes' => 'required',
+                'folleto_impreso' => 'required',
+                'aviso_privacidad' => 'required',
+            ]);
+            $alumno->cuestionario->modalidad_estudios_id = $request->get('modelo_educativo_id');
+            $opciones = $alumno->cuestionario->opciones_carreras;
+            // dd($request->get('carrera_id'));
+            if ($opciones->isEmpty()) {
+                $carrera_principal = new CuestionarioOpcionesCarrera(
+                    [
+                        "principal" => true,
+                        "carrera_no_registrada" => $request->get('carrera_no_registrada'),
+                        "carrera_id" => $request->get('carrera_id') != 'otra'? $request->get('carrera_id'): null
+                    ]
+                );
+                $carrera_secundaria = new CuestionarioOpcionesCarrera(
+                    [
+                        "principal" => false,
+                        "carrera_id" => $request->get('carrera_2_id')
+                    ]
+                );
+                $alumno->cuestionario->opciones_carreras()->saveMany(
+                    [
+                        $carrera_principal,
+                        $carrera_secundaria
+                    ]
+                );
+                $alumno->refresh();
+                // dd('no options, adding');
+            }
+            if ($opciones->isNotEmpty()) {
+                $carrera_principal = $alumno->cuestionario->opciones_carreras()
+                ->where('principal',true)->get();
+                $carrera_secundaria = $alumno->cuestionario->opciones_carreras()
+                ->where('principal',false)->get();
+                
+                // dd([$carrera_principal, $carrera_secundaria]);
+                $carrera_principal->carrera_no_registrada = $request->get('carrera_no_registrada');
+                $carrera_principal->carrera_id = $request->get('carrera_id') != 'otra'? $request->get('carrera_id'): null;
+                $carrera_secundaria->carrera_id = $request->get('carrera_2_id');
+                $alumno->push();
+                // dd($alumno);
+
+            }
+
+            // dd($request->all());
+        }
+        return redirect(route('thanks'));
+    }
+
     public function bajaAlumno(Request $request, Alumno $alumno)
     {
         if (!$alumno->cuestionario->baja) {
@@ -184,7 +249,7 @@ class questionaireController extends Controller
             $baja->save();
             // $alumno->cuestionario->
             $alumno->cuestionario->baja()->associate($baja)->save();
-            dd('asocciated baja');
+            // dd('asocciated baja');
         }
         if ($request->get('causa_baja_id') == 6) {
             $request->validate(['otra_causa_baja' => 'required']);
@@ -193,7 +258,8 @@ class questionaireController extends Controller
         } else {
             $alumno->cuestionario->baja->otra_causa = null;
         }
-
+        
+        $alumno->cuestionario->modalidad_estudios_id = null;
         $alumno->cuestionario->baja->causa_baja_id = $request->get('causa_baja_id');
         $alumno->cuestionario->baja->apoyo_economico = $request->get('apoyo_economico');
         $alumno->cuestionario->baja->save();
