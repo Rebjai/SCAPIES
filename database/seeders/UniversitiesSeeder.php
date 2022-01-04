@@ -80,7 +80,7 @@ class UniversitiesSeeder extends Seeder
                         
             Universidad::create( [
             'siglas'=>'LACY',
-            'nombre'=>'CENTRO UNIVERSIOTARIO LACY',
+            'nombre'=>'CENTRO UNIVERSITARIO LACY',
             'regimen_id'=>2
             ] );
             

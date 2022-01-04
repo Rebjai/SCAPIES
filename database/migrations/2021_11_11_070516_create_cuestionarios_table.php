@@ -13,13 +13,7 @@ class CreateCuestionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuestionario_opciones_carreras', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->foreignId('carrera_id')->nullable()->references('id')->on('carreras')->onDelete('restrict');
-            $table->string('carrera_no_registrada');
-            $table->boolean('principal');
-        });
+        
         Schema::create('baja_alumnos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('causa_baja_id')->references('id')->on('causas_baja')->onDelete('restrict');
@@ -38,6 +32,14 @@ class CreateCuestionariosTable extends Migration
             $table->boolean('aviso_privacidad');
             $table->boolean('continuar_estudios');
         });
+        Schema::create('cuestionario_opciones_carreras', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->foreignId('cuestionario_id')->nullable()->references('id')->on('cuestionarios')->onDelete('restrict');
+            $table->foreignId('carrera_id')->nullable()->references('id')->on('carreras')->onDelete('restrict');
+            $table->string('carrera_no_registrada')->nullable();
+            $table->boolean('principal');
+        });
     }
 
     /**
@@ -47,8 +49,8 @@ class CreateCuestionariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuestionarios');
         Schema::dropIfExists('cuestionario_opciones_carreras');
+        Schema::dropIfExists('cuestionarios');
         Schema::dropIfExists('baja_alumnos');
     }
 }
