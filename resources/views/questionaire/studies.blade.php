@@ -179,6 +179,9 @@
     <div class="pt-10">
         <h2>Aviso de privacidad</h2>
         <div class="pt-2">
+            En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
+        </div>
+        <div class="pt-2">
 
             <x-label for="aviso_privacidad" :value="__('¿Autorizas compartir tus datos personales del cuestionario, para que las instituciones de educación superior que elegiste para continuar tus estudios, te envien información adicional?')" class="my-4 " />
             <div class="flex justify-start -mx-2">
