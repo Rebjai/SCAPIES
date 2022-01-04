@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Questionaire;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumno\Alumno;
+use App\Models\Alumno\BajaAlumno;
 use App\Models\Alumno\DatoAcademico;
 use App\Models\Bachillerato\Area;
 use App\Models\Bachillerato\Plantel;
@@ -41,13 +42,15 @@ class questionaireController extends Controller
         $otra_causa_baja = null;
         $universidad_seleccionada = 0;
         $universidad_seleccionada_2 = 0;
-        
+
         if ($alumno->cuestionario) {
             $opciones_carrera = $alumno->cuestionario->carreras;
-            foreach ($opciones_carrera as $opcion_carrera) {
-                
+            if ($opciones_carrera) {
+                foreach ($opciones_carrera as $opcion_carrera) {
+                }
             }
-            dd('cuestionario realizado');
+
+            // dd('cuestionario realizado');
         }
         return view('questionaire.step_four', compact(
             'alumno',
@@ -101,27 +104,50 @@ class questionaireController extends Controller
     }
     public function studies(Request $request)
     {
-        dd($request->all());
+        // i'm not proud of what i've done, sorry
         $continuar = $request->get('continuar_estudios');
-        if (!$continuar) {
-            $request->validate();
+        $alumno = Alumno::where("user_id", Auth::user()->id)->first();
+        if (!$alumno->cuestionario) {
+            $cuestionario = new Cuestionario([
+                "aviso_privacidad" => $request->get('aviso_privacidad'),
+                "continuar_estudios" => $request->get('continuar_estudios')
+            ]);
+            $alumno->cuestionario()->save($cuestionario);
         }
-        if($request->has('carrera_no_registrada')){
-            //registrar carrera
+        $alumno->cuestionario->continuar_estudios = $request->get('continuar_estudios');
+        $alumno->cuestionario->aviso_privacidad = $request->get('aviso_privacidad');
+        $alumno->cuestionario->save();
+
+        if (!$continuar) {
+
+            $request->validate([
+                'continuar_estudios' => 'nullable',
+                'apoyo_economico' => 'required',
+                'causa_baja_id' => 'required',
+            ]);
+            $this->bajaAlumno($request, $alumno);
         }
 
-        $request->validate([
-            'apoyo_económico' => 'required',
-            'modelo_educativo_id' => 'required',
-            'universidad_id' => 'required',
-            'carrera_id' => 'required',
-            'universidad_2_id' => 'required',
-            'carrera_2_id' => 'required',
-            'mes' => 'required',
-            'folleto_impreso' => 'required',
-            'aviso_privacidad' => 'required',
-        ]);
-        return redirect(route('dashboard'));
+
+        if ($continuar) {
+
+            dd($request->all());
+            if ($request->has('carrera_no_registrada')) {
+                //registrar carrera
+            }
+
+            $request->validate([
+                'modelo_educativo_id' => 'required',
+                'universidad_id' => 'required',
+                'carrera_id' => 'required',
+                'universidad_2_id' => 'required',
+                'carrera_2_id' => 'required',
+                'mes' => 'required',
+                'folleto_impreso' => 'required',
+                'aviso_privacidad' => 'required',
+            ]);
+        }
+        return redirect(route('thanks'));
     }
     public function academicInfo(Request $request)
     {
@@ -146,5 +172,30 @@ class questionaireController extends Controller
         $alumno->formacion()->associate($formacion)->save();
 
         return redirect(route('questionaire.step_four'))->with('success', 'Datos académicos guardados');
+    }
+
+    public function bajaAlumno(Request $request, Alumno $alumno)
+    {
+        if (!$alumno->cuestionario->baja) {
+            $baja = new BajaAlumno([
+                'causa_baja_id' => $request->get('causa_baja_id'),
+                'apoyo_economico' => $request->get('apoyo_economico'),
+            ]);
+            $baja->save();
+            // $alumno->cuestionario->
+            $alumno->cuestionario->baja()->associate($baja)->save();
+            dd('asocciated baja');
+        }
+        if ($request->get('causa_baja_id') == 6) {
+            $request->validate(['otra_causa_baja' => 'required']);
+            // dd('debes poner la causa');
+            $alumno->cuestionario->baja->otra_causa = $request->get('otra_causa_baja');
+        } else {
+            $alumno->cuestionario->baja->otra_causa = null;
+        }
+
+        $alumno->cuestionario->baja->causa_baja_id = $request->get('causa_baja_id');
+        $alumno->cuestionario->baja->apoyo_economico = $request->get('apoyo_economico');
+        $alumno->cuestionario->baja->save();
     }
 }

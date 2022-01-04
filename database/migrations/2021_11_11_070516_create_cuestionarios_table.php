@@ -24,16 +24,19 @@ class CreateCuestionariosTable extends Migration
             $table->id();
             $table->foreignId('causa_baja_id')->references('id')->on('causas_baja')->onDelete('restrict');
             $table->boolean('apoyo_economico');
+            $table->string('otra_causa')->nullable();
             $table->timestamps();
         });
         Schema::create('cuestionarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('alumno_id')->references('id')->on('alumnos')->onDelete('restrict');
-            $table->foreignId('modalidad_estudios_id')->references('id')->on('modalidad_estudios')->onDelete('restrict');
-            $table->integer('mes');
-            $table->boolean('folleto_impreso');
+            $table->foreignId('alumno_id')->unique()->references('id')->on('alumnos')->onDelete('restrict');
+            $table->foreignId('modalidad_estudios_id')->nullable()->references('id')->on('modalidad_estudios')->onDelete('restrict');
+            $table->foreignId('baja_id')->nullable()->references('id')->on('baja_alumnos')->onDelete('restrict');
+            $table->integer('mes')->nullable();
+            $table->boolean('folleto_impreso')->nullable();
             $table->boolean('aviso_privacidad');
+            $table->boolean('continuar_estudios');
         });
     }
 

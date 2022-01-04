@@ -1,16 +1,17 @@
 <form method="POST" action="{{ route('questionaire.studies') }}">
     @csrf
+    <!-- {{$alumno->cuestionario}} -->
     <div class="pt-4">
         <x-label for="continuar_estudios" :value="__('¿Planeas continuar con tus estudios superiores?')" class="my-4 " />
         <div class="flex justify-start mx-2">
             <div class="mx-2 flex">
 
-                <input id="si" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="1" required {{ old('continuar_estudios',$alumno->continuar_estudios)==false ? 'checked' : '' }} />
+                <input id="si" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="1" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios)==true ? 'checked' : '' }} />
                 <x-label for="si" :value="__('Si')" />
             </div>
             <div class="mx-2 flex">
 
-                <input id="no" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="0" required {{ old('continuar_estudios',$alumno->continuar_estudios)!=false ? 'checked' : '' }} />
+                <input id="no" class="ml-2 mr-2" type="radio" name="continuar_estudios" value="0" required {{ old('continuar_estudios',$alumno->cuestionario->continuar_estudios)==false ? 'checked' : '' }} />
                 <x-label for="no" :value="__('No')" />
             </div>
 
@@ -24,37 +25,42 @@
         <h2>Motivos de la baja escolar</h2>
         <div class="pt-4" id="causa_baja">
             <x-label for="causas" :value="__('Seleccione la causa')" />
-            <select id="causas" class="block mt-1 w-full" type="" name="causa_id" :value="old('causa')" autocomplete="causa">
+            <select id="causas" class="block mt-1 w-full" type="" name="causa_baja_id" :value="old('causa_baja_id')" autocomplete="causa">
                 <option value="">Selecciona la causa de la baja escolar</option>
                 @foreach ($causas as $causa)
-                <option value="{{$causa->id}}" @if ($causa->id==old('causa_id', $alumno->formacion->causa_id??''))
+                <option value="{{$causa->id}}" @if ($causa->id==old('causa_baja_id', $alumno->cuestionario->baja->causa_baja_id??''))
                     selected="selected"
                     @endif
                     >{{$causa->causa}}</option>
                 @endforeach
             </select>
+            @error('causa_baja_id')
+            <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
+            @enderror
         </div>
+        
 
         <div class="pt-4" id="indicar_causa_baja" style="display: none;">
             <x-label for="otra_causa_baja" :value="__('Menciona el motivo por el que no continuarás con tus estudios')" />
-            <x-input id="otra_causa_baja" class="block mt-1 w-full" type="text" name="otra_causa_baja" :value="old('otra_causa_baja')?old('otra_causa_baja'):$otra_causa_baja" placeholder="Otra causa" autocomplete="otra_causa_baja" />
+            <x-input id="otra_causa_baja" class="block mt-1 w-full" type="text" name="otra_causa_baja" :value="old('otra_causa_baja', $alumno->cuestionario->baja->otra_causa)" placeholder="Otra causa" autocomplete="otra_causa_baja" />
         </div>
-        @error('carrera_no_registrada')
+        @error('otra_causa_baja')
         <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
         @enderror
 
         <div class="pt-4">
 
             <x-label for="apoyo_economico" :value="__('Si tuvieras apoyo económico, ¿Seguirías estudiando?')" class="my-4 " />
+            {{$alumno->cuestionario->apoyo_economico}}
             <div class="flex justify-start -mx-2">
                 <div class="mx-2 flex">
 
-                    <input id="si_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" required {{ old('apoyo_economico',$alumno->apoyo_economico)==false ? 'checked' : '' }} />
+                    <input id="si_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="1" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico)==true ? 'checked' : '' }} />
                     <x-label for="si" :value="__('Si')" />
                 </div>
                 <div class="mx-2 flex">
 
-                    <input id="no_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" required {{ old('apoyo_economico',$alumno->apoyo_economico)!=false ? 'checked' : '' }} />
+                    <input id="no_apoyo" class="ml-2 mr-2" type="radio" name="apoyo_economico" value="0" {{ old('apoyo_economico',$alumno->cuestionario->baja->apoyo_economico)==false ? 'checked' : '' }} />
                     <x-label for="no" :value="__('No')" />
                 </div>
 
@@ -111,7 +117,7 @@
 
             <div class="pt-4">
                 <x-label for="universidades_2" :value="__('En caso de no ser admitido en la institución antes señalada, ¿Cuál sería tu segunda opción?')" />
-                <select id="universidades_2" class="block mt-1 w-full" type="" name="universidad_2_id" :value="old('universidad_2_id')" required autocomplete="universidad_2_id">
+                <select id="universidades_2" class="block mt-1 w-full" type="" name="universidad_2_id" :value="old('universidad_2_id')" autocomplete="universidad_2_id">
                     <option value="">Selecciona una institución educativa</option>
                     @foreach ($universidades as $universidad)
                     <option value="{{$universidad->id}}" @if ($universidad->id==old('universidad_2_id', $universidad_2_seleccionada->id??''))
@@ -123,7 +129,7 @@
             </div>
             <div class="pt-4">
                 <x-label for="carreras_2" :value="__('Carrera')" />
-                <select id="carreras_2" class="block mt-1 w-full" type="" name="carrera_2_id" :value="old('carrera_2_id')" required autocomplete="carrera_2_id">
+                <select id="carreras_2" class="block mt-1 w-full" type="" name="carrera_2_id" :value="old('carrera_2_id')" autocomplete="carrera_2_id">
                     <option value="">Selecciona una institución para ver las carreras que ofrece</option>
 
                 </select>
@@ -132,7 +138,7 @@
 
             <div class="pt-4">
                 <x-label for="mes" :value="__('Para poder elegir adecuadamente tu carrera profesional, en qué mes prefieres recibir la información de las instituciones y carreras de educación superior')" />
-                <select id="mes" class="block mt-1 w-full" type="" name="mes" :value="old('mes')" required autocomplete="mes">
+                <select id="mes" class="block mt-1 w-full" type="" name="mes" :value="old('mes')" autocomplete="mes">
                     <option value="1">Febrero</option>
                     <option value="1">Marzo</option>
                     <option value="1">Abril</option>
@@ -152,12 +158,12 @@
                 <div class="flex justify-start -mx-2">
                     <div class="mx-2 flex">
 
-                        <input id="digital" class="ml-2 mr-2" type="radio" name="folleto_impreso" value="0" required {{ old('folleto_impreso',$alumno->cuestionario->folleto_impreso??'')==false ? 'checked' : '' }} />
+                        <input id="digital" class="ml-2 mr-2" type="radio" name="folleto_impreso" value="0" {{ old('folleto_impreso',$alumno->cuestionario->folleto_impreso??'')==false ? 'checked' : '' }} />
                         <x-label for="digital" :value="__('Digital')" />
                     </div>
                     <div class="mx-2 flex">
 
-                        <input id="impreso" class="ml-2 mr-2" type="radio" name="folleto_impreso" value="1" required {{ old('folleto_impreso',$alumno->cuestionario->folleto_impreso??'')!=false ? 'checked' : '' }} />
+                        <input id="impreso" class="ml-2 mr-2" type="radio" name="folleto_impreso" value="1" {{ old('folleto_impreso',$alumno->cuestionario->folleto_impreso??'')!=false ? 'checked' : '' }} />
                         <x-label for="impreso" :value="__('impreso')" />
                     </div>
 
@@ -179,12 +185,12 @@
                 <div class="mx-2 flex">
 
                     <input id="rechazar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="0" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')==false ? 'checked' : '' }} />
-                    <x-label for="rechazar" :value="__('Si')" />
+                    <x-label for="rechazar" :value="__('No')" />
                 </div>
                 <div class="mx-2 flex">
 
                     <input id="aceptar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="1" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')!=false ? 'checked' : '' }} />
-                    <x-label for="aceptar" :value="__('No')" />
+                    <x-label for="aceptar" :value="__('Si')" />
                 </div>
 
             </div>
@@ -310,4 +316,10 @@
         document.querySelector("#otra_causa_baja").focus()
 
     })
+    if (noContinuar.checked) {
+        dropStudies()
+    }
+    if (document.querySelector('#causas').value ==6) {
+        document.querySelector('#indicar_causa_baja').style.display = 'block'
+    }
 </script>
