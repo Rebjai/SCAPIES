@@ -234,6 +234,15 @@ class questionaireController extends Controller
 
             }
 
+            // delete dropout if adding career options
+            if ($alumno->cuestionario->baja) {
+                # code...
+                $baja = $alumno->cuestionario->baja;
+                $alumno->cuestionario->baja()->dissociate();
+                $alumno->cuestionario->save();
+                $baja->delete();
+            }
+
             // dd($request->all());
         }
         return redirect(route('thanks'));
@@ -257,6 +266,10 @@ class questionaireController extends Controller
             $alumno->cuestionario->baja->otra_causa = $request->get('otra_causa_baja');
         } else {
             $alumno->cuestionario->baja->otra_causa = null;
+        }
+        
+        if ($alumno->cuestionario->opciones_carreras->isNotEmpty()) {
+            $alumno->cuestionario->opciones_carreras()->delete();
         }
         
         $alumno->cuestionario->modalidad_estudios_id = null;
