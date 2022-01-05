@@ -50,26 +50,29 @@ class questionaireController extends Controller
         $otra_causa_baja = null;
         $universidad_seleccionada = 0;
         $universidad_seleccionada_2 = 0;
+        $carrera_seleccionada = null;
+        $carrera_seleccionada_2 = null;
 
         if ($alumno->cuestionario) {
             $opciones_carrera = $alumno->cuestionario->opciones_carreras;
             // dd($opciones_carrera->where('principal',true)->first()->id);
             if (!$opciones_carrera->isEmpty()) {
-                $opcion_principal = $opciones_carrera
+                $carrera_seleccionada = $opciones_carrera
                 ->where('principal',true)
                 ->first();
-                $opcion_secundaria = $opciones_carrera
+                $carrera_seleccionada_2 = $opciones_carrera
                 ->where('principal',false)
                 ->first();
-                if (!$opcion_principal->carrera_id) {
-                    $carrera_no_registrada = $opcion_principal->carrera_no_registrada;
+                if (!$carrera_seleccionada->carrera_id) {
+                    $carrera_no_registrada = $carrera_seleccionada->carrera_no_registrada;
                     $universidad_seleccionada = 'otra';
-                    dd($carrera_no_registrada);
+                    $carrera_seleccionada = null;
+                    // dd($carrera_no_registrada);
                 }
                 else{
-                    $universidad_seleccionada = $opcion_principal->carrera->universidad->id;
+                    $universidad_seleccionada = $carrera_seleccionada->carrera->universidad->id;
                 }
-                $universidad_seleccionada_2 = $opcion_secundaria->carrera->universidad->id;
+                $universidad_seleccionada_2 = $carrera_seleccionada_2->carrera->universidad->id;
             }
 
             // dd('cuestionario realizado');
@@ -82,7 +85,9 @@ class questionaireController extends Controller
             'carrera_no_registrada',
             'otra_causa_baja',
             'universidad_seleccionada',
-            'universidad_seleccionada_2'
+            'universidad_seleccionada_2',
+            'carrera_seleccionada',
+            'carrera_seleccionada_2'
         ));
     }
     public function generalInfo(Request $request)
@@ -221,16 +226,19 @@ class questionaireController extends Controller
             }
             if ($opciones->isNotEmpty()) {
                 $carrera_principal = $alumno->cuestionario->opciones_carreras()
-                ->where('principal',true)->get();
+                ->where('principal',true)->first();
                 $carrera_secundaria = $alumno->cuestionario->opciones_carreras()
-                ->where('principal',false)->get();
+                ->where('principal',false)->first();
                 
                 // dd([$carrera_principal, $carrera_secundaria]);
-                $carrera_principal->carrera_no_registrada = $request->get('carrera_no_registrada');
-                $carrera_principal->carrera_id = $request->get('carrera_id') != 'otra'? $request->get('carrera_id'): null;
+                $carrera_principal->carrera_no_registrada = $request->get('universidad_id') == 'otra'?$request->get('carrera_no_registrada'):null;
+                $carrera_principal->carrera_id = $request->get('universidad_id') != 'otra'? $request->get('carrera_id'): null;
                 $carrera_secundaria->carrera_id = $request->get('carrera_2_id');
+                $carrera_principal->save();
+                $carrera_secundaria->save();
                 $alumno->push();
-                // dd($alumno);
+                
+                // dd($request->get('universidad_id') == 'otra'?$request->get('carrera_no_registrada'):null);
 
             }
 
@@ -267,7 +275,7 @@ class questionaireController extends Controller
         } else {
             $alumno->cuestionario->baja->otra_causa = null;
         }
-        
+
         if ($alumno->cuestionario->opciones_carreras->isNotEmpty()) {
             $alumno->cuestionario->opciones_carreras()->delete();
         }

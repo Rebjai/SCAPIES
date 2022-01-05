@@ -245,7 +245,7 @@
     let alreadySelected = '{{$universidad_seleccionada}}' > 0
     let alreadySelected_2 = '{{$universidad_seleccionada_2}}' > 0
 
-    function getCarreras(origin, targetSelect) {
+    function getCarreras(origin, targetSelect, selectedOption = null) {
         let select = origin
         let idUniversidad = select.selectedOptions[0]?.value
         let urlGetCarreras = '{{route("carreras.show",["carrera" => $universidad_seleccionada])}}'
@@ -256,13 +256,8 @@
                 return r.json()
             })
             .then(r => {
-                addOptions(r, targetSelect)
-                let selectedOption = "{{$carrera_seleccionada??''}}"
-                let oldSubsistema = "{{$universidad_seleccionada??''}}"
-                if (oldSubsistema == idUniversidad) {
-                    return targetSelect.value = selectedOption
-                }
-                return targetSelect.value = ''
+                addOptions(r, targetSelect, selectedOption)
+                return true
 
             })
     }
@@ -274,7 +269,19 @@
         }
     }
 
-    function addOptions(elements, selectElement) {
+    function addOptions(elements, selectElement, selectedOption) {
+        if (selectedOption != null) {
+            for (element of elements) {
+                let option = document.createElement('option')
+                if (element.id == selectedOption) {
+                    option.selected = true
+                }
+                option.value = element.id
+                option.text = element.carrera
+                selectElement.add(option)
+            }
+            return
+        }
         for (element of elements) {
             let option = document.createElement('option')
             option.value = element.id
@@ -283,7 +290,6 @@
         }
     }
 
-    
 
     function continueStudies() {
         showQuestionaire()
@@ -344,12 +350,14 @@
         if (document.querySelector('#universidades').value == 'otra') {
             document.querySelector('#otra').style.display = 'block'
         } else {
+            let option_1 = '{{$carrera_seleccionada->carrera_id??null}}'
             document.querySelector('#opcion_carreras').style.display = 'block'
-            getCarreras(universidadesSelect, carrerasSelect)
+            getCarreras(universidadesSelect, carrerasSelect, option_1)
         }
     }
     if (document.querySelector('#universidades_2').value != "") {
 
-        getCarreras(universidadesSelect_2, carrerasSelect_2)
+        let option_2 = '{{$carrera_seleccionada_2->carrera_id??null}}'
+        getCarreras(universidadesSelect_2, carrerasSelect_2, option_2)
     }
 </script>
