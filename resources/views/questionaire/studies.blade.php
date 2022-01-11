@@ -22,11 +22,13 @@
     <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
     @enderror
     <div id="baja" class="pt-10" style="display: none;">
-        <h2>Motivos de la baja escolar</h2>
+        
+        <h2 class="mt-4">Motivos por los que no continuarás tus estudios</h2>
+        
         <div class="pt-4" id="causa_baja">
             <x-label for="causas" :value="__('Seleccione la causa')" />
             <select id="causas" class="block mt-1 w-full" type="" name="causa_baja_id" :value="old('causa_baja_id')" autocomplete="causa">
-                <option value="">Selecciona la causa de la baja escolar</option>
+                <option value="">Selecciona la causa por la que no continuarás tus estudios</option>
                 @foreach ($causas as $causa)
                 <option value="{{$causa->id}}" @if ($causa->id==old('causa_baja_id', $alumno->cuestionario->baja->causa_baja_id??''))
                     selected="selected"
@@ -37,6 +39,9 @@
             @error('causa_baja_id')
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
+            <div class="text-sm text-gray-500 mt-4">
+            Te recomendamos que revises con el apoyo de tu tutor los factores que te pueden ayudar con tus estudios de tipo superior
+        </div>
         </div>
 
 
@@ -196,7 +201,7 @@
     <div class="pt-10">
         <h2>Aviso de privacidad</h2>
         <div class="pt-2">
-            En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
+            En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
         </div>
         <div class="pt-2">
 

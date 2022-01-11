@@ -448,10 +448,11 @@
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-md">
                                 <p>
-                                    Las Instituciones de Educación Superior de Oaxaca, se han puesto de acuerdo para mostrarte informacion relevante en él podrás expresar cuál es la carrera que deseas estudiar y la institución a la
-                                    que deseas ingresar. Léelo con atención y respondelos datos que se te piden. La información que proporciones
+                                    Las Instituciones de Educación Superior de Oaxaca, se han puesto de acuerdo para mostrarte información relevante a las carreras que ofertan, condensándolas en esta encuesta, gracias a esta podrás
+                                    expresar cuál es la carrera que deseas estudiar y la institución a la
+                                    que planeas ingresar. Lee las instrucciones con atención y responde los datos que se te piden. La información que proporciones
                                     servirá para mejorar la atención a los jóvenes que desean solicitar admisión en las Instituciones de Educación
-                                    Superior, por lo que te agradeceremos enviar tu informacion desde este sitio.
+                                    Superior, por lo que te agradeceremos enviar tu información correcta desde este sitio.
                                     Recuerda que para elegir una institución y carrera consulta con toda atención el presente folleto.
                                 <h5>
                                     Pulsa el boton continuar para realizar el cuestionario de preferencias académicas.
