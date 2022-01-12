@@ -47,7 +47,7 @@ class carrerasController extends Controller
      */
     public function show($id)
     {
-        $carreras = Carrera::select('id', 'carrera')->where('universidad_id',$id)->get();
+        $carreras = Carrera::with('modalidad')->select('id', 'carrera', 'modalidad_estudio_id')->where('universidad_id',$id)->get();
         return response()->json($carreras);
     }
 

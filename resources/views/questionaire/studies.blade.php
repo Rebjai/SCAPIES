@@ -1,6 +1,7 @@
 <form method="POST" action="{{ route('questionaire.studies') }}">
     @csrf
     <!-- {{$alumno->cuestionario}} -->
+    <h2 class="mt-4 font-bold">Continuación de estudios</h2>
     <div class="pt-4">
         <x-label for="continuar_estudios" :value="__('¿Planeas continuar con tus estudios superiores?')" class="my-4 " />
         <div class="flex justify-start mx-2">
@@ -22,9 +23,9 @@
     <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
     @enderror
     <div id="baja" class="pt-10" style="display: none;">
-        
-        <h2 class="mt-4">Motivos por los que no continuarás tus estudios</h2>
-        
+
+        <h2 class="mt-4 font-bold">Motivos por los que no continuarás tus estudios</h2>
+
         <div class="pt-4" id="causa_baja">
             <x-label for="causas" :value="__('Seleccione la causa')" />
             <select id="causas" class="block mt-1 w-full" type="" name="causa_baja_id" :value="old('causa_baja_id')" autocomplete="causa">
@@ -39,9 +40,6 @@
             @error('causa_baja_id')
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
-            <div class="text-sm text-gray-500 mt-4">
-            Te recomendamos que revises con el apoyo de tu tutor los factores que te pueden ayudar con tus estudios de tipo superior
-        </div>
         </div>
 
 
@@ -73,9 +71,12 @@
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
         </div>
+        <div class="text-sm text-gray-700 mt-10  mb-4 font-bold italic">
+            Te recomendamos que revises con el apoyo de tu tutor los factores que te pueden ayudar con tus estudios de tipo superior
+        </div>
     </div>
     <div id="estudios_superiores" class="pt-10">
-        <h2>Estudios Superiores</h2>
+        <h2 class="font-bold">Estudios Superiores</h2>
         <div class="pt-4">
             <x-label for="modelos_educativos" :value="__('¿En qué modelo educativo te gustaría estudiar la licenciatura?')" />
             <select id="modelos_educativos" class="block mt-1 w-full" type="" name="modelo_educativo_id" :value="old('modelo_educativo')" autocomplete="modelo_educativo">
@@ -199,8 +200,8 @@
     </div>
 
     <div class="pt-10">
-        <h2>Aviso de privacidad</h2>
-        <div class="pt-2">
+        <h2 class="font-bold">Aviso de privacidad</h2>
+        <div class="pt-2 italic text-base">
             En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
         </div>
         <div class="pt-2">
@@ -261,6 +262,7 @@
                 return r.json()
             })
             .then(r => {
+                console.log(r);
                 addOptions(r, targetSelect, selectedOption)
                 return true
 
@@ -283,6 +285,11 @@
                 }
                 option.value = element.id
                 option.text = element.carrera
+                console.log(element);
+                if (element.modalidad != null) {
+                    console.log("not null");
+                    option.text += ` (${element.modalidad.modalidad})`
+                }
                 selectElement.add(option)
             }
             return
@@ -291,6 +298,10 @@
             let option = document.createElement('option')
             option.value = element.id
             option.text = element.carrera
+            if (element.modalidad != null) {
+                console.log("not null");
+                option.text += ` (${element.modalidad.modalidad})`
+            }
             selectElement.add(option)
         }
     }
