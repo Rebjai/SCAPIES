@@ -15,12 +15,15 @@ class ModalidadEstudiosSeeder extends Seeder
     public function run()
     {
         DB::table('modalidad_estudios')->insert([
+            'id'=>1,
             'modalidad' => 'Escolarizada'
         ]);
         DB::table('modalidad_estudios')->insert([
-            'modalidad' => 'Escolarizada a distancia'
+            'id'=>2,
+            'modalidad' => 'No Escolarizada'
         ]);
         DB::table('modalidad_estudios')->insert([
+            'id'=>3,
             'modalidad' => 'Mixta'
         ]);
     }
