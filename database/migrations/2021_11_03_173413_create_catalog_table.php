@@ -50,6 +50,7 @@ class CreateCatalogTable extends Migration
         Schema::create('modalidad_estudios', function (Blueprint $table) {
             $table->id();
             $table->string('modalidad');
+            $table->string('descripcion');
             $table->timestamps();
         });
         Schema::create('modelos_educativos', function (Blueprint $table) {

@@ -82,10 +82,10 @@
             <select id="modelos_educativos" class="block mt-1 w-full" type="" name="modelo_educativo_id" :value="old('modelo_educativo')" autocomplete="modelo_educativo">
                 <option value="">Selecciona un modelo educativo</option>
                 @foreach ($modelos_educativos as $modelo_educativo)
-                <option value="{{$modelo_educativo->id}}" @if ($modelo_educativo->id==old('modelo_educativo_id', $alumno->cuestionario->modalidad_estudios_id??''))
+                <option value="{{$modelo_educativo->id}}" title="{{$modelo_educativo->descripcion}}" @if ($modelo_educativo->id==old('modelo_educativo_id', $alumno->cuestionario->modalidad_estudios_id??''))
                     selected="selected"
                     @endif
-                    >{{$modelo_educativo->modalidad}}</option>
+                    >{{$modelo_educativo->modalidad.' ('.$modelo_educativo->descripcion.')'}}</option>
                 @endforeach
             </select>
         </div>
