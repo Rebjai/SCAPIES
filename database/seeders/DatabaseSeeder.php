@@ -13,13 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Seed admin and default users
+        $this->call([
+            UserSeeder::class,
+        ]);
         // Regimen seeder
         $this->call([
             RegimenesSeeder::class
-        ]);
-        // Seed admin and defauld users
-        $this->call([
-            UserSeeder::class,
         ]);
         // bachillerato dependencies seeder
         $this->call([

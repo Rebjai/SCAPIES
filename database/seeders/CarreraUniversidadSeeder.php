@@ -44,119 +44,136 @@ class CarreraUniversidadSeeder extends Seeder
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN '
+            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS '
+            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS',
+            'modalidad_estudio_id' => 1
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA COMUNICACIÓN'
+            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA COMUNICACIÓN',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN'
+            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN COMUNICACIÓN '
+            'carrera' => 'LICENCIATURA EN COMUNICACIÓN',
+            'modalidad_estudio_id' => 1
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN CONTADURÍA PÚBLICA '
+            'carrera' => 'LICENCIATURA EN CONTADURÍA PÚBLICA',
+            'modalidad_estudio_id' => 1
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN DERECHO '
+            'carrera' => 'LICENCIATURA EN DERECHO',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN EDUCACIÓN ARTÍSTICA '
+            'carrera' => 'LICENCIATURA EN EDUCACIÓN ARTÍSTICA',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN EDUCACIÓN FINANCIERA'
+            'carrera' => 'LICENCIATURA EN EDUCACIÓN FINANCIERA',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN INFORMÁTICA '
+            'carrera' => 'LICENCIATURA EN INFORMÁTICA',
+            'modalidad_estudio_id' => 1
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN INGENIERÍA CIVIL '
+            'carrera' => 'LICENCIATURA EN INGENIERÍA CIVIL',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN INGENIERÍA ELÉCTRICA '
+            'carrera' => 'LICENCIATURA EN INGENIERÍA ELÉCTRICA',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN INGENIERÍA INDUSTRIAL '
+            'carrera' => 'LICENCIATURA EN INGENIERÍA INDUSTRIAL',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN INGENIERÍA MECÁNICA AUTOMOTRIZ '
+            'carrera' => 'LICENCIATURA EN INGENIERÍA MECÁNICA AUTOMOTRIZ',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN PEDAGOGÍA '
+            'carrera' => 'LICENCIATURA EN PEDAGOGÍA',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN PERIODISMO Y PUBLICIDAD '
+            'carrera' => 'LICENCIATURA EN PERIODISMO Y PUBLICIDAD',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 4,
-            'carrera' => 'LICENCIATURA EN TURISMO'
+            'carrera' => 'LICENCIATURA EN TURISMO',
+            'modalidad_estudio_id' => 3
         ]);
 
 
@@ -261,7 +278,8 @@ class CarreraUniversidadSeeder extends Seeder
 
         Carrera::create([
             'universidad_id' => 8,
-            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS'
+            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS',
+            'modalidad_estudio_id' => 3
         ]);
 
 
@@ -275,7 +293,8 @@ class CarreraUniversidadSeeder extends Seeder
 
         Carrera::create([
             'universidad_id' => 8,
-            'carrera' => 'LICENCIATURA EN CRIMINOLOGÍA Y CRIMINALÍSTICA '
+            'carrera' => 'LICENCIATURA EN CRIMINOLOGÍA Y CRIMINALÍSTICA ',
+            'modalidad_estudio_id' => 3
         ]);
 
 
@@ -289,7 +308,8 @@ class CarreraUniversidadSeeder extends Seeder
 
         Carrera::create([
             'universidad_id' => 8,
-            'carrera' => 'LICENCIATURA EN IDIOMA INGLÉS '
+            'carrera' => 'LICENCIATURA EN IDIOMA INGLÉS',
+            'modalidad_estudio_id' => 3
         ]);
 
 
@@ -317,42 +337,48 @@ class CarreraUniversidadSeeder extends Seeder
 
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN'
+            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN',
+            'modalidad_estudio_id' => 3
         ]);
 
 
 
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS TURÍSTICAS'
+            'carrera' => 'LICENCIATURA EN ADMINISTRACIÓN DE EMPRESAS TURÍSTICAS',
+            'modalidad_estudio_id' => 1
         ]);
 
         
         
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN ARQUITECTURA'
+            'carrera' => 'LICENCIATURA EN ARQUITECTURA',
+            'modalidad_estudio_id' => 1
         ]);
         
         
         
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN '
+            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN',
+            'modalidad_estudio_id' => 1
         ]);
         
         
         
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN '
+            'carrera' => 'LICENCIATURA EN CIENCIAS DE LA EDUCACIÓN',
+            'modalidad_estudio_id' => 3
         ]);
         
         
         
         Carrera::create([
             'universidad_id' => 9,
-            'carrera' => 'LICENCIATURA EN CONTADURÍA '
+            'carrera' => 'LICENCIATURA EN CONTADURÍA',
+            'modalidad_estudio_id' => 3
         ]);  
 
 
