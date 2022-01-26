@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ResponsesController;
 use App\Http\Controllers\Alumno\EstudioController;
 use App\Http\Controllers\Bachillerato\areaController;
 use App\Http\Controllers\Bachillerato\plantelController;
