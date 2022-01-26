@@ -4,18 +4,36 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
+                @if (Auth::user()->admin)
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{{ route('responses') }}">
+                        <x-application-logo class="block h-20 w-auto fill-current text-gray-600" />
+                    </a>
+                </div>
+                @else
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-20 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
+                @endif
+                
 
                 <!-- Navigation Links -->
+                
+                @if (Auth::user()->admin)
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('responses')" :active="request()->routeIs('responses')">
+                        {{ __('Respuestas del cuestionario') }}
+                    </x-nav-link>
+                </div>
+                @else
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Cuestionario') }}
                     </x-nav-link>
                 </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

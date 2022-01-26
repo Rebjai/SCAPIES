@@ -13,9 +13,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6">
+                <!-- <div class="p-6">
                     <a href="{{route('subsistema.create')}}" class="bg-green-400 py-1 px-2 rounded mt-8">Añadir Subsistema</a>
-                </div>
+                </div> -->
                 
                 <div class="bg-white overflow-x-auto shadow-sm sm:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-300">
