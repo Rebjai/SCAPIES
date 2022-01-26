@@ -425,7 +425,7 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="background-image: url('/img/flor_gobierno.svg'); background-repeat: space; background-size: 60%;">
             <div class="flex justify-center pt-8 sm:pt-4 mt-8" style="padding-top:5rem">
-                
+
                 <x-application-logo class="block h-50 w-auto fill-current text-gray-600" />
             </div>
 
@@ -444,18 +444,20 @@
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-md">
                                 <p>
-                                    Las Instituciones de Educación Superior de Oaxaca, se han puesto de acuerdo para mostrarte información relevante a las carreras que ofertan, condensándolas en esta encuesta, gracias a esta podrás
-                                    expresar cuál es la carrera que deseas estudiar y la institución a la
-                                    que planeas ingresar. Lee las instrucciones con atención y responde los datos que se te piden. La información que proporciones
+                                    Las Instituciones de Educación Superior de Oaxaca, se han puesto de acuerdo para mostrarte información relevante, en él podrás expresar cuál es la carrera que deseas estudiar y la institución a la
+                                    que deseas ingresar.
+                                    Lee las instrucciones con atención y responde los datos que se te piden. La información que proporciones
                                     servirá para mejorar la atención a los jóvenes que desean solicitar admisión en las Instituciones de Educación
                                     Superior, por lo que te agradeceremos enviar tu información correcta desde este sitio.
                                     Recuerda que para elegir una institución y carrera consulta con toda atención el presente folleto.
                                 <h5>
                                     Pulsa el boton continuar para realizar el cuestionario de preferencias académicas.
                                 </h5>
-                            </p>
-                        </div>
-                        <a href="{{ route('login') }}" ><x-button class="hover:bgbg-purple-700 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 cursor-pointer">Entrar</x-application-button></a>
+                                </p>
+                            </div>
+                            <a href="{{ route('login') }}">
+                                <x-button class="hover:bgbg-purple-700 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 cursor-pointer">Entrar</x-application-button>
+                            </a>
                         </div>
                     </div>
 
