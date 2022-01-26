@@ -23,6 +23,13 @@ input:invalid:focus {
     border: 3px solid red;
 }
 
+.flor-gobierno {
+    background-image : url('/img/flor_gobierno.svg');
+    background-repeat: space;
+    background-size  : 60%;
+    background-position: center;
+}
+
 @keyframes fadeOff {
     0% {
         opacity: 1;
