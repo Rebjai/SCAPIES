@@ -35,4 +35,9 @@ class Alumno extends Model
     {
         return $this->hasOne(Cuestionario::class);
     }
+
+    public function getNombreCompletoAttribute()
+    {
+        return ucfirst($this->nombre).' '. ucfirst($this->apellido_paterno).' '. ucfirst($this->apellido_materno);
+    }
 }

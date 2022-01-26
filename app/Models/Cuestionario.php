@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Alumno\Alumno;
 use App\Models\Alumno\BajaAlumno;
 use App\Models\Cuestionario\CuestionarioOpcionesCarrera;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -35,5 +36,46 @@ class Cuestionario extends Model
     public function baja(): BelongsTo
     {
         return $this->belongsTo(BajaAlumno::class);
+    }
+    
+    public function alumno(): BelongsTo
+    {
+        return $this->belongsTo(Alumno::class);
+    }
+
+    public function getOpcionPrincipalAttribute()
+    {
+        // return $this->opciones_carreras()->where('principal', true)->first();
+        $option = $this->getRelation('opciones_carreras')->where('principal', true)->first();
+        if ($option) {
+            return $option->carrera->carrera;
+        }
+        return 'No seleccionado';
+    }
+    public function getOpcionSecundariaAttribute()
+    {
+        $option =$this->opciones_carreras()->where('principal', false)->first();
+        if ($option) {
+            return $option->carrera->carrera;
+        }
+        return 'No seleccionado';
+    }
+
+    public function getUniversidadPrincipalAttribute()
+    {
+        // return $this->opciones_carreras()->where('principal', true)->first();
+        $option = $this->getRelation('opciones_carreras')->where('principal', true)->first();
+        if ($option) {
+            return $option->carrera->universidad->nombre;
+        }
+        return 'No seleccionado';
+    }
+    public function getUniversidadSecundariaAttribute()
+    {
+        $option =$this->opciones_carreras()->where('principal', false)->first();
+        if ($option) {
+            return $option->carrera->universidad->nombre;
+        }
+        return 'No seleccionado';
     }
 }

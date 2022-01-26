@@ -38,6 +38,7 @@ Route::resource('plantel', plantelController::class);
 Route::resource('carreras', carrerasController::class);
 Route::resource('area', areaController::class);
 Route::resource('estudio', EstudioController::class);
+Route::get('respuestas',[ResponsesController::class, 'index'])->middleware(['auth'])->name('responses');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/', function () {
     return view('welcome');

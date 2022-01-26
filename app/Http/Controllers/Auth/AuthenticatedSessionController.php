@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if (auth()->user()->admin)
-            return redirect()->intended("/subsistema");
+            return redirect()->intended("/respuestas");
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
