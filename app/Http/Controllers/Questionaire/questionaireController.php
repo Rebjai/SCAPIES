@@ -52,24 +52,25 @@ class questionaireController extends Controller
         $universidad_seleccionada_2 = 0;
         $carrera_seleccionada = null;
         $carrera_seleccionada_2 = null;
+        $mes = null;
 
         if ($alumno->cuestionario) {
+            $mes = $alumno->cuestionario->mes;
             $opciones_carrera = $alumno->cuestionario->opciones_carreras;
             // dd($opciones_carrera->where('principal',true)->first()->id);
             if (!$opciones_carrera->isEmpty()) {
                 $carrera_seleccionada = $opciones_carrera
-                ->where('principal',true)
-                ->first();
+                    ->where('principal', true)
+                    ->first();
                 $carrera_seleccionada_2 = $opciones_carrera
-                ->where('principal',false)
-                ->first();
+                    ->where('principal', false)
+                    ->first();
                 if (!$carrera_seleccionada->carrera_id) {
                     $carrera_no_registrada = $carrera_seleccionada->carrera_no_registrada;
                     $universidad_seleccionada = 'otra';
                     $carrera_seleccionada = null;
                     // dd($carrera_no_registrada);
-                }
-                else{
+                } else {
                     $universidad_seleccionada = $carrera_seleccionada->carrera->universidad->id;
                 }
                 $universidad_seleccionada_2 = $carrera_seleccionada_2->carrera->universidad->id;
@@ -87,7 +88,8 @@ class questionaireController extends Controller
             'universidad_seleccionada',
             'universidad_seleccionada_2',
             'carrera_seleccionada',
-            'carrera_seleccionada_2'
+            'carrera_seleccionada_2',
+            'mes'
         ));
     }
     public function generalInfo(Request $request)
@@ -199,14 +201,18 @@ class questionaireController extends Controller
                 'aviso_privacidad' => 'required',
             ]);
             $alumno->cuestionario->modalidad_estudios_id = $request->get('modelo_educativo_id');
+            $alumno->cuestionario->mes = $request->get('mes');
+            $alumno->cuestionario->folleto_impreso = $request->get('folleto_impreso');
+            $alumno->cuestionario->save();
+
+            // check options
             $opciones = $alumno->cuestionario->opciones_carreras;
-            // dd($request->get('carrera_id'));
             if ($opciones->isEmpty()) {
                 $carrera_principal = new CuestionarioOpcionesCarrera(
                     [
                         "principal" => true,
                         "carrera_no_registrada" => $request->get('carrera_no_registrada'),
-                        "carrera_id" => $request->get('carrera_id') != 'otra'? $request->get('carrera_id'): null
+                        "carrera_id" => $request->get('carrera_id') != 'otra' ? $request->get('carrera_id') : null
                     ]
                 );
                 $carrera_secundaria = new CuestionarioOpcionesCarrera(
@@ -226,18 +232,18 @@ class questionaireController extends Controller
             }
             if ($opciones->isNotEmpty()) {
                 $carrera_principal = $alumno->cuestionario->opciones_carreras()
-                ->where('principal',true)->first();
+                    ->where('principal', true)->first();
                 $carrera_secundaria = $alumno->cuestionario->opciones_carreras()
-                ->where('principal',false)->first();
-                
+                    ->where('principal', false)->first();
+
                 // dd([$carrera_principal, $carrera_secundaria]);
-                $carrera_principal->carrera_no_registrada = $request->get('universidad_id') == 'otra'?$request->get('carrera_no_registrada'):null;
-                $carrera_principal->carrera_id = $request->get('universidad_id') != 'otra'? $request->get('carrera_id'): null;
+                $carrera_principal->carrera_no_registrada = $request->get('universidad_id') == 'otra' ? $request->get('carrera_no_registrada') : null;
+                $carrera_principal->carrera_id = $request->get('universidad_id') != 'otra' ? $request->get('carrera_id') : null;
                 $carrera_secundaria->carrera_id = $request->get('carrera_2_id');
                 $carrera_principal->save();
                 $carrera_secundaria->save();
                 $alumno->push();
-                
+
                 // dd($request->get('universidad_id') == 'otra'?$request->get('carrera_no_registrada'):null);
 
             }
@@ -279,8 +285,12 @@ class questionaireController extends Controller
         if ($alumno->cuestionario->opciones_carreras->isNotEmpty()) {
             $alumno->cuestionario->opciones_carreras()->delete();
         }
-        
+
         $alumno->cuestionario->modalidad_estudios_id = null;
+        $alumno->cuestionario->mes = null;
+        $alumno->cuestionario->folleto_impreso = null;
+        $alumno->cuestionario->save();
+        
         $alumno->cuestionario->baja->causa_baja_id = $request->get('causa_baja_id');
         $alumno->cuestionario->baja->apoyo_economico = $request->get('apoyo_economico');
         $alumno->cuestionario->baja->save();

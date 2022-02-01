@@ -17,7 +17,7 @@ class Cuestionario extends Model
     static $rules = [
 		'aviso_privacidad' => 'required',
     ];
-    protected $fillable = ['alumno_id', 'aviso_privacidad', 'continuar_estudios'];
+    protected $fillable = ['alumno_id', 'aviso_privacidad', 'continuar_estudios','mes'];
     /**
      * Get all of the carreras for the Cuestionario
      *
@@ -42,6 +42,10 @@ class Cuestionario extends Model
     {
         return $this->belongsTo(Alumno::class);
     }
+    public function modalidad_estudios(): BelongsTo
+    {
+        return $this->belongsTo(ModalidadEstudio::class);
+    }
 
     public function getOpcionPrincipalAttribute()
     {
@@ -50,7 +54,7 @@ class Cuestionario extends Model
         if ($option) {
             return $option->carrera->carrera;
         }
-        return 'No seleccionado';
+        return 'N/A';
     }
     public function getOpcionSecundariaAttribute()
     {
@@ -58,7 +62,7 @@ class Cuestionario extends Model
         if ($option) {
             return $option->carrera->carrera;
         }
-        return 'No seleccionado';
+        return 'N/A';
     }
 
     public function getUniversidadPrincipalAttribute()
@@ -68,7 +72,7 @@ class Cuestionario extends Model
         if ($option) {
             return $option->carrera->universidad->nombre;
         }
-        return 'No seleccionado';
+        return 'N/A';
     }
     public function getUniversidadSecundariaAttribute()
     {
@@ -76,6 +80,6 @@ class Cuestionario extends Model
         if ($option) {
             return $option->carrera->universidad->nombre;
         }
-        return 'No seleccionado';
+        return 'N/A';
     }
 }

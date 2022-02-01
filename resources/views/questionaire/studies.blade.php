@@ -159,15 +159,42 @@
             <div class="pt-4">
                 <x-label for="mes" :value="__('Para poder elegir adecuadamente tu carrera profesional, en qué mes prefieres recibir la información de las instituciones y carreras de educación superior')" />
                 <select id="mes" class="block mt-1 w-full" type="" name="mes" :value="old('mes')" autocomplete="mes">
-                    <option value="1">Febrero</option>
-                    <option value="1">Marzo</option>
-                    <option value="1">Abril</option>
-                    <option value="1">Mayo</option>
-                    <option value="1">Junio</option>
-                    <option value="1">Agosto</option>
-                    <option value="1">Septiembre</option>
-                    <option value="1">Octubre</option>
-                    <option value="1">Noviembre</option>
+                    <option value="1" @if (1==old('mes', $mes??''))
+                    selected="selected"
+                    @endif 
+                    >Febrero</option>
+                    <option value="2" @if (2==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Marzo</option>
+                    <option value="3" @if (3==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Abril</option>
+                    <option value="4" @if (4==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Mayo</option>
+                    <option value="5" @if (5==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Junio</option>
+                    <option value="7" @if (7==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Agosto</option>
+                    <option value="8" @if (8==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Septiembre</option>
+                    <option value="9" @if (9==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Octubre</option>
+                    <option value="10" @if (10==old('mes', $mes??''))
+                    selected="selected"
+                    @endif
+                    >Noviembre</option>
                 </select>
             </div>
             @error('mes')
@@ -201,9 +228,6 @@
 
     <div class="pt-10">
         <h2 class="font-bold">Aviso de privacidad</h2>
-        <div class="pt-2 italic text-base">
-            En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
-        </div>
         <div class="pt-2">
 
             <x-label for="aviso_privacidad" :value="__('¿Autorizas compartir tus datos personales del cuestionario, para que las instituciones de educación superior que elegiste para continuar tus estudios, te envien información adicional?')" class="my-4 " />
@@ -223,6 +247,9 @@
             @error('aviso_privacidad')
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
+        </div>
+        <div class="pt-6 italic text-base">
+            En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
         </div>
     </div>
 
