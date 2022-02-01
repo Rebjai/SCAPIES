@@ -37,7 +37,40 @@
                                     CURP
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Calle
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Número
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Colonia
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Localidad
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Código postal
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Subsistema
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Plantel
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Área de conocimiento
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                                     continuar
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Motivo baja
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Apoyo económico
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Modelo educativo
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                                     Opción 1
@@ -50,6 +83,15 @@
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                                     Carrera 2
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Mes Folleto
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Formato Folleto
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    Aviso privacidad
                                 </th>
                                 
                                 <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
@@ -92,7 +134,63 @@
                             </td>
                             <td>
                                 <div class="pl-4">
+                                    {{$respuesta->alumno->direccion->calle}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->direccion->numero}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->direccion->colonia}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->direccion->localidad}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->direccion->codigo_postal}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->formacion->subsistema->nombre}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->formacion->plantel->nombre}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->alumno->formacion->campo_formacion->nombre}}
+                                </div>
+                            </td>
+                            
+                            <td>
+                                <div class="pl-4">
                                     {{$respuesta->continuar_estudios == 1? 'Si': 'No'}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->baja?($respuesta->baja->causa_baja_id == 6? $respuesta->baja->otra_causa:$respuesta->baja->causa_baja->causa):'N/A' }}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->baja?($respuesta->baja->apoyo_economico == 1? 'Si': 'No'):'N/A'}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->modalidad_estudios?->modalidad?:'N/A'}}
                                 </div>
                             </td>
                             <td>
@@ -113,6 +211,21 @@
                             <td>
                                 <div class="pl-4">
                                     {{$respuesta->opcionSecundaria}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->mes?$respuesta->mes+1:'N/A'}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->folleto_impreso!==null?($respuesta->folleto_impreso == 1? 'Impreso': 'Digital'):'N/A'}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pl-4">
+                                    {{$respuesta->aviso_privacidad == 1? 'Si': 'No'}}
                                 </div>
                             </td>
                             <!-- <td  class="border-l-2">
