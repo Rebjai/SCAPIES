@@ -7,6 +7,7 @@ use App\Http\Controllers\Bachillerato\plantelController;
 use App\Http\Controllers\Bachillerato\subsistemaController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Questionaire\questionaireController;
+use App\Http\Controllers\Questionaire\QuestionaireExportController;
 use App\Http\Controllers\Universidad\carrerasController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +48,6 @@ Route::get('/', function () {
 Route::get('/thanks', function () {
     return view('Thanks');
 })->name('thanks');
+Route::get('/export', [QuestionaireExportController::class, 'export'])->middleware(['auth'])->name('export');
 
 require __DIR__.'/auth.php';
