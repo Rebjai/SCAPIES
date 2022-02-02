@@ -68,7 +68,7 @@ class QuestionaireExport implements FromCollection, WithMapping, WithHeadings
             'Modelo educativo',
             'Opción 1',
             'Carrera 1',
-            'Opcion 2',
+            'Opción 2',
             'Carrera 2',
             'Mes Folleto',
             'Formato Folleto',
