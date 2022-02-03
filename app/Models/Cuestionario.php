@@ -52,7 +52,7 @@ class Cuestionario extends Model
         // return $this->opciones_carreras()->where('principal', true)->first();
         $option = $this->getRelation('opciones_carreras')->where('principal', true)->first();
         if ($option) {
-            return $option->carrera->carrera;
+            return $option->carrera_no_registrada?:$option->carrera?->carrera;
         }
         return 'N/A';
     }
@@ -60,7 +60,7 @@ class Cuestionario extends Model
     {
         $option =$this->opciones_carreras()->where('principal', false)->first();
         if ($option) {
-            return $option->carrera->carrera;
+            return $option->carrera?->carrera;
         }
         return 'N/A';
     }
@@ -70,7 +70,7 @@ class Cuestionario extends Model
         // return $this->opciones_carreras()->where('principal', true)->first();
         $option = $this->getRelation('opciones_carreras')->where('principal', true)->first();
         if ($option) {
-            return $option->carrera->universidad->nombre;
+            return $option->carrera_no_registrada?'OTRA':$option->carrera->universidad->nombre;
         }
         return 'N/A';
     }
@@ -78,7 +78,7 @@ class Cuestionario extends Model
     {
         $option =$this->opciones_carreras()->where('principal', false)->first();
         if ($option) {
-            return $option->carrera->universidad->nombre;
+            return $option->carrera?->universidad->nombre;
         }
         return 'N/A';
     }
