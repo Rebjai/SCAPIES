@@ -20,6 +20,7 @@ class QuestionaireExport implements FromCollection, WithMapping, WithHeadings
     public function map($cuestionario): array
     {
         return [
+            $cuestionario->id,
             $cuestionario->alumno->nombreCompleto,
             $cuestionario->alumno->correo,
             $cuestionario->alumno->genero == 1 ? 'M' : 'F',
@@ -49,6 +50,7 @@ class QuestionaireExport implements FromCollection, WithMapping, WithHeadings
     public function headings(): array
     {
         return [
+            'ID',
             'Nombre',
             'Correo',
             'Género',
@@ -72,7 +74,7 @@ class QuestionaireExport implements FromCollection, WithMapping, WithHeadings
             'Carrera 2',
             'Mes Folleto',
             'Formato Folleto',
-            'Aviso privacidad'
+            'Autoriza compartir datos'
         ];
     }
 }

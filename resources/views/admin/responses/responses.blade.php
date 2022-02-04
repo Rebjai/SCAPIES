@@ -16,11 +16,14 @@
                 <div class="p-6">
                     <a href="{{route('export')}}" class="bg-yellow-500 py-1 font-bold px-2 rounded mt-8">Exportar respuestas</a>
                 </div>
-                
+
                 <div class="bg-white overflow-x-auto shadow-sm sm:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-gray-20">
                             <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                                    ID
+                                </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                                     Nombre
                                 </th>
@@ -91,9 +94,9 @@
                                     Formato Folleto
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                                    Aviso privacidad
+                                    Autoriza compartir datos
                                 </th>
-                                
+
                                 <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                                     
                                     </th>
@@ -102,139 +105,144 @@
                                     </th>
                                     
                                 </tr> -->
-                            </thead>
-                            <tbody>
-                                
-                                @foreach ($respuestas as $respuesta)
-                                <tr>
-                                    <td>
-                                        <div class="pl-4">
-                                            {{$respuesta->alumno->nombreCompleto}}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="pl-4">
-                                            {{$respuesta->alumno->correo}}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="pl-4">
-                                    {{$respuesta->alumno->genero == 1? 'M': 'F'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->telefono}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->curp}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->direccion->calle}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->direccion->numero}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->direccion->colonia}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->direccion->localidad}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->direccion->codigo_postal}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->formacion->subsistema->nombre}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->formacion->plantel->nombre}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->alumno->formacion->campo_formacion->nombre}}
-                                </div>
-                            </td>
-                            
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->continuar_estudios == 1? 'Si': 'No'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->baja?($respuesta->baja->causa_baja_id == 6? $respuesta->baja->otra_causa:$respuesta->baja->causa_baja->causa):'N/A' }}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->baja?($respuesta->baja->apoyo_economico == 1? 'Si': 'No'):'N/A'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->modalidad_estudios?->modalidad?:'N/A'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->universidadPrincipal}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->opcionPrincipal}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->universidadSecundaria}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->opcionSecundaria}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->mes?$respuesta->mes+1:'N/A'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->folleto_impreso!==null?($respuesta->folleto_impreso == 1? 'Impreso': 'Digital'):'N/A'}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pl-4">
-                                    {{$respuesta->aviso_privacidad == 1? 'Si': 'No'}}
-                                </div>
-                            </td>
-                            <!-- <td  class="border-l-2">
+                        </thead>
+                        <tbody>
+
+                            @foreach ($respuestas as $respuesta)
+                            <tr>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->id}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->nombreCompleto}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->correo}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->genero == 1? 'M': 'F'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->telefono}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->curp}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->direccion->calle}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->direccion->numero}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->direccion->colonia}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->direccion->localidad}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->direccion->codigo_postal}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->formacion->subsistema->nombre}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->formacion->plantel->nombre}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->alumno->formacion->campo_formacion->nombre}}
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->continuar_estudios == 1? 'Si': 'No'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->baja?($respuesta->baja->causa_baja_id == 6? $respuesta->baja->otra_causa:$respuesta->baja->causa_baja->causa):'N/A' }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->baja?($respuesta->baja->apoyo_economico == 1? 'Si': 'No'):'N/A'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->modalidad_estudios?->modalidad?:'N/A'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->universidadPrincipal}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->opcionPrincipal}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->universidadSecundaria}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->opcionSecundaria}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->mes?$respuesta->mes+1:'N/A'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->folleto_impreso!==null?($respuesta->folleto_impreso == 1? 'Impreso': 'Digital'):'N/A'}}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pl-4">
+                                        {{$respuesta->aviso_privacidad == 1? 'Si': 'No'}}
+                                    </div>
+                                </td>
+                                <!-- <td  class="border-l-2">
                                 
                                 </td>
                             </tr> -->
-                            @endforeach
+                                @endforeach
                         </tbody>
-                        
+
                     </table>
                 </div>
             </div>
