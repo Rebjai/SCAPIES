@@ -12,6 +12,7 @@
    height="250"
    viewBox="0, 0, 400, 150"
    sodipodi:docname="image2vector (7).svg"
+   style="filter: grayscale(1);"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)" {{ $attributes }}>
   <metadata
      id="metadata10">

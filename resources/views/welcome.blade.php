@@ -394,6 +394,26 @@
                 color: #6b7280;
                 color: rgba(107, 114, 128, var(--tw-text-opacity))
             }
+
+        }
+
+        .flor-gobierno {
+            position: relative;
+        }
+
+        .flor-gobierno::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/img/flor_gobierno.svg');
+            background-repeat: space;
+            background-size: 60%;
+            background-position: left;
+            filter: grayscale(1);
         }
     </style>
 
@@ -408,7 +428,7 @@
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))
         <div class="fixed top-0 left-0 px-6 py-4 sm:block w-10 text-center">
-            <img src="/img/tira_logos.png" class="h-10" alt="" srcset="" width="80%">
+            <img src="/img/tira_logos.png" class="h-10" alt="" srcset="" width="80%" style="filter: grayscale(1);">
         </div>
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -423,13 +443,13 @@
         </div>
         @endif
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="background-image: url('/img/flor_gobierno.svg'); background-repeat: space; background-size: 60%;">
-            <div class="flex justify-center pt-8 sm:pt-4 mt-8" style="padding-top:5rem">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 flor-gobierno">
+            <div class="flex justify-center pt-8 sm:pt-4 mt-8 relative" style="padding-top:5rem">
 
                 <x-application-logo class="block h-50 w-auto fill-current text-gray-600" />
             </div>
 
-            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg relative">
                 <div class="grid grid-cols-1">
                     <div class="p-6">
                         <div class="flex items-center">

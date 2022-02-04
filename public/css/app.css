@@ -17962,14 +17962,6 @@ select {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
-.bg-flor-gobierno {
-  background-image: url('/img/flor_gobierno.svg');
-}
-
-.bg-degrad {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-}
-
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -32168,10 +32160,22 @@ input:invalid:focus {
 }
 
 .flor-gobierno {
-  background-image : url('/img/flor_gobierno.svg');
-  background-repeat: space;
-  background-size  : 60%;
+  position: relative;
+}
+
+.flor-gobierno::before {
+  content            : '';
+  position           : absolute;
+  z-index            : 0;
+  top                : 0;
+  left               : 0;
+  width              : 100%;
+  height             : 100%;
+  background-image   : url('/img/flor_gobierno.svg');
+  background-repeat  : space;
+  background-size    : 60%;
   background-position: center;
+  filter             : grayscale(1);
 }
 
 @-webkit-keyframes fadeOff {
@@ -49317,14 +49321,6 @@ input:invalid:focus {
 
   .sm\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
-  }
-
-  .sm\:bg-flor-gobierno {
-    background-image: url('/img/flor_gobierno.svg');
-  }
-
-  .sm\:bg-degrad {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   }
 
   .sm\:from-transparent {
@@ -80615,14 +80611,6 @@ input:invalid:focus {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
-  .md\:bg-flor-gobierno {
-    background-image: url('/img/flor_gobierno.svg');
-  }
-
-  .md\:bg-degrad {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  }
-
   .md\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -111909,14 +111897,6 @@ input:invalid:focus {
 
   .lg\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
-  }
-
-  .lg\:bg-flor-gobierno {
-    background-image: url('/img/flor_gobierno.svg');
-  }
-
-  .lg\:bg-degrad {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   }
 
   .lg\:from-transparent {
@@ -143207,14 +143187,6 @@ input:invalid:focus {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
-  .xl\:bg-flor-gobierno {
-    background-image: url('/img/flor_gobierno.svg');
-  }
-
-  .xl\:bg-degrad {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  }
-
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -174501,14 +174473,6 @@ input:invalid:focus {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
-  }
-
-  .\32xl\:bg-flor-gobierno {
-    background-image: url('/img/flor_gobierno.svg');
-  }
-
-  .\32xl\:bg-degrad {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   }
 
   .\32xl\:from-transparent {
