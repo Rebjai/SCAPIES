@@ -227,28 +227,28 @@
     </div>
 
     <div class="pt-10">
-        <h2 class="font-bold">Aviso de privacidad</h2>
         <div class="pt-2">
-
+            
             <x-label for="aviso_privacidad" :value="__('¿Autorizas compartir tus datos personales del cuestionario, para que las instituciones de educación superior que elegiste para continuar tus estudios, te envien información adicional?')" class="my-4 " />
             <div class="flex justify-start -mx-2">
                 <div class="mx-2 flex">
-
+                    
                     <input id="rechazar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="0" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')==false ? 'checked' : '' }} />
                     <x-label for="rechazar" :value="__('No')" />
                 </div>
                 <div class="mx-2 flex">
-
+                    
                     <input id="aceptar" class="ml-2 mr-2" type="radio" name="aviso_privacidad" value="1" required {{ old('aviso_privacidad',$alumno->cuestionario->aviso_privacidad??'')!=false ? 'checked' : '' }} />
                     <x-label for="aceptar" :value="__('Si')" />
                 </div>
-
+                
             </div>
             @error('aviso_privacidad')
             <div class="text-red-500 mt2 text-sm">{{ $message }}</div>
             @enderror
         </div>
-        <div class="pt-6 italic text-base">
+        <h2 class="font-bold pt-6">Aviso de privacidad</h2>
+        <div class="pb-6 italic text-base">
             En el siguiente link puedes <a href="http://www.coepesoaxaca.com/sistema/pages/form/avisodep.html" target="_blank" class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">consultar el aviso de privacidad.</a>
         </div>
     </div>
