@@ -51,7 +51,7 @@ class plantelController extends Controller
      */
     public function show($id)
     {
-        $planteles = Plantel::select('id', 'nombre')->where('subsistema_id', $id)->get();
+        $planteles = Plantel::select('id', 'nombre')->where('subsistema_id', $id)->orderBy('nombre')->get();
         return response()->json($planteles);
 
 

@@ -35,7 +35,7 @@ class questionaireController extends Controller
     public function stepThree(Request $request)
     {
         $alumno = Alumno::where('user_id', '=', Auth::user()->id)->first();
-        $subsistemas = Subsistema::all();
+        $subsistemas = Subsistema::orderBy('nombre')->get();
         $planteles = Plantel::all();
         $areas = Area::all();
         return view('questionaire.step_three', compact('alumno', "subsistemas", "planteles", "areas"));
