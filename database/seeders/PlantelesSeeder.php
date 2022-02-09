@@ -170,7 +170,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 18,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 019 TIDAA',
+            'nombre' => 'IEBO 019 TIDAÁ',
             'clave' => '20ETH0019N'
         ]);
 
@@ -206,7 +206,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 22,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 023 ZOQUITLAN',
+            'nombre' => 'IEBO 023 ZOQUITLÁN',
             'clave' => '20ETH0023Z'
         ]);
 
@@ -287,7 +287,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 31,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 032 SANTA MARIA ZANIZA',
+            'nombre' => 'IEBO 032 SANTA MARÍA ZANIZA',
             'clave' => '20ETH0033G'
         ]);
 
@@ -296,7 +296,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 32,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 034 SAN BARTOLOME LOXICHA',
+            'nombre' => 'IEBO 034 SAN BARTOLOMÉ LOXICHA',
             'clave' => '20ETH0035E'
         ]);
 
@@ -314,7 +314,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 34,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 036 SAN PEDRO IXCATLAN',
+            'nombre' => 'IEBO 036 SAN PEDRO IXCATLÁN',
             'clave' => '20ETH0037C'
         ]);
 
@@ -332,7 +332,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 36,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 038 SAN ANDRES CHICAHUAXTLA',
+            'nombre' => 'IEBO 038 SAN ANDRÉS CHICAHUAXTLA',
             'clave' => '20ETH0039A'
         ]);
 
@@ -341,7 +341,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 37,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 039 CONCEPCION PAPALO',
+            'nombre' => 'IEBO 039 CONCEPCIÓN PÁPALO',
             'clave' => '20ETH0040Q'
         ]);
 
@@ -359,7 +359,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 39,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 041 SAN JOSE INDEPENDENCIA',
+            'nombre' => 'IEBO 041 SAN JOSÉ INDEPENDENCIA',
             'clave' => '20ETH0042O'
         ]);
 
@@ -368,7 +368,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 40,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 043 EL MORRO MAZATLAN',
+            'nombre' => 'IEBO 043 EL MORRO MAZATLÁN',
             'clave' => '20ETH0044M'
         ]);
 
@@ -377,7 +377,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 41,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 044 SAN JUAN COTZOCON',
+            'nombre' => 'IEBO 044 SAN JUAN COTZOCÓN',
             'clave' => '20ETH0045L'
         ]);
 
@@ -395,7 +395,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 43,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 046 SAN JOSE DEL RIOMANZO',
+            'nombre' => 'IEBO 046 SAN JOSÉ DEL RIOMANZO',
             'clave' => '20ETH0047J'
         ]);
 
@@ -422,7 +422,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 46,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 049 SANTA LUCIA TEOTEPEC',
+            'nombre' => 'IEBO 049 SANTA LUCÍA TEOTEPEC',
             'clave' => '20ETH0050X'
         ]);
 
@@ -431,7 +431,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 47,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 050 SAN JUAN MAZATLAN',
+            'nombre' => 'IEBO 050 SAN JUAN MAZATLÁN',
             'clave' => '20ETH0051W'
         ]);
 
@@ -449,7 +449,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 49,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 052 ASUNCION ATOYAQUILLO',
+            'nombre' => 'IEBO 052 ASUNCIÓN ATOYAQUILLO',
             'clave' => '20ETH0053U'
         ]);
 
@@ -467,7 +467,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 51,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 054 CAMOTINCHAN',
+            'nombre' => 'IEBO 054 CAMOTINCHÁN',
             'clave' => '20ETH0055S'
         ]);
 
@@ -494,7 +494,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 54,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 057 SAN AGUSTIN CHAYUCO',
+            'nombre' => 'IEBO 057 SAN AGUSTÍN CHAYUCO',
             'clave' => '20ETH0058P'
         ]);
 
@@ -539,7 +539,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 59,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 062 NUEVO MALZAGA',
+            'nombre' => 'IEBO 062 NUEVO MÁLZAGA',
             'clave' => '20ETH0063A'
         ]);
 
@@ -584,7 +584,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 64,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 067 SANTA MARIA TLALIXTAC',
+            'nombre' => 'IEBO 067 SANTA MARÍA TLALIXTAC',
             'clave' => '20ETH0068W'
         ]);
 
@@ -674,7 +674,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 74,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 077 LOS ANGELES',
+            'nombre' => 'IEBO 077 LOS ÁNGELES',
             'clave' => '20ETH0077D'
         ]);
 
@@ -692,7 +692,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 76,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 079 ASUNCION CACALOTEPEC',
+            'nombre' => 'IEBO 079 ASUNCIÓN CACALOTEPEC',
             'clave' => '20ETH0079B'
         ]);
 
@@ -701,7 +701,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 77,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 080 SANTA MARIA YACOCHI',
+            'nombre' => 'IEBO 080 SANTA MARÍA YACOCHI',
             'clave' => '20ETH0080R'
         ]);
 
@@ -737,7 +737,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 81,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 084 SAN JUAN JICAYAN',
+            'nombre' => 'IEBO 084 SAN JUAN JICAYÁN',
             'clave' => '20ETH0084N'
         ]);
 
@@ -746,7 +746,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 82,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 085 SANTA MARIA YOSOYUA',
+            'nombre' => 'IEBO 085 SANTA MARÍA YOSOYUA',
             'clave' => '20ETH0085M'
         ]);
 
@@ -755,7 +755,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 83,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 086 SANTA MARIA XADANI',
+            'nombre' => 'IEBO 086 SANTA MARÍA XADANI',
             'clave' => '20ETH0086L'
         ]);
 
@@ -782,7 +782,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 86,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 089 RIO SAPO',
+            'nombre' => 'IEBO 089 RÍO SAPO',
             'clave' => '20ETH0089I'
         ]);
 
@@ -791,7 +791,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 87,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 090 ZAPOTITLAN DEL RIO',
+            'nombre' => 'IEBO 090 ZAPOTITLÁN DEL RIO',
             'clave' => '20ETH0090Y'
         ]);
 
@@ -800,7 +800,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 88,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 091 SAN LUCAS ZOQUIAPAM',
+            'nombre' => 'IEBO 091 SAN LUCAS ZOQUIÁPAM',
             'clave' => '20ETH0091X'
         ]);
 
@@ -881,7 +881,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 97,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 101 SAN MATEO YOLOXCHITLAN',
+            'nombre' => 'IEBO 101 SAN MATEO YOLOXCHITLÁN',
             'clave' => '20ETH0100O'
         ]);
 
@@ -890,7 +890,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 98,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 102 SANTA MARIA MIXTEQUILLA',
+            'nombre' => 'IEBO 102 SANTA MARÍA MIXTEQUILLA',
             'clave' => '20ETH0009G'
         ]);
 
@@ -917,7 +917,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 101,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 105 SAN MATEO YUCUTINDOO',
+            'nombre' => 'IEBO 105 SAN MATEO YUCUTINDOÓ',
             'clave' => '20ETH0105J'
         ]);
 
@@ -926,7 +926,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 102,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 106 SANTA MARIA GUIENAGATI',
+            'nombre' => 'IEBO 106 SANTA MARÍA GUIENAGATI',
             'clave' => '20ETH0106I'
         ]);
 
@@ -944,7 +944,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 104,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 108 CHIQUIHUITAL DE BENITO JUAREZ',
+            'nombre' => 'IEBO 108 CHIQUIHUITAL DE BENITO JUÁREZ',
             'clave' => '20ETH0108G'
         ]);
 
@@ -953,7 +953,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 105,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 109 SAN ANDRES DINICUITI',
+            'nombre' => 'IEBO 109 SAN ANDRÉS DINICUITI',
             'clave' => '20ETH0109F'
         ]);
 
@@ -971,7 +971,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 107,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 111 SANTIAGO TEXTITLAN',
+            'nombre' => 'IEBO 111 SANTIAGO TEXTITLÁN',
             'clave' => '20ETH0111U'
         ]);
 
@@ -989,7 +989,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 109,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 114 NUEVO ZOQUIAPAM',
+            'nombre' => 'IEBO 114 NUEVO ZOQUIÁPAM',
             'clave' => '20ETH0114R'
         ]);
 
@@ -1061,7 +1061,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 117,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 122 SANTA MARIA CHICOMOEPEC',
+            'nombre' => 'IEBO 122 SANTA MARÍA CHICOMOEPEC',
             'clave' => '20ETH0122Z'
         ]);
 
@@ -1070,7 +1070,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 118,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 123 SANTA MARIA APAZCO',
+            'nombre' => 'IEBO 123 SANTA MARÍA APAZCO',
             'clave' => '20ETH0123Z'
         ]);
 
@@ -1088,7 +1088,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 120,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 125 SAN ANDRES NUXIÑO',
+            'nombre' => 'IEBO 125 SAN ANDRÉS NUXIÑO',
             'clave' => '20ETH0125X'
         ]);
 
@@ -1115,7 +1115,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 123,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 128 SAN MIGUEL AMATITLAN',
+            'nombre' => 'IEBO 128 SAN MIGUEL AMATITLÁN',
             'clave' => '20ETH0128U'
         ]);
 
@@ -1124,7 +1124,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 124,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 130 SAN FRANCISCO CAHUACA',
+            'nombre' => 'IEBO 130 SAN FRANCISCO CAHUACUÁ',
             'clave' => '20ETH0130I'
         ]);
 
@@ -1142,7 +1142,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 126,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 132 SAN CRISTOBAL AMATLAN',
+            'nombre' => 'IEBO 132 SAN CRISTÓBAL AMATLÁN',
             'clave' => '20ETH0132G'
         ]);
 
@@ -1151,7 +1151,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 127,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 133 SAN SEBASTIAN COATLAN',
+            'nombre' => 'IEBO 133 SAN SEBASTIÁN COATLÁN',
             'clave' => '20ETH0133F'
         ]);
 
@@ -1160,7 +1160,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 128,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 134 SANTA MARIA IPALAPA',
+            'nombre' => 'IEBO 134 SANTA MARÍA IPALAPA',
             'clave' => '20ETH0134E'
         ]);
 
@@ -1187,7 +1187,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 131,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 137 SANTA MARIA JACATEPEC',
+            'nombre' => 'IEBO 137 SANTA MARÍA JACATEPEC',
             'clave' => '20ETH0137B'
         ]);
 
@@ -1223,7 +1223,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 135,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 141 SAN ANDRES TEOTILALPAN',
+            'nombre' => 'IEBO 141 SAN ANDRÉS TEOTILALPAN',
             'clave' => '20ETH0141O'
         ]);
 
@@ -1250,7 +1250,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 138,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 144 SANTA MARIA PETAPA',
+            'nombre' => 'IEBO 144 SANTA MARÍA PETAPA',
             'clave' => '20ETH0144L'
         ]);
 
@@ -1295,7 +1295,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 143,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 149 SALINAS DEL MARQUEZ',
+            'nombre' => 'IEBO 149 SALINAS DEL MARQUÉZ',
             'clave' => '20ETH0149G'
         ]);
 
@@ -1313,7 +1313,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 145,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 151 OCOTLAN DE JUAREZ TETEPEC',
+            'nombre' => 'IEBO 151 OCOTLÁN DE JUÁREZ TETEPEC',
             'clave' => '20ETH0151V'
         ]);
 
@@ -1322,7 +1322,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 146,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 152 MARTIRES DE TACUBAYA',
+            'nombre' => 'IEBO 152 MÁRTIRES DE TACUBAYA',
             'clave' => '20ETH0152U'
         ]);
 
@@ -1331,7 +1331,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 147,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 153 SAN JOSE ESTANCIA GRANDE',
+            'nombre' => 'IEBO 153 SAN JOSÉ ESTANCIA GRANDE',
             'clave' => '20ETH0153T'
         ]);
 
@@ -1358,7 +1358,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 150,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 156 TATALTEPEC DE VALDES',
+            'nombre' => 'IEBO 156 TATALTEPEC DE VALDÉS',
             'clave' => '20ETH0156Q'
         ]);
 
@@ -1385,7 +1385,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 153,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 159 SANTIAGO CAMOTLAN',
+            'nombre' => 'IEBO 159 SANTIAGO CAMOTLÁN',
             'clave' => '20ETH0159N'
         ]);
 
@@ -1439,7 +1439,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 159,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 165 RIO DE LA ANONA',
+            'nombre' => 'IEBO 165 RÍO DE LA ANONA',
             'clave' => '20ETH0165Y'
         ]);
 
@@ -1448,7 +1448,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 160,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 166 VILLA TEJUPAN DE LA UNION',
+            'nombre' => 'IEBO 166 VILLA TEJÚPAM DE LA UNION',
             'clave' => '20ETH0166X'
         ]);
 
@@ -1493,7 +1493,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 165,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 172 BENITO JUAREZ II',
+            'nombre' => 'IEBO 172 BENITO JUÁREZ II',
             'clave' => '20ETH0172H'
         ]);
 
@@ -1529,7 +1529,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 169,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 177 SANTA MARIA LACHIXIO',
+            'nombre' => 'IEBO 177 SANTA MARÍA LACHIXIO',
             'clave' => '20ETH0177C'
         ]);
 
@@ -1565,7 +1565,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 173,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 182 SANTA MARIA PAPALO',
+            'nombre' => 'IEBO 182 SANTA MARÍA PÁPALO',
             'clave' => '20ETH0182O'
         ]);
 
@@ -1574,7 +1574,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 174,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 183 CONSTITUCION MEXICANA',
+            'nombre' => 'IEBO 183 CONSTITUCIÓN MEXICANA',
             'clave' => '20ETH0183N'
         ]);
 
@@ -1610,7 +1610,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 178,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 187 LAZARO CARDENAS',
+            'nombre' => 'IEBO 187 LÁZARO CÁRDENAS',
             'clave' => '20ETH0187J'
         ]);
 
@@ -1628,7 +1628,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 180,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 189 COSTATITLAN',
+            'nombre' => 'IEBO 189 COSTATITLÁN',
             'clave' => '20ETH0189H'
         ]);
 
@@ -1646,7 +1646,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 182,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 191 SAN ANDRES PAXTLAN',
+            'nombre' => 'IEBO 191 SAN ANDRÉS PAXTLÁN',
             'clave' => '20ETH0191W'
         ]);
 
@@ -1673,7 +1673,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 185,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 194 SAN SEBASTIAN RIO HONDO',
+            'nombre' => 'IEBO 194 SAN SEBASTIÁN RÍO HONDO',
             'clave' => '20ETH0194T'
         ]);
 
@@ -1682,7 +1682,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 186,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 195 CERRO CLARIN',
+            'nombre' => 'IEBO 195 CERRO CLARÍN',
             'clave' => '20ETH0195S'
         ]);
 
@@ -1700,7 +1700,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 188,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 197 SANTA CATARINA TICUA',
+            'nombre' => 'IEBO 197 SANTA CATARINA TICUÁ',
             'clave' => '20ETH0197Q'
         ]);
 
@@ -1709,7 +1709,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 189,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 198 SAN SEBASTIAN NICANANDUTA',
+            'nombre' => 'IEBO 198 SAN SEBASTIÁN NICANANDUTA',
             'clave' => '20ETH0198P'
         ]);
 
@@ -1727,7 +1727,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 191,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 200 SANTA MARIA TEPANTLALI',
+            'nombre' => 'IEBO 200 SANTA MARÍA TEPANTLALI',
             'clave' => '20ETH0200N'
         ]);
 
@@ -1754,7 +1754,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 194,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 204 SAN JERONIMO COATLAN',
+            'nombre' => 'IEBO 204 SAN JERÓNIMO COATLÁN',
             'clave' => '20ETH0204J'
         ]);
 
@@ -1844,7 +1844,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 204,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 219 SAN LUCAS CAMOTLAN',
+            'nombre' => 'IEBO 219 SAN LUCAS CAMOTLÁN',
             'clave' => '20ETH0219L'
         ]);
 
@@ -1871,7 +1871,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 207,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 222 SANTA MARIA XADANI',
+            'nombre' => 'IEBO 222 SANTA MARÍA XADANI',
             'clave' => '20ETH0224X'
         ]);
 
@@ -1943,7 +1943,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 215,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 230 STA MARIA ACATEPEC',
+            'nombre' => 'IEBO 230 STA MARÍA ACATEPEC',
             'clave' => '20ETH0232F'
         ]);
 
@@ -1970,7 +1970,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 218,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 233 RINCON JUAREZ',
+            'nombre' => 'IEBO 233 RINCÓN JUÁREZ',
             'clave' => '20ETH0235C'
         ]);
 
@@ -1979,7 +1979,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 219,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 234 SAN JOSE RIO VERDE',
+            'nombre' => 'IEBO 234 SAN JOSÉ RÍO VERDE',
             'clave' => '20ETH0236B'
         ]);
 
@@ -1997,7 +1997,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 221,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 236 STGO ATITLAN',
+            'nombre' => 'IEBO 236 STGO ÁTITLAN',
             'clave' => '20ETH0238Z'
         ]);
 
@@ -2024,7 +2024,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 224,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 239 SAN MARTIN LACHILA',
+            'nombre' => 'IEBO 239 SAN MARTÍN LACHILÁ',
             'clave' => '20ETH0241N'
         ]);
 
@@ -2051,7 +2051,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 227,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 242 SAN SEBASTIAN YUTANINO',
+            'nombre' => 'IEBO 242 SAN SEBASTIÁN YUTANINO',
             'clave' => '20ETH0244K'
         ]);
 
@@ -2060,7 +2060,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 228,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 243 ZAPOTITLAN PALMAS',
+            'nombre' => 'IEBO 243 ZAPOTITLÁN PALMAS',
             'clave' => '20ETH0245J'
         ]);
 
@@ -2123,7 +2123,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 235,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 250 SANTA ANA MIAHUATLAN',
+            'nombre' => 'IEBO 250 SANTA ANA MIAHUATLÁN',
             'clave' => '20ETH0252T'
         ]);
 
@@ -2168,7 +2168,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 240,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 255 SAN JUAN COATZOSPAM',
+            'nombre' => 'IEBO 255 SAN JUAN COATZOSPÁM',
             'clave' => '20ETH0257O'
         ]);
 
@@ -2177,7 +2177,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 241,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 256 SAN MARTIN DE PORRES',
+            'nombre' => 'IEBO 256 SAN MARTÍN DE PORRES',
             'clave' => '20ETH0258N'
         ]);
 
@@ -2195,7 +2195,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 243,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 258 SAN MIGUEL COATLAN',
+            'nombre' => 'IEBO 258 SAN MIGUEL COATLÁN',
             'clave' => '20ETH0260B'
         ]);
 
@@ -2249,7 +2249,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 249,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 264 SAN ISIDRO ZOQUIAPAM',
+            'nombre' => 'IEBO 264 SAN ISIDRO ZOQUIÁPAM',
             'clave' => '20ETH0272G'
         ]);
 
@@ -2285,7 +2285,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 253,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 268 SAN MIGUEL ALOAPAM',
+            'nombre' => 'IEBO 268 SAN MIGUEL ALOAPÁM',
             'clave' => '20ETH0276C'
         ]);
 
@@ -2312,7 +2312,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 256,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 271 SANTA CRUZ MIXTEPEC ZIMATLAN',
+            'nombre' => 'IEBO 271 SANTA CRUZ MIXTEPEC ZIMATLÁN',
             'clave' => '20ETH0279Z'
         ]);
 
@@ -2321,7 +2321,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 257,
             'subsistema_id' => 1,
-            'nombre' => 'IEBO 272 SAN ESTEBAN AMATLAN',
+            'nombre' => 'IEBO 272 SAN ESTEBAN AMATLÁN',
             'clave' => '20ETH0280P'
         ]);
 
@@ -2366,7 +2366,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 262,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 02 CUICATLAN',
+            'nombre' => 'CECYTE 02 CUICATLÁN',
             'clave' => '20ETC0002S'
         ]);
 
@@ -2375,7 +2375,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 263,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 03 IXTLAN',
+            'nombre' => 'CECYTE 03 IXTLÁN',
             'clave' => '20ETC0003R'
         ]);
 
@@ -2420,7 +2420,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 268,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 08 YOLOMECATL',
+            'nombre' => 'CECYTE 08 YOLOMECÁTL',
             'clave' => '20ETC0008M'
         ]);
 
@@ -2429,7 +2429,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 269,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 10 STA MARIA ZACATEPEC',
+            'nombre' => 'CECYTE 10 STA MARÍA ZACATEPEC',
             'clave' => '20ETC0009L'
         ]);
 
@@ -2438,7 +2438,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 270,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 11 MARIA LOMBARDO',
+            'nombre' => 'CECYTE 11 MARÍA LOMBARDO',
             'clave' => '20ETC0010A'
         ]);
 
@@ -2474,7 +2474,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 274,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 14 EL CAMARON',
+            'nombre' => 'CECYTE 14 EL CAMARÓN',
             'clave' => '20ETC0014X'
         ]);
 
@@ -2483,7 +2483,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 275,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 15 JICAYAN',
+            'nombre' => 'CECYTE 15 JICAYÁN',
             'clave' => '20ETC0015W'
         ]);
 
@@ -2528,7 +2528,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 280,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 20 ASUNCION IXTALTEPEC',
+            'nombre' => 'CECYTE 20 ASUNCIÓN IXTALTEPEC',
             'clave' => '20ETC0020H'
         ]);
 
@@ -2537,7 +2537,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 281,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 21 PUERTO ANGEL',
+            'nombre' => 'CECYTE 21 PUERTO ÁNGEL',
             'clave' => '20ETC0021G'
         ]);
 
@@ -2555,7 +2555,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 283,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 23 JUCHITAN',
+            'nombre' => 'CECYTE 23 JUCHITÁN',
             'clave' => '20ETC0023E'
         ]);
 
@@ -2609,7 +2609,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 289,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 29 XOXOCOTLAN',
+            'nombre' => 'CECYTE 29 XOXOCOTLÁN',
             'clave' => '20ETC0029Z'
         ]);
 
@@ -2663,7 +2663,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 295,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 35 SAN JOSE AYUQUILA',
+            'nombre' => 'CECYTE 35 SAN JOSÉ AYUQUILA',
             'clave' => '20ETC0035J'
         ]);
 
@@ -2672,7 +2672,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 296,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 36 BENEMERITO JUAREZ',
+            'nombre' => 'CECYTE 36 BENEMÉRITO JUÁREZ',
             'clave' => '20ETC0036I'
         ]);
 
@@ -2699,7 +2699,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 299,
             'subsistema_id' => 2,
-            'nombre' => 'CECYTE 39 SAN JOSE LACHIGUIRI',
+            'nombre' => 'CECYTE 39 SAN JOSÉ LACHIGUIRI',
             'clave' => '20ETC0039F'
         ]);
 
@@ -3041,7 +3041,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 337,
             'subsistema_id' => 3,
-            'nombre' => 'EMSAD NÚM. 46 COLONIA CUAUHEMOC',
+            'nombre' => 'EMSAD NÚM. 46 COLONIA CUAUHTÉMOC',
             'clave' => '20EMS0046G'
         ]);
 
@@ -3308,246 +3308,33 @@ class PlantelesSeeder extends Seeder
 
 
 
-        Plantel::create([
-            'id' => 367,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 025 SALINA CRUZ',
-            'clave' => '20DCT0022G'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 368,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 091 CIUDAD IXTEPEC',
-            'clave' => '20DCT0023F'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 369,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 002 TLAXIACO',
-            'clave' => '20DCT0024E'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 370,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 107 TUXTEPEC',
-            'clave' => '20DCT0168A'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 371,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 031 MATÍAS ROMERO',
-            'clave' => '20DCT0240U'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 372,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 123 SANTA LUCIA DEL CAMINO',
-            'clave' => '20DCT0003S'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 373,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 026 SAN FELIPE DEL AGUA',
-            'clave' => '20DCT0015X'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 374,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 090 LOMA BONITA',
-            'clave' => '20DCT0017V'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 375,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 150 OCOTLÁN',
-            'clave' => '20EBD0001C'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 376,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 183 MIAHUATLÁN',
-            'clave' => '20EBD0002B'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 377,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 205 JUCHITÁN',
-            'clave' => '20EBD0003A'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 378,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 123 TEOTITLAN',
-            'clave' => '20EBD0004Z'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 379,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 103 TAMAZULAPAM DEL PROGRESO',
-            'clave' => '20EBD0005Z'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 380,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 102 NOCHIXTLÁN',
-            'clave' => '20EBD0006Y'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 381,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 124 TLACOLULA',
-            'clave' => '20EBD0007X'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 382,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 231 HUATULCO',
-            'clave' => '20EBD0008W'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 383,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 248 ZIMATLAN',
-            'clave' => '20EBD0009V'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 384,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 038 SANTIAGO SUCHILQUITONGO',
-            'clave' => '20EBD0011J'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 385,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 259 XOXOCOTLAN',
-            'clave' => '20EBD0012I'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 386,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 263 SAN AGUSTÍN DE LAS JUNTAS',
-            'clave' => '20EBD0013H'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 387,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 264 SANTA MARÍA TONAMECA',
-            'clave' => '20EBD0014G'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 388,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 265 SAN JACINTO AMILPAS',
-            'clave' => '20EBD0015F'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 389,
-            'subsistema_id' => 4,
-            'nombre' => 'CETIS 168 CIUDAD IXTEPEC',
-            'clave' => '20EBD0016E'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 390,
-            'subsistema_id' => 4,
-            'nombre' => 'CBTIS 240 PUESTO ESCONDIDO',
-            'clave' => '20EBD0017D'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 391,
-            'subsistema_id' => 4,
-            'nombre' => 'EXTENSIÓN CBTIS 002 SANTIAGO LLANO GRANDE',
-            'clave' => '20EBD0018C'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 392,
-            'subsistema_id' => 4,
-            'nombre' => 'EXTENSIÓN CETIS 103 CINCO SEÑORES',
-            'clave' => '20EBD0019B'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 393,
-            'subsistema_id' => 4,
-            'nombre' => 'EXTENSIÓN CETIS 124 SAN FRANCISCO LACHIGOLÓ',
-            'clave' => '20EBD0020R'
-        ]);
+        Plantel::create(['id' => 367, 'subsistema_id' => 4, 'nombre' => 'CBTIS 002 TLAXIACO', 'clave' => '20DCT0024E']);
+        Plantel::create(['id' => 368, 'subsistema_id' => 4, 'nombre' => 'CBTIS 025 SALINA CRUZ', 'clave' => '20DCT0022G']);
+        Plantel::create(['id' => 369, 'subsistema_id' => 4, 'nombre' => 'CBTIS 026 SAN FELIPE DEL AGUA', 'clave' => '20DCT0015X']);
+        Plantel::create(['id' => 370, 'subsistema_id' => 4, 'nombre' => 'CBTIS 031 MATÍAS ROMERO', 'clave' => '20DCT0240U']);
+        Plantel::create(['id' => 371, 'subsistema_id' => 4, 'nombre' => 'CBTIS 090 LOMA BONITA', 'clave' => '20DCT0017V']);
+        Plantel::create(['id' => 372, 'subsistema_id' => 4, 'nombre' => 'CBTIS 091 CIUDAD IXTEPEC', 'clave' => '20DCT0023F']);
+        Plantel::create(['id' => 373, 'subsistema_id' => 4, 'nombre' => 'CBTIS 107 TUXTEPEC', 'clave' => '20DCT0168A']);
+        Plantel::create(['id' => 374, 'subsistema_id' => 4, 'nombre' => 'CBTIS 123 SANTA LUCÍA DEL CAMINO', 'clave' => '20DCT0003S']);
+        Plantel::create(['id' => 375, 'subsistema_id' => 4, 'nombre' => 'CBTIS 150 OCOTLÁN', 'clave' => '20EBD0001C']);
+        Plantel::create(['id' => 376, 'subsistema_id' => 4, 'nombre' => 'CBTIS 183 MIAHUATLÁN', 'clave' => '20EBD0002B']);
+        Plantel::create(['id' => 377, 'subsistema_id' => 4, 'nombre' => 'CBTIS 205 JUCHITÁN', 'clave' => '20EBD0003A']);
+        Plantel::create(['id' => 378, 'subsistema_id' => 4, 'nombre' => 'CBTIS 231 HUATULCO', 'clave' => '20EBD0008W']);
+        Plantel::create(['id' => 379, 'subsistema_id' => 4, 'nombre' => 'CBTIS 240 PUESTO ESCONDIDO', 'clave' => '20EBD0017D']);
+        Plantel::create(['id' => 380, 'subsistema_id' => 4, 'nombre' => 'CBTIS 248 ZIMATLÁN', 'clave' => '20EBD0009V']);
+        Plantel::create(['id' => 381, 'subsistema_id' => 4, 'nombre' => 'CBTIS 259 XOXOCOTLÁN', 'clave' => '20EBD0012I']);
+        Plantel::create(['id' => 382, 'subsistema_id' => 4, 'nombre' => 'CBTIS 263 SAN AGUSTÍN DE LAS JUNTAS', 'clave' => '20EBD0013H']);
+        Plantel::create(['id' => 383, 'subsistema_id' => 4, 'nombre' => 'CBTIS 264 SANTA MARÍA TONAMECA', 'clave' => '20EBD0014G']);
+        Plantel::create(['id' => 384, 'subsistema_id' => 4, 'nombre' => 'CBTIS 265 SAN JACINTO AMILPAS', 'clave' => '20EBD0015F']);
+        Plantel::create(['id' => 385, 'subsistema_id' => 4, 'nombre' => 'CETIS 038 SANTIAGO SUCHILQUITONGO', 'clave' => '20EBD0011J']);
+        Plantel::create(['id' => 386, 'subsistema_id' => 4, 'nombre' => 'CETIS 102 NOCHIXTLÁN', 'clave' => '20EBD0006Y']);
+        Plantel::create(['id' => 387, 'subsistema_id' => 4, 'nombre' => 'CETIS 103 TAMAZULAPAM DEL PROGRESO', 'clave' => '20EBD0005Z']);
+        Plantel::create(['id' => 388, 'subsistema_id' => 4, 'nombre' => 'CETIS 123 TEOTITLÁN', 'clave' => '20EBD0004Z']);
+        Plantel::create(['id' => 389, 'subsistema_id' => 4, 'nombre' => 'CETIS 124 TLACOLULA', 'clave' => '20EBD0007X']);
+        Plantel::create(['id' => 390, 'subsistema_id' => 4, 'nombre' => 'CETIS 168 CIUDAD IXTEPEC', 'clave' => '20EBD0016E']);
+        Plantel::create(['id' => 391, 'subsistema_id' => 4, 'nombre' => 'EXTENSIÓN CBTIS 002 SANTIAGO LLANO GRANDE', 'clave' => '20EBD0018C']);
+        Plantel::create(['id' => 392, 'subsistema_id' => 4, 'nombre' => 'EXTENSIÓN CETIS 103 CINCO SEÑORES', 'clave' => '20EBD0019B']);
+        Plantel::create(['id' => 393, 'subsistema_id' => 4, 'nombre' => 'EXTENSIÓN CETIS 124 SAN FRANCISCO LACHIGOLÓ', 'clave' => '20EBD0020R']);
 
 
 
@@ -3563,7 +3350,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 395,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 02 STA MARIA ALOTEPEC',
+            'nombre' => 'BIC 02 STA MARÍA ALOTEPEC',
             'clave' => '20EBD0022P'
         ]);
 
@@ -3572,7 +3359,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 396,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 03 ELOXOCHITLAN DE FLORES MAGON',
+            'nombre' => 'BIC 03 ELOXOCHITLÁN DE FLORES MAGÓN',
             'clave' => '20EBD0023O'
         ]);
 
@@ -3581,7 +3368,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 397,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 04 SANTA MARIA CHIMALAPA',
+            'nombre' => 'BIC 04 SANTA MARÍA CHIMALAPA',
             'clave' => '20EBD0024N'
         ]);
 
@@ -3590,7 +3377,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 398,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 05 SANTIAGO CHOAPAM',
+            'nombre' => 'BIC 05 SANTIAGO CHOAPÁM',
             'clave' => '20EBD0025M'
         ]);
 
@@ -3599,7 +3386,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 399,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 06 SAN CRISTOBAL LACHIRIOOAG',
+            'nombre' => 'BIC 06 SAN CRISTÓBAL LACHIRIOOAG',
             'clave' => '20EBD0026L'
         ]);
 
@@ -3608,7 +3395,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 400,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 07 SANTIAGO NUYOO',
+            'nombre' => 'BIC 07 SANTIAGO NUYOÓ',
             'clave' => '20EBD0027K'
         ]);
 
@@ -3617,7 +3404,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 401,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 08 SANTA MARIA NUTIO',
+            'nombre' => 'BIC 08 SANTA MARÍA NUTÍO',
             'clave' => '20EBD0028J'
         ]);
 
@@ -3635,7 +3422,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 403,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 11 MAZATLAN VILLA DE FLORES',
+            'nombre' => 'BIC 11 MAZATLÁN VILLA DE FLORES',
             'clave' => '20EBD0030Y'
         ]);
 
@@ -3698,7 +3485,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 410,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 18 SAN AGUSTIN TLACOTEPEC',
+            'nombre' => 'BIC 18 SAN AGUSTÍN TLACOTEPEC',
             'clave' => '20EBD0037R'
         ]);
 
@@ -3707,7 +3494,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 411,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 19 SANTA MARIA TEOPOXCO',
+            'nombre' => 'BIC 19 SANTA MARÍA TEOPOXCO',
             'clave' => '20EBD0038Q'
         ]);
 
@@ -3716,7 +3503,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 412,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 20 SAN PEDRO SOCHIAPAM',
+            'nombre' => 'BIC 20 SAN PEDRO SOCHIÁPAM',
             'clave' => '20EBD0039P'
         ]);
 
@@ -3734,7 +3521,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 414,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 22 SAN JOSE DE LAS FLORES',
+            'nombre' => 'BIC 22 SAN JOSÉ DE LAS FLORES',
             'clave' => '20EBD0041D'
         ]);
 
@@ -3743,7 +3530,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 415,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 23 SAN BARTOLOME AYAUTLA',
+            'nombre' => 'BIC 23 SAN BARTOLOMÉ AYAUTLA',
             'clave' => '20EBD0042C'
         ]);
 
@@ -3761,7 +3548,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 417,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 25 SAN MARTIN PERAS',
+            'nombre' => 'BIC 25 SAN MARTÍN PERAS',
             'clave' => '20EBD0044A'
         ]);
 
@@ -3770,7 +3557,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 418,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 26 DE SAN ANDRES SOLAGA',
+            'nombre' => 'BIC 26 DE SAN ANDRÉS SOLAGA',
             'clave' => '20EBD0045Z'
         ]);
 
@@ -3779,7 +3566,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 419,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 27 DE ALVARO OBREGON',
+            'nombre' => 'BIC 27 DE ÁLVARO OBREGÓN',
             'clave' => '20EBD0046Z'
         ]);
 
@@ -3788,7 +3575,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 420,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 28 DE SANTOS REYES PAPALO',
+            'nombre' => 'BIC 28 DE SANTOS REYES PÁPALO',
             'clave' => '20EBD0047Y'
         ]);
 
@@ -3797,7 +3584,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 421,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 29 DE TEOTITLAN DEL VALLE',
+            'nombre' => 'BIC 29 DE TEOTITLÁN DEL VALLE',
             'clave' => '20EBD0048X'
         ]);
 
@@ -3806,7 +3593,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 422,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 30 DE SAN JERONIMO NUCHITA',
+            'nombre' => 'BIC 30 DE SAN JERÓNIMO NUCHITA',
             'clave' => '20EBD0049W'
         ]);
 
@@ -3815,7 +3602,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 423,
             'subsistema_id' => 5,
-            'nombre' => 'BIC 31 DE SAN MIGUEL AHUEHUETITLAN',
+            'nombre' => 'BIC 31 DE SAN MIGUEL AHUEHUETITLÁN',
             'clave' => '20UBH0001Q'
         ]);
 
@@ -4067,15 +3854,6 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 451,
             'subsistema_id' => 7,
-            'nombre' => '6/12 VILLA DE ETLA',
-            'clave' => '20DTA0011C'
-        ]);
-
-
-
-        Plantel::create([
-            'id' => 452,
-            'subsistema_id' => 7,
             'nombre' => '5/8 SANTA CRUZ AMILPAS',
             'clave' => '20DTA0012B'
         ]);
@@ -4083,12 +3861,20 @@ class PlantelesSeeder extends Seeder
 
 
         Plantel::create([
-            'id' => 453,
+            'id' => 452,
             'subsistema_id' => 7,
-            'nombre' => '5/7 RIO GRANDE ',
+            'nombre' => '5/7 RÍO GRANDE ',
             'clave' => '20DTA0013A'
         ]);
 
+
+
+        Plantel::create([
+            'id' => 453,
+            'subsistema_id' => 7,
+            'nombre' => '6/12 VILLA DE ETLA',
+            'clave' => '20DTA0011C'
+        ]);
 
 
         Plantel::create([
@@ -4184,7 +3970,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 464,
             'subsistema_id' => 9,
-            'nombre' => 'CBTA No 092 TEQUISISTLAN',
+            'nombre' => 'CBTA No 092 TEQUISISTLÁN',
             'clave' => '20DTA0252A'
         ]);
 
@@ -4238,7 +4024,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 470,
             'subsistema_id' => 9,
-            'nombre' => 'CBTA No 003',
+            'nombre' => 'CBTA No 003 TUXTEPEC',
             'clave' => '20DTA0002V'
         ]);
 
@@ -4247,7 +4033,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 471,
             'subsistema_id' => 9,
-            'nombre' => 'CBTA No 051 YANHUITLAN',
+            'nombre' => 'CBTA No 051 YANHUITLÁN',
             'clave' => '20DTA0003U'
         ]);
 
@@ -4427,7 +4213,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 491,
             'subsistema_id' => 9,
-            'nombre' => 'EXTENSIÓN CBTA No 109 SAN JUAN TABAA',
+            'nombre' => 'EXTENSIÓN CBTA No 109 SAN JUAN TABAÁ',
             'clave' => '20ECB0015G'
         ]);
 
@@ -4571,7 +4357,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 507,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 12 NOCHIXTLAN',
+            'nombre' => 'COBAO 12 NOCHIXTLÁN',
             'clave' => '20ECB0031Y'
         ]);
 
@@ -4661,7 +4447,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 517,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 21 OJITLAN',
+            'nombre' => 'COBAO 21 OJITLÁN',
             'clave' => '20ECB0041E'
         ]);
 
@@ -4670,7 +4456,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 518,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 23 IXHUATAN',
+            'nombre' => 'COBAO 23 IXHUATÁN',
             'clave' => '20ECB0042D'
         ]);
 
@@ -4688,7 +4474,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 520,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 25 RIO GRANDE',
+            'nombre' => 'COBAO 25 RÍO GRANDE',
             'clave' => '20ECB0044B'
         ]);
 
@@ -4868,7 +4654,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 540,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 45 TEOTITLAN DE FLORES MAGÓN',
+            'nombre' => 'COBAO 45 TEOTITLÁN DE FLORES MAGÓN',
             'clave' => '20ECB0064P'
         ]);
 
@@ -5021,7 +4807,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 557,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 62 HUAZOLOTITLAN',
+            'nombre' => 'COBAO 62 HUAZOLOTITLÁN',
             'clave' => '20ETK0013G'
         ]);
 
@@ -5075,7 +4861,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 563,
             'subsistema_id' => 10,
-            'nombre' => 'COBAO 68 MECHOACAN',
+            'nombre' => 'COBAO 68 MECHOACÁN',
             'clave' => '20ETK0019A'
         ]);
 
@@ -6002,7 +5788,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 666,
             'subsistema_id' => 13,
-            'nombre' => 'ANTONIO DE LEON',
+            'nombre' => 'ANTONIO DE LEÓN',
             'clave' => '20PBH3010G'
         ]);
 
@@ -6011,7 +5797,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 667,
             'subsistema_id' => 13,
-            'nombre' => 'BACHILLERATO ASUNCION IXTALTEPEC',
+            'nombre' => 'BACHILLERATO ASUNCIÓN IXTALTEPEC',
             'clave' => '20PBH0070A'
         ]);
 
@@ -6047,7 +5833,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 674,
             'subsistema_id' => 13,
-            'nombre' => 'BACHILLERATO COLEGIO NACIONALISTA DE MEXICO',
+            'nombre' => 'BACHILLERATO COLEGIO NACIONALISTA DE MÉXICO',
             'clave' => '20PBH0106Z'
         ]);
 
@@ -6119,7 +5905,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 683,
             'subsistema_id' => 13,
-            'nombre' => 'BACHILLERATO LIC. ANDRES HENESTROSA',
+            'nombre' => 'BACHILLERATO LIC. ANDRÉS HENESTROSA',
             'clave' => '20PCT0008S'
         ]);
 
@@ -6146,7 +5932,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 686,
             'subsistema_id' => 13,
-            'nombre' => 'BACHILLERATO TECNOLOGICO MOISES SAENZ',
+            'nombre' => 'BACHILLERATO TECNOLÓGICO MOISES SAENZ',
             'clave' => '20PBH0018E'
         ]);
 
@@ -6191,7 +5977,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 691,
             'subsistema_id' => 13,
-            'nombre' => 'CENTRO DE ENSEÑANZA MAXIMO RAMON ORTIZ',
+            'nombre' => 'CENTRO DE ENSEÑANZA MÁXIMO RAMÓN ORTIZ',
             'clave' => '20PBH0035V'
         ]);
 
@@ -6263,7 +6049,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 701,
             'subsistema_id' => 13,
-            'nombre' => 'COLEGIO MOTOLINIA',
+            'nombre' => 'COLEGIO MOTOLINÍA',
             'clave' => '20PBH0020T'
         ]);
 
@@ -6281,7 +6067,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 703,
             'subsistema_id' => 13,
-            'nombre' => 'COLEGIO SANTA LUCIA AC. SECCIÓN PREPARATORIA',
+            'nombre' => 'COLEGIO SANTA LUCÍA AC. SECCIÓN PREPARATORIA',
             'clave' => '20PBH0036U'
         ]);
 
@@ -6299,7 +6085,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 705,
             'subsistema_id' => 13,
-            'nombre' => 'COLEGIO TERESITA MARTIN',
+            'nombre' => 'COLEGIO TERESITA MARTÍN',
             'clave' => '20PBH0049Y'
         ]);
 
@@ -6317,7 +6103,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 708,
             'subsistema_id' => 13,
-            'nombre' => 'DR. NICOLAS GAMBOA DORANTES',
+            'nombre' => 'DR. NICOLÁS GAMBOA DORANTES',
             'clave' => '20PBH3212C'
         ]);
 
@@ -6326,7 +6112,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 710,
             'subsistema_id' => 13,
-            'nombre' => 'ENFERMERIA GENERAL URSE',
+            'nombre' => 'ENFERMERÍA GENERAL URSE',
             'clave' => '20PBH3009R'
         ]);
 
@@ -6371,25 +6157,17 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 715,
             'subsistema_id' => 13,
-            'nombre' => 'ESCUELA PREPARATORIA INSTITUTO JUAREZ',
+            'nombre' => 'ESCUELA PREPARATORIA INSTITUTO JUÁREZ',
             'clave' => '20PBH0093L'
         ]);
 
-
-
-        Plantel::create([
-            'id' => 827,
-            'subsistema_id' => 12,
-            'nombre' => 'CEDARTB MIGUEL CABRERA',
-            'clave' => 0
-        ]);
 
 
 
         Plantel::create([
             'id' => 721,
             'subsistema_id' => 13,
-            'nombre' => 'FLORES MAGON',
+            'nombre' => 'FLORES MAGÓN',
             'clave' => '20PBH0101D'
         ]);
 
@@ -6398,7 +6176,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 722,
             'subsistema_id' => 13,
-            'nombre' => 'FRANCISCO GONZALEZ BOCANEGRA',
+            'nombre' => 'FRANCISCO GONZÁLEZ BOCANEGRA',
             'clave' => '20PBH0062S'
         ]);
 
@@ -6416,7 +6194,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 724,
             'subsistema_id' => 13,
-            'nombre' => 'GUADALUPE DE OCOTLAN',
+            'nombre' => 'GUADALUPE DE OCOTLÁN',
             'clave' => '20PCT0009R'
         ]);
 
@@ -6443,7 +6221,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 727,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO BENEMERITO DE OAXACA',
+            'nombre' => 'INSTITUTO BENEMÉRITO DE OAXACA',
             'clave' => '20PBH0080H'
         ]);
 
@@ -6452,7 +6230,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 728,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO BERNAL DIAZ DEL CASTILLO',
+            'nombre' => 'INSTITUTO BERNAL DÍAZ DEL CASTILLO',
             'clave' => '20PBH0086B'
         ]);
 
@@ -6488,7 +6266,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 732,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO CULTURAL HUAJUAPAN DE LEON',
+            'nombre' => 'INSTITUTO CULTURAL HUAJUAPAN DE LEÓN',
             'clave' => '20PBH3461J'
         ]);
 
@@ -6515,7 +6293,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 736,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO EDUCATIVO CARDENAS CASTANEDA',
+            'nombre' => 'INSTITUTO EDUCATIVO CÁRDENAS CASTANEDA',
             'clave' => '20PBH0089Z'
         ]);
 
@@ -6542,7 +6320,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 739,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO FRAY BARTOLOME DE LAS CASAS',
+            'nombre' => 'INSTITUTO FRAY BARTOLOMÉ DE LAS CASAS',
             'clave' => '20PBH3346S'
         ]);
 
@@ -6578,7 +6356,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 743,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO LIBRE DE COMERCIO Y ADMINISTRACION',
+            'nombre' => 'INSTITUTO LIBRE DE COMERCIO Y ADMINISTRACIÓN',
             'clave' => '20SBC2092B'
         ]);
 
@@ -6623,7 +6401,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 749,
             'subsistema_id' => 13,
-            'nombre' => 'INSTITUTO PEDAGOGICO MARGARITA AGUILAR DIAZ',
+            'nombre' => 'INSTITUTO PEDAGÓGICO MARGARITA AGUILAR DÍAZ',
             'clave' => '20PBH0056H'
         ]);
 
@@ -6650,7 +6428,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 752,
             'subsistema_id' => 13,
-            'nombre' => 'JOSE VASCONCELOS',
+            'nombre' => 'JOSÉ VASCONCELOS',
             'clave' => '20PBH0103B'
         ]);
 
@@ -6695,7 +6473,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 757,
             'subsistema_id' => 13,
-            'nombre' => 'LIC. JOSE VASCONCELOS',
+            'nombre' => 'LIC. JOSÉ VASCONCELOS',
             'clave' => '20PBH0072Z'
         ]);
 
@@ -6713,7 +6491,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 759,
             'subsistema_id' => 13,
-            'nombre' => 'MACEDONIO ALCALA',
+            'nombre' => 'MACEDONIO ALCALÁ',
             'clave' => '20PBH0102C'
         ]);
 
@@ -6749,7 +6527,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 763,
             'subsistema_id' => 13,
-            'nombre' => 'PORFIRIO DIAZ',
+            'nombre' => 'PORFIRIO DÍAZ',
             'clave' => '20PBH3250F'
         ]);
 
@@ -6776,7 +6554,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 766,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA BENEMERITO DE LAS AMERICAS',
+            'nombre' => 'PREPARATORIA BENEMÉRITO DE LAS AMERICAS',
             'clave' => '20PBH0025O'
         ]);
 
@@ -6830,7 +6608,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 782,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA GENERAL ANTONIO LEON',
+            'nombre' => 'PREPARATORIA GENERAL ANTONIO LEÓN',
             'clave' => '20PBH0041F'
         ]);
 
@@ -6875,7 +6653,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 777,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA LAZARO CARDENAS DEL RIO',
+            'nombre' => 'PREPARATORIA LÁZARO CÁRDENAS DEL RIO',
             'clave' => '20PBH0041F'
         ]);
 
@@ -6902,7 +6680,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 785,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA MARIA TERESA RIVERA',
+            'nombre' => 'PREPARATORIA MARÍA TERESA RIVERA',
             'clave' => '20PBH0057G'
         ]);
 
@@ -6938,7 +6716,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 789,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA PROMOCION CULTURAL DEL ISTMO',
+            'nombre' => 'PREPARATORIA PROMOCIÓN CULTURAL DEL ISTMO',
             'clave' => 771
         ]);
 
@@ -6965,7 +6743,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 792,
             'subsistema_id' => 13,
-            'nombre' => 'PREPARATORIA TEZOATLAN',
+            'nombre' => 'PREPARATORIA TEZOATLÁN',
             'clave' => 774
         ]);
 
@@ -7019,8 +6797,17 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 799,
             'subsistema_id' => 13,
-            'nombre' => 'UNIVERSIDAD LA SALLE OAXACA SECCION BACHILLERATO',
+            'nombre' => 'UNIVERSIDAD LA SALLE OAXACA SECCIÓN BACHILLERATO',
             'clave' => 781
+        ]);
+
+
+
+        Plantel::create([
+            'id' => 827,
+            'subsistema_id' => 15,
+            'nombre' => 'CEDART MIGUEL CABRERA',
+            'clave' => 0
         ]);
 
 
@@ -7046,7 +6833,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 801,
             'subsistema_id' => 27,
-            'nombre' => 'CUAUHTEMOC',
+            'nombre' => 'CUAUHTÉMOC',
             'clave' => 782
         ]);
 
@@ -7055,7 +6842,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 802,
             'subsistema_id' => 27,
-            'nombre' => 'SAN FRANCISCO IXHUATAN',
+            'nombre' => 'SAN FRANCISCO IXHUATÁN',
             'clave' => 783
         ]);
 
@@ -7073,7 +6860,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 824,
             'subsistema_id' => 27,
-            'nombre' => 'JOSE VASCONCELOS',
+            'nombre' => 'JOSÉ VASCONCELOS',
             'clave' => 805
         ]);
 
@@ -7145,7 +6932,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 826,
             'subsistema_id' => 27,
-            'nombre' => 'FRANCISCO GONZALEZ BOCANEGRA',
+            'nombre' => 'FRANCISCO GONZÁLEZ BOCANEGRA',
             'clave' => 807
         ]);
 
@@ -7163,7 +6950,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 822,
             'subsistema_id' => 27,
-            'nombre' => 'MACEDONIO ALCALA',
+            'nombre' => 'MACEDONIO ALCALÁ',
             'clave' => 803
         ]);
 
@@ -7172,7 +6959,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 816,
             'subsistema_id' => 27,
-            'nombre' => 'RICARDO FLORES MAGON',
+            'nombre' => 'RICARDO FLORES MAGÓN',
             'clave' => 797
         ]);
 
@@ -7193,7 +6980,5 @@ class PlantelesSeeder extends Seeder
             'nombre' => 'SANTA CATARINA JUQUILA',
             'clave' => 799
         ]);
-
-
     }
 }

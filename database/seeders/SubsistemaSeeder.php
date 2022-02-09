@@ -117,6 +117,10 @@ class SubsistemaSeeder extends Seeder
             'nombre' => 'CETMAR'
         ]);
 
+        Subsistema::create([
+            'id' => 15,
+            'nombre' => 'CEDART'
+        ]);
 
 
         Subsistema::create([
