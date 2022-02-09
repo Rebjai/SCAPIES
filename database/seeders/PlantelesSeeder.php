@@ -5734,7 +5734,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 660,
             'subsistema_id' => 11,
-            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚM. 100',
+            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚMERO 100.',
             'clave' => '20PBH0095J'
         ]);
 
@@ -5743,7 +5743,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 661,
             'subsistema_id' => 11,
-            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚM. 101',
+            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚMERO 101.',
             'clave' => '20PBH3651A'
         ]);
 
@@ -5752,7 +5752,7 @@ class PlantelesSeeder extends Seeder
         Plantel::create([
             'id' => 662,
             'subsistema_id' => 11,
-            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚM. 102',
+            'nombre' => 'TELEBACHILLERATO COMUNITARIO NÚMERO 102.',
             'clave' => '20PCT0012E'
         ]);
 
