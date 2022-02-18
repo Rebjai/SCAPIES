@@ -338,12 +338,23 @@
         showQuestionaire()
         let drop = document.querySelector('#baja')
         drop.style.display = 'none'
+        let acceptPriv = document.querySelector('#aceptar')
+        acceptPriv.disabled=false
+        acceptPriv.classList.toggle("bg-gray-400")
+        let rejectPriv = document.querySelector('#rechazar')
+        // rejectPriv.checked = true
     }
-
+    
     function dropStudies() {
         hideQuestionaire()
         let drop = document.querySelector('#baja')
         drop.style.display = 'block'
+        let acceptPriv = document.querySelector('#aceptar')
+        acceptPriv.disabled=true
+        acceptPriv.classList.toggle("bg-gray-400")
+        let rejectPriv = document.querySelector('#rechazar')
+        rejectPriv.checked = true
+        console.log(rejectPriv);
     }
 
     function showQuestionaire() {
