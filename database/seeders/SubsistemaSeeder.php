@@ -16,77 +16,77 @@ class SubsistemaSeeder extends Seeder
     {
         Subsistema::create([
             'id' => 1,
-            'nombre' => 'IEBO'
+            'nombre' => 'INSTITUTO DE ESTUDIOS DE BACHILLERATO DEL ESTADO DE OAXACA (IEBO)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 2,
-            'nombre' => 'CECYTE'
+            'nombre' => 'COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS (CECYTE)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 3,
-            'nombre' => 'EMSAD'
+            'nombre' => 'EDUCACIÓN MEDIA SUPERIOR A DISTANCIA (EMSAD)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 4,
-            'nombre' => 'DGETI'
+            'nombre' => 'DIRECCIÓN GENERAL DE EDUCACIÓN TECNOLÓGICA INDUSTRIAL (DGETI)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 5,
-            'nombre' => 'CSEIIO'
+            'nombre' => 'COLEGIO SUPERIOR PARA LA EDUCACIÓN INTEGRAL INTERCULTURAL DE OAXACA (CSEIIO)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 6,
-            'nombre' => 'UABJO'
+            'nombre' => 'UNIVERSIDAD AUTÓNOMA BENITO JUÁREZ DE OAXACA (UABJO)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 7,
-            'nombre' => 'CENTRO DE ESTUDIOS DE BACHILLERATO'
+            'nombre' => 'CENTRO DE ESTUDIOS DE BACHILLERATO (CEB)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 8,
-            'nombre' => 'CONALEP'
+            'nombre' => 'COLEGIO NACIONAL DE EDUCACIÓN PROFESIONAL TÉCNICA (CONALEP)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 9,
-            'nombre' => 'DGETA'
+            'nombre' => 'DIRECCIÓN GENERAL DE EDUCACIÓN TECNOLÓGICA AGROPECUARÍA (DGETA)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 10,
-            'nombre' => 'COBAO'
+            'nombre' => 'COLEGIO DE BACHILLERES DEL ESTADO DE OAXACA (COBAO)'
         ]);
 
 
 
         Subsistema::create([
             'id' => 11,
-            'nombre' => 'TBCEO'
+            'nombre' => 'TELEBACHILLERATO COMUNITARIO DEL ESTADO DE OAXACA (TBCEO)'
         ]);
 
 
@@ -114,18 +114,18 @@ class SubsistemaSeeder extends Seeder
 
         Subsistema::create([
             'id' => 14,
-            'nombre' => 'CETMAR'
+            'nombre' => 'CENTRO DE ESTUDIOS TECNOLÓGICOS DEL MAR (CETMAR)'
         ]);
 
         Subsistema::create([
             'id' => 15,
-            'nombre' => 'CEDART'
+            'nombre' => 'CENTRO DE EDUCACIÓN ARTÍSTICA (CEDART)'
         ]);
 
 
         Subsistema::create([
             'id' => 27,
-            'nombre' => 'PREFECO'
+            'nombre' => 'PREPARATORIA FEDERAL POR COOPERACIÓN (PREFECO)'
         ]);
     }
 }
