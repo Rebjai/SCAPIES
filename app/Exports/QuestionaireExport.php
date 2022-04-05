@@ -3,18 +3,20 @@
 namespace App\Exports;
 
 use App\Models\Cuestionario;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class QuestionaireExport implements FromCollection, WithMapping, WithHeadings
+class QuestionaireExport implements FromQuery, WithMapping, WithHeadings, ShouldQueue
 {
     /**
      * @return \Illuminate\Support\Collection
      */
-    public function collection()
+    public function query()
     {
-        return Cuestionario::with('opciones_carreras')->get();
+        return Cuestionario::query()->with('opciones_carreras');
     }
 
     public function map($cuestionario): array
