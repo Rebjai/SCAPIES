@@ -10,7 +10,10 @@ use Maatwebsite\Excel\Excel;
 class QuestionaireExportController extends Controller
 {
     public function export( Excel $excel)
+    
     {
+        ini_set('max_execution_time', 8800);
+
         return $excel->download(new QuestionaireExport, 'Respuestas.xlsx');
     }
 }
