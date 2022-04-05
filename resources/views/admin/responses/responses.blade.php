@@ -18,6 +18,8 @@
                 </div>
 
                 <div class="bg-white overflow-x-auto shadow-sm sm:rounded-lg">
+                {{ $respuestas->links() }}
+
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-gray-20">
                             <tr>
@@ -245,6 +247,8 @@
 
                     </table>
                 </div>
+                {{ $respuestas->links() }}
+
             </div>
         </div>
     </div>

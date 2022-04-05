@@ -10,7 +10,7 @@ class ResponsesController extends Controller
 {
     public function index()
     {
-        $respuestas = Cuestionario::with(['alumno', 'baja', 'opciones_carreras','opciones_carreras.carrera'])->get();
+        $respuestas = Cuestionario::with(['alumno', 'baja', 'opciones_carreras','opciones_carreras.carrera'])->paginate(100);
         // dd($respuestas);
         $res = [];
         foreach ($respuestas as $r){
