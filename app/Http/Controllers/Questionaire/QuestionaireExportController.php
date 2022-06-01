@@ -12,7 +12,7 @@ class QuestionaireExportController extends Controller
     public function export( Excel $excel)
     
     {
-        ini_set('max_execution_time', 8800);
+        ini_set('max_execution_time', 16800);
 
         return $excel->download(new QuestionaireExport, 'Respuestas.xlsx');
     }
